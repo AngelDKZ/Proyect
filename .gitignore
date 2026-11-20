@@ -54,3 +54,6 @@ tools/visor-revision/visor.html
 
 # Registro RENIPRESS completo (20 MB): se vuelve a descargar desde datosabiertos.gob.pe (ver data/raw/huaraz/establecimientos_salud.json)
 /data/raw/susalud/
+
+# Modelo de elevación Copernicus (41 MB): se descarga con scripts/etl/pendiente_copernicus.sh
+/data/raw/copernicus/

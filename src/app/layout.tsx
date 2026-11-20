@@ -32,8 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <header className="border-b border-line bg-surface">
           <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4">
-            <Link href="/" className="text-base font-semibold tracking-tight">
-              Mapa de Riesgo Comunitario
+            <Link href="/" className="flex min-w-0 flex-col leading-tight">
+              <span className="truncate text-sm font-semibold tracking-tight sm:text-base">
+                Mapa de Riesgo<span className="hidden sm:inline"> Comunitario</span>
+              </span>
+              <span className="truncate text-xs text-muted">
+                Versión de prueba<span className="hidden sm:inline"> · proyecto académico</span>
+              </span>
             </Link>
             <Link
               href="/emergencia"

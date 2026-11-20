@@ -11,8 +11,14 @@ import * as schema from "./schema";
 const globalForDb = globalThis as unknown as { pgClient?: ReturnType<typeof postgres> };
 
 function createClient() {
-  return postgres(serverEnv().DATABASE_URL, {
-    max: 5,
+  const url = serverEnv().DATABASE_URL;
+  // En Vercel cada función es un proceso corto: una conexión por instancia. Con la conexión "agrupada" de Neon
+  // (host con "-pooler", PgBouncer en modo transacción) no se pueden usar sentencias preparadas.
+  const enVercel = Boolean(process.env.VERCEL);
+  const agrupada = /-pooler\./.test(url);
+  return postgres(url, {
+    max: enVercel ? 1 : 5,
+    prepare: !agrupada,
     // Neon y otros servicios gestionados cierran conexiones inactivas: se reconecta solo.
     idle_timeout: 20,
   });

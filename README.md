@@ -23,6 +23,10 @@ npm run datos:todo        # carga los datos de Huaraz (se puede repetir)
 npm run dev               # http://localhost:3000 → /mapa
 ```
 
+## Publicar
+
+Ver [docs/despliegue.md](docs/despliegue.md) (Vercel + Neon, gratis).
+
 ## Scripts
 
 | Comando | Qué hace |
