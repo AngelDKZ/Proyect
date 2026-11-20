@@ -1,0 +1,121 @@
+{
+ "peligro": "caida",
+ "consultado": "2026-11-19",
+ "eventos": [
+  {
+   "fecha": "2025-04-22",
+   "lugar": "Centro poblado Paccha (vía vecinal y reservorio)",
+   "distrito": "Independencia",
+   "descripcion": "Por las lluvias, un derrumbe de rocas impactó contra el cerco perimétrico de un reservorio y una manguera de riego; también hubo daños en la vía vecinal y en la red de agua potable. Fecha exacta del evento no indicada: se usa la de publicación.",
+   "afectacion": "Cerco perimétrico de reservorio y manguera de riego dañados; tránsito vehicular interrumpido en el centro poblado.",
+   "coord": [
+    -77.5559267,
+    -9.5176074
+   ],
+   "metodo_ubicacion": "API local de lugares (OpenStreetMap, barrio 'Paccha', distrito Independencia); no figura en el archivo INEI de centros poblados. Punto de la localidad, no del reservorio.",
+   "confianza": "media",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Radio Santo Domingo (RSD), con datos del COER Áncash",
+     "titulo": "Áncash: lluvias ocasionan daños en vía vecinal y en red de agua potable en Independencia",
+     "url": "https://radiorsd.pe/noticias/ancash-lluvias-ocasionan-danos-en-vecinal-y-en-red-de-agua-potable-en-independencia",
+     "fecha_publicacion": "2025-04-22",
+     "cita": "el derrumbe de rocas a causa de las precipitaciones impactó contra el cerco perimétrico de un reservorio y una manguera de riego. […] El tránsito vehicular permanece interrumpido en el centro poblado de Paccha"
+    }
+   ]
+  },
+  {
+   "fecha": "2025-03-06",
+   "lugar": "Vía Huallcor – San Pedro, a 1,6 km de Huallcor (derrumbes D1 y D2, margen derecha de la quebrada Huallcor)",
+   "distrito": "Huaraz",
+   "descripcion": "Reactivación de derrumbes en talud rocoso fracturado (rotura por vuelco) con bloques de 0,5 a 2,5 m; Ingemmet también registra en la zona una caída de rocas reactivada la misma fecha que afectó 75 m de la vía.",
+   "afectacion": "Vía de acceso a Huallcor afectada en 88 m (D1) e interrumpida por horas; cuneta dañada; tuberías de agua potable (PVC) afectadas.",
+   "coord": [
+    -77.503951,
+    -9.604856
+   ],
+   "metodo_ubicacion": "Coordenadas UTM del derrumbe D1 en el informe (225170 E, 8937273 N, WGS84 zona 18S) convertidas a geográficas con pyproj.",
+   "confianza": "alta",
+   "recorrido": "Vía vecinal Huallcor – San Pedro (D1 225170E/8937273N; D2 225113E/8937192N; D3 225021E/8937076N)",
+   "fuentes": [
+    {
+     "medio": "Ingemmet (vía CENEPRED-SIGRID)",
+     "titulo": "Informe Técnico N° A7658: Evaluación de peligros geológicos por movimientos en masa entre los centros poblados de Huallcor y San Pedro (Sosa, 2025)",
+     "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/20341/descargar",
+     "fecha_publicacion": "2025-01-01",
+     "cita": "El derrumbe nace sobre los 3341 m, reactivada el 06 de marzo del 2025, este se ubicado a 1.6 km desde el centro poblado de Huallcor […] El derrumbe afectó a la vía entre del acceso San Pedro a Huallcor por horas"
+    }
+   ]
+  },
+  {
+   "fecha": "2022-03-30",
+   "lugar": "Barrio Chua Bajo (tres derrumbes puntuales en taludes)",
+   "distrito": "Independencia",
+   "descripcion": "Las lluvias intensas causaron tres derrumbes en taludes de roca y suelo (alturas de 2 a 3 m); el D-3 destruyó una vivienda de adobe y los otros dos dañaron otras dos viviendas.",
+   "afectacion": "1 vivienda de adobe destruida (deshabitada); 2 viviendas de material rústico o adobe afectadas (acceso y techo de calamina).",
+   "coord": [
+    -77.539423,
+    -9.521199
+   ],
+   "metodo_ubicacion": "Coordenadas UTM del derrumbe D-3 del cuadro 5 del informe (221205.97 E, 8946502.25 N, zona 18S) convertidas con pyproj; D-1 y D-2 están a unos 120 m (≈[-77.5404, -9.5218]).",
+   "confianza": "alta",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ingemmet (vía CENEPRED-SIGRID)",
+     "titulo": "Informe Técnico N° A7315: Evaluación de peligros geológicos en el Barrio de Chua Bajo (2022)",
+     "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/14933/descargar",
+     "fecha_publicacion": "2022-01-01",
+     "cita": "el 30 de marzo del presente año, debido a las lluvias intensas y prolongadas, se produjeron tres derrumbes puntuales en el Barrio de Chua Bajo, destruyendo 1 vivienda de adobe"
+    }
+   ]
+  }
+ ],
+ "descartados": [
+  {
+   "lugar": "Barrio Chua Alto (Independencia), 29/07/2022",
+   "motivo": "Ingemmet (Opinión Técnica N° 3-2023, SIGRID doc 16325) lo califica como deslizamiento rotacional reactivado, no caída ni derrumbe; corresponde a la capa de deslizamientos. Algunos resúmenes web lo llaman erróneamente caída de rocas."
+  },
+  {
+   "lugar": "Barrio Chua Alto (Independencia), 15/01/2021",
+   "motivo": "Caída de rocas real (Ingemmet A7160), pero anterior a 2022."
+  },
+  {
+   "lugar": "Cerro 'El Balcón de Judas' (Independencia)",
+   "motivo": "Derrumbe publicado por Andina el 23/12/2019, fuera de rango. Ingemmet A7460 (FEN 2023-2024) lo cita como zona con caída de rocas y derrumbes, junto al 'Balcón del Diablo' (vía a Los Olivos), pero sin evento fechado."
+  },
+  {
+   "lugar": "Caserío Llactash (Independencia), 07/02/2023",
+   "motivo": "Ingemmet A7375 lo describe como movimientos en masa por lluvias, sin caída de rocas ni derrumbe."
+  },
+  {
+   "lugar": "Sector Jatun Zanja, C.P. Santa Cruz (Huaraz), 2025",
+   "motivo": "Ingemmet A7630: el evento reciente es un deslizamiento (enero y febrero de 2025); el derrumbe descrito es antiguo y sin fecha."
+  },
+  {
+   "lugar": "Sector Quispar, C.P. Huamarín (Huaraz), 2025",
+   "motivo": "Opinión Técnica N° 12-2025: es la reactivación de un deslizamiento, no una caída."
+  },
+  {
+   "lugar": "Vía Huaraz–Casma km 97+600, Quenuacocha (2022)",
+   "motivo": "Derrumbe en el distrito de Pira, fuera del área."
+  },
+  {
+   "lugar": "Caserío Secsecpampa, C.P. Monterrey (Independencia), marzo de 2022",
+   "motivo": "Colapso de una vivienda por filtración de lluvia, no por caída de rocas (Andina, 04/03/2022)."
+  },
+  {
+   "lugar": "C.P. Pongor (Independencia), mayo de 2025",
+   "motivo": "Reptación de suelos (Radio RSD, 06/05/2025), no una caída."
+  },
+  {
+   "lugar": "Tramo Pariac–Carman AN-1148, Macashca (Huaraz), 03/02/2025",
+   "motivo": "Huaico, no caída (Radio RSD, 04/02/2025)."
+  },
+  {
+   "lugar": "Cabecera de la quebrada Paria, talud oriental del cerro San Cristóbal (inmediaciones del nevado Vallunaraju)",
+   "motivo": "Revisión: es el derrumbe que originó el flujo del 28-04-2025, ya registrado como huaico; ubicación en la cumbre, muy aproximada."
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "peligro": "inundacion_pluvial",
+ "consultado": "2026-11-19",
+ "eventos": [
+  {
+   "fecha": "2026-11-06",
+   "lugar": "Centro de Salud de Huarupampa (área de Emergencia, local provisional)",
+   "distrito": "Huaraz",
+   "descripcion": "La lluvia con granizada hizo colapsar las canaletas y el agua rebalsó e inundó el área de Emergencia del centro de salud, que funciona en un local provisional mientras se construye su sede; la atención se interrumpió un momento.",
+   "afectacion": "Área de Emergencia inundada; sin pacientes afectados ni daños mayores en equipos según la jefa del establecimiento.",
+   "coord": [
+    -77.5302617,
+    -9.525825
+   ],
+   "metodo_ubicacion": "Búsqueda local (Centro de Salud Huarupampa, OpenStreetMap). Ojo: la nota indica que el servicio funciona provisionalmente en otro local, cuya dirección no se publica. (revisión: el servicio funciona en un local temporal de dirección no publicada; ubicación tentativa)",
+   "confianza": "baja",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: lluvias y granizada inundan emergencia del centro de salud de Huarupampa",
+     "url": "https://ancashnoticias.com/2026/11/09/huaraz-lluvias-y-granizada-inundan-emergencia-del-centro-de-salud-de-huarupampa/",
+     "fecha_publicacion": "2026-11-09",
+     "cita": "Las intensas lluvias acompañadas de granizada inundaron el área de emergencia del Centro de Salud de Huarupampa, en Huaraz,"
+    },
+    {
+     "medio": "Diario Correo",
+     "titulo": "Lluvias y granizada inundaron oficinas policiales y un centro de salud en Huaraz",
+     "url": "https://diariocorreo.pe/peru/lluvias-y-granizada-inundaron-oficinas-policiales-y-un-centro-de-salud-en-huaraz-noticia/",
+     "fecha_publicacion": "2026-11-07",
+     "cita": "el establecimiento de salud que funciona provisionalmente"
+    },
+    {
+     "medio": "Canal N",
+     "titulo": "Intensas lluvias y granizada inundan calles y establecimientos en Huaraz",
+     "url": "https://canaln.pe/peru/intensas-lluvias-y-granizada-inundan-calles-y-establecimientos-huaraz-n496130",
+     "fecha_publicacion": "2026-11-07",
+     "cita": "El agua ingresó al área de Emergencia"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-06",
+   "lugar": "Municipalidad Provincial de Huaraz (Plaza de Armas)",
+   "distrito": "Huaraz",
+   "descripcion": "Durante la lluvia con granizada del viernes 6 de noviembre el agua alcanzó instalaciones de la Municipalidad Provincial de Huaraz.",
+   "afectacion": "Instalaciones municipales afectadas por el agua (sin detalle del área).",
+   "coord": [
+    -77.5294221,
+    -9.5299637
+   ],
+   "metodo_ubicacion": "OSM Nominatim: edificio 'Municipalidad Provincial Huaraz' (© colaboradores de OpenStreetMap)",
+   "confianza": "alta",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Sol TV Perú",
+     "titulo": "Áncash: lluvia y granizada inunda calles y viviendas",
+     "url": "https://soltvperu.com/lluvias-granizada-inundan-huaraz/",
+     "fecha_publicacion": "2026-11-08",
+     "cita": "La emergencia también alcanzó instalaciones de la Municipalidad Provincial de Huaraz"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-03-16",
+   "lugar": "Centro poblado de Marian",
+   "distrito": "Independencia",
+   "descripcion": "Las lluvias de marzo de 2026 provocaron el desborde de un canal de regadío que afectó siete viviendas. La fecha es la de publicación; la nota solo dice que ocurrió durante las lluvias de marzo.",
+   "afectacion": "7 viviendas afectadas",
+   "coord": [
+    -77.5041728,
+    -9.5136252
+   ],
+   "metodo_ubicacion": "Búsqueda local (Marian, OpenStreetMap)",
+   "confianza": "media",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Lluvias provocan colapso y daños en 10 viviendas en Independencia",
+     "url": "https://ancashnoticias.com/2026/03/16/lluvias-provocan-colapso-y-danos-en-10-viviendas-en-independencia/",
+     "fecha_publicacion": "2026-03-16",
+     "cita": "Las lluvias también provocaron el desborde de un canal de regadío que afectó siete viviendas en el centro poblado de Marian."
+    }
+   ]
+  },
+  {
+   "fecha": "2026-03-16",
+   "lugar": "Localidad de Ucrumaran (centro poblado de Huanchac)",
+   "distrito": "Independencia",
+   "descripcion": "Una vivienda quedó completamente inundada por las lluvias de marzo de 2026. La fecha es la de publicación de la nota.",
+   "afectacion": "1 vivienda inundada; familia reubicada en otra casa",
+   "coord": [
+    -77.5117321,
+    -9.507122
+   ],
+   "metodo_ubicacion": "No se encontró Ucrumaran en la búsqueda local, en INEI ni en Nominatim; se usa el punto del barrio Huanchac (OpenStreetMap), al que pertenece según la nota",
+   "confianza": "baja",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Lluvias provocan colapso y daños en 10 viviendas en Independencia",
+     "url": "https://ancashnoticias.com/2026/03/16/lluvias-provocan-colapso-y-danos-en-10-viviendas-en-independencia/",
+     "fecha_publicacion": "2026-03-16",
+     "cita": "Asimismo, una vivienda resultó completamente inundada en la localidad de Ucrumaran, perteneciente al centro poblado de Huanchac."
+    }
+   ]
+  },
+  {
+   "fecha": "2025-10-07",
+   "lugar": "Av. Luzuriaga a la altura del BCP (cuadra 6–7, cerca de la Plaza de Armas)",
+   "distrito": "Huaraz",
+   "descripcion": "Colapso del sistema pluvial en la Av. Luzuriaga porque la lluvia superó la capacidad de un conducto provisional; la municipalidad lo atribuye a obras inconclusas en la Av. Gamarra. Fecha probable: la nota del 09-10 lo llama 'reciente' y la lluvia intensa fue el 07-10.",
+   "afectacion": null,
+   "coord": [
+    -77.5289959,
+    -9.5292747
+   ],
+   "metodo_ubicacion": "OSM Nominatim: agencia BCP, Av. Luzuriaga 691 (© colaboradores de OpenStreetMap). Está a ~30 m del punto ya registrado 'luzuriaga-sucre'; es una fecha nueva para el mismo sitio.",
+   "confianza": "alta",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Municipalidad de Huaraz atribuye colapso pluvial de Luzuriaga a obras inconclusas en avenida Gamarra",
+     "url": "https://ancashnoticias.com/2025/10/09/municipalidad-de-huaraz-atribuye-colapso-pluvial-de-luzuriaga-a-obras-inconclusas-en-avenida-gamarra/",
+     "fecha_publicacion": "2025-10-09",
+     "cita": "a la altura del BCP, se produjo porque las lluvias sobrepasaron la capacidad del conducto provisional"
+    }
+   ]
+  },
+  {
+   "fecha": "2025-10-07",
+   "lugar": "Barrio de Challhua",
+   "distrito": "Huaraz",
+   "descripcion": "Tras las lluvias de inicios de octubre de 2025 hubo colapsos del desagüe en el barrio, que EPS Chavín atribuye a conexiones pluviales indebidas; la municipalidad también reportó aniegos en 'Chayhua' (probablemente Challhua). Fecha aproximada.",
+   "afectacion": null,
+   "coord": [
+    -77.532057,
+    -9.5378533
+   ],
+   "metodo_ubicacion": "Búsqueda local (Urbanización Challhua, OpenStreetMap)",
+   "confianza": "baja",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "EPS Chavín advierte que conexiones indebidas provocan colapso de desagües en Huaraz",
+     "url": "https://ancashnoticias.com/2025/10/09/eps-chavin-advierte-que-conexiones-indebidas-provocan-colapso-de-desagues-en-huaraz/",
+     "fecha_publicacion": "2025-10-09",
+     "cita": "inadecuadas de agua pluvial al sistema doméstico estarían generando colapsos en la red de desagüe, principalmente en los barrios de Huarupampa y Challhua."
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Municipalidad de Huaraz atribuye colapso pluvial de Luzuriaga a obras inconclusas en avenida Gamarra",
+     "url": "https://ancashnoticias.com/2025/10/09/municipalidad-de-huaraz-atribuye-colapso-pluvial-de-luzuriaga-a-obras-inconclusas-en-avenida-gamarra/",
+     "fecha_publicacion": "2025-10-09",
+     "cita": "alcantarillas fluviales de Confraternidad y Chayhua, sectores donde se reportaron aniegos"
+    }
+   ]
+  },
+  {
+   "fecha": "2025-10-07",
+   "lugar": "Barrio de Huarupampa",
+   "distrito": "Huaraz",
+   "descripcion": "EPS Chavín reportó colapsos de la red de desagüe tras las lluvias de inicios de octubre de 2025, principalmente en Huarupampa y Challhua. Fecha aproximada; la nota no nombra calles.",
+   "afectacion": null,
+   "coord": [
+    -77.5307761,
+    -9.529096
+   ],
+   "metodo_ubicacion": "Búsqueda local (Urbanización Huarupampa, OpenStreetMap)",
+   "confianza": "baja",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "EPS Chavín advierte que conexiones indebidas provocan colapso de desagües en Huaraz",
+     "url": "https://ancashnoticias.com/2025/10/09/eps-chavin-advierte-que-conexiones-indebidas-provocan-colapso-de-desagues-en-huaraz/",
+     "fecha_publicacion": "2025-10-09",
+     "cita": "inadecuadas de agua pluvial al sistema doméstico estarían generando colapsos en la red de desagüe, principalmente en los barrios de Huarupampa y Challhua."
+    }
+   ]
+  }
+ ],
+ "descartados": [
+  {
+   "lugar": "Divincri Huaraz (oficinas de Secuestros y Extorsiones, 3.er piso), 06-11-2026",
+   "motivo": "Andina, La República y Canal N hablan de 'filtraciones de agua' (goteras por el techo), no de inundación; tampoco se publicó la dirección del local."
+  },
+  {
+   "lugar": "Av. Raimondi, 2.ª cuadra cerca de Av. Confraternidad Oeste, marzo 2026",
+   "motivo": "Mismo episodio que 'raymondi' (2026-03), que ya está en el archivo. Hay desacuerdo: la nota del 04-03-2026 (Ancash Noticias) la sitúa en la 2.ª cuadra y la atribuye al desagüe interno de la vivienda; la del 02-03 habla de la 1.ª cuadra."
+  },
+  {
+   "lugar": "Av. Raimondi, noviembre 2026 (notas del 09-11 y del 18-11 sobre rejillas y la empresa constructora)",
+   "motivo": "Ya está en el archivo (raymondi, 2026-11-06)."
+  },
+  {
+   "lugar": "Sector Challhua, mercado de Challhua (3 familias), octubre 2025",
+   "motivo": "El agua entró por techos y paredes de viviendas precarias (Ancash Noticias, 10-10-2025); es un daño por lluvia directa, no una inundación."
+  },
+  {
+   "lugar": "Sector Confraternidad (aniegos), octubre 2025",
+   "motivo": "La nota no da cuadra ni cruce y la avenida es muy larga; no se puede ubicar."
+  },
+  {
+   "lugar": "Huaraz, calles sin nombre (24-09-2026, 25-09-2026, 18-11-2026)",
+   "motivo": "Andina, El Comercio y Ancash Noticias no nombran calles; el evento del 24-09 ya está en 'sin_lugar_preciso'."
+  },
+  {
+   "lugar": "Centro de Huaraz, 17/18-12-2023 (Gestión, Exitosa)",
+   "motivo": "Ya está en el archivo (luzuriaga-sucre y mercado-central, 2023-12-18); las notas no dan otras calles."
+  },
+  {
+   "lugar": "Radio RSD: 'Granizadas afectan colegio, centro de salud y viviendas en Huaraz' (probablemente 06-10-2023)",
+   "motivo": "No se pudo abrir (HTTP 403); no se sabe el lugar ni si hubo inundación."
+  },
+  {
+   "lugar": "Radio RSD: '5 viviendas resultan afectadas y una inhabitable por las lluvias'",
+   "motivo": "No se pudo abrir (HTTP 403)."
+  },
+  {
+   "lugar": "Río Casca / laguna Vallunaraju, Independencia, 28-04-2025",
+   "motivo": "Es un desborde de río por origen glaciar, fuera del alcance (otro agente)."
+  },
+  {
+   "lugar": "Chua y Pico (Independencia), marzo 2026",
+   "motivo": "Viviendas colapsadas por fallas estructurales, no por inundación."
+  },
+  {
+   "lugar": "Chincay (Independencia), octubre 2025",
+   "motivo": "Daño por granizada en la Cordillera Negra, no por inundación."
+  }
+ ]
+}

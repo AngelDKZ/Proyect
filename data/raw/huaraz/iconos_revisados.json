@@ -1,0 +1,50 @@
+{
+  "_descripcion": "Lista revisada de zonas seguras y puntos de atención del mapa oficial de Huaraz e Independencia (mayo 2025). punta_px = punta del pin en la imagen data/raw/huaraz/mapa_zonas_seguras_2025.png (3508x2480). 'nombre' solo se llena si el mapa rotula el lugar; si no, 'referencia' indica la calle o el sector cercano. Revisado visualmente por el asistente el 19-11-2026; falta la revisión de una persona del equipo.",
+  "_descartados": [
+    {"punta_px": [167, 2299], "tipo_detectado": "gestion_cadaveres", "motivo": "Falso positivo: es el símbolo del Puente Santo Toribio, no un ícono."}
+  ],
+  "puntos": [
+    {"tipo": "centro_acopio", "punta_px": [2420, 1100], "nombre": "Colegio Fe y Alegría", "referencia": "Jr. Aija / Jr. Pedro Cochachín, Pedregal", "origen": "deteccion"},
+    {"tipo": "centro_acopio", "punta_px": [2310, 1218], "nombre": "I.E. La Soledad", "referencia": "Soledad Alta", "origen": "deteccion"},
+    {"tipo": "centro_acopio", "punta_px": [1018, 1383], "nombre": "Universidad Nacional Santiago Antúnez de Mayolo (UNASAM)", "referencia": "Shancayán", "origen": "deteccion"},
+    {"tipo": "centro_acopio", "punta_px": [2102, 1777], "nombre": "Centro Cultural", "referencia": "Junto a la Plaza de Armas de Huaraz", "origen": "deteccion"},
+    {"tipo": "centro_acopio", "punta_px": [774, 1835], "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga", "referencia": "Centenario", "origen": "deteccion"},
+    {"tipo": "centro_acopio", "punta_px": [590, 1741], "nombre": "U.P. San Pedro", "referencia": "Centenario (borde del mapa)", "origen": "manual", "nota": "Parcialmente tapado por la leyenda; ubicado a mano."},
+
+    {"tipo": "atencion_medica", "punta_px": [1404, 1309], "nombre": null, "referencia": "Av. Las Flores", "origen": "deteccion"},
+    {"tipo": "atencion_medica", "punta_px": [2628, 1613], "nombre": "Parque Perú", "referencia": "Villón Alto", "origen": "deteccion"},
+    {"tipo": "atencion_medica", "punta_px": [795, 1731], "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga", "referencia": "Centenario", "origen": "deteccion"},
+    {"tipo": "atencion_medica", "punta_px": [873, 1480], "nombre": "I.S.T. Eleazar Guzmán Barrón", "referencia": "Av. Los Eucaliptos, Shancayán", "origen": "manual", "nota": "La etiqueta de texto tapa el ícono; ubicado a mano."},
+
+    {"tipo": "puesto_comando", "punta_px": [2612, 1414], "nombre": "Parque Lawn Tennis", "referencia": "Pedregal Medio / Villón Alto", "origen": "deteccion"},
+    {"tipo": "puesto_comando", "punta_px": [858, 1742], "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga", "referencia": "Centenario", "origen": "deteccion"},
+
+    {"tipo": "refugio_temporal", "punta_px": [1568, 977], "nombre": null, "referencia": "Jr. Horacio Zevallos", "origen": "deteccion"},
+    {"tipo": "refugio_temporal", "punta_px": [2576, 1247], "nombre": "Parque Bicentenario", "referencia": "Pedregal Medio", "origen": "deteccion"},
+    {"tipo": "refugio_temporal", "punta_px": [958, 1461], "nombre": null, "referencia": "Entre UNASAM y el I.S.T. Eleazar Guzmán Barrón, Shancayán", "origen": "deteccion", "nota": "Verificar a qué local corresponde."},
+    {"tipo": "refugio_temporal", "punta_px": [2814, 1630], "nombre": "Ministerio de Transportes y Comunicaciones", "referencia": "Av. Confraternidad Internacional Sur, Villón Alto", "origen": "deteccion"},
+    {"tipo": "refugio_temporal", "punta_px": [638, 1699], "nombre": "U.P. San Pedro", "referencia": "Centenario", "origen": "deteccion"},
+    {"tipo": "refugio_temporal", "punta_px": [908, 1844], "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga", "referencia": "Jr. Francisco Araoz, Centenario", "origen": "deteccion"},
+
+    {"tipo": "zona_seguridad", "punta_px": [2572, 1122], "nombre": null, "referencia": "Área verde junto a Av. Confraternidad Internacional Este, Pedregal", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [1468, 1219], "nombre": null, "referencia": "Área verde junto a Av. Confraternidad Internacional Este, Nicrupampa", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2142, 1251], "nombre": null, "referencia": "Área verde, Soledad Alta (Jr. Ramón Castilla)", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [1302, 1297], "nombre": null, "referencia": "Cerca de Av. Las Flores, Nicrupampa", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [1116, 1381], "nombre": "Universidad Nacional Santiago Antúnez de Mayolo (UNASAM)", "referencia": "Shancayán", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2098, 1385], "nombre": null, "referencia": "Área verde, Jr. José de Sucre / Jr. Ramón Castilla", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2242, 1429], "nombre": null, "referencia": "Área verde, Av. Ramón Castilla, Soledad Baja", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [788, 1484], "nombre": null, "referencia": "Área verde, Av. Los Eucaliptos, Shancayán", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2214, 1675], "nombre": null, "referencia": "Área verde, Av. Simón Bolívar, Belén", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2058, 1716], "nombre": "Plaza de Armas de Huaraz", "referencia": "Centro", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2252, 1762], "nombre": null, "referencia": "Área verde, Av. Mariscal Toribio de Luzuriaga, Belén", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2050, 1873], "nombre": null, "referencia": "Área verde, Huarupampa", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2226, 1913], "nombre": "Parque Santa Rosa", "referencia": "Huarupampa", "origen": "deteccion"},
+    {"tipo": "zona_seguridad", "punta_px": [2286, 1952], "nombre": null, "referencia": "Área verde junto a Av. 27 de Noviembre", "origen": "deteccion"},
+
+    {"tipo": "atencion_animal", "punta_px": [2352, 1355], "nombre": null, "referencia": "Área verde, Av. 28 de Julio, Soledad Baja", "origen": "deteccion"},
+    {"tipo": "atencion_animal", "punta_px": [680, 1942], "nombre": "Hotel Huascarán", "referencia": "Centenario, cerca de Av. Confraternidad Internacional Oeste", "origen": "deteccion"},
+
+    {"tipo": "gestion_cadaveres", "punta_px": [1316, 1426], "nombre": "I.E. Jorge Basadre", "referencia": "Av. Las Flores / Av. Los Girasoles", "origen": "deteccion"},
+    {"tipo": "gestion_cadaveres", "punta_px": [2394, 1630], "nombre": null, "referencia": "Av. Agustín Gamarra / Av. Simón Bolívar, Belén", "origen": "deteccion"}
+  ]
+}

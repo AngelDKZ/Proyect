@@ -1,0 +1,378 @@
+{
+ "type": "FeatureCollection",
+ "name": "huaraz_aniegos_centro",
+ "metadata": {
+  "nota": "Lugares del centro de Huaraz con inundaciones/aniegos por lluvia registrados por la Contraloría y la prensa. Otros episodios sin calle precisa: 24-09-2026 (Diario de Chimbote, aniegos en calles de Huaraz).",
+  "fecha_compilacion": "2026-11-19"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.529194,
+      -9.5294439
+     ],
+     [
+      -77.5291806,
+      -9.5293509
+     ],
+     [
+      -77.5291444,
+      -9.5291002
+     ],
+     [
+      -77.5291082,
+      -9.5288537
+     ],
+     [
+      -77.5290746,
+      -9.5286168
+     ],
+     [
+      -77.5290354,
+      -9.5283727
+     ],
+     [
+      -77.5289885,
+      -9.5281648
+     ],
+     [
+      -77.5289683,
+      -9.5280922
+     ],
+     [
+      -77.5289549,
+      -9.5279988
+     ],
+     [
+      -77.5288699,
+      -9.5273979
+     ],
+     [
+      -77.5288592,
+      -9.527332
+     ],
+     [
+      -77.5288448,
+      -9.5272438
+     ],
+     [
+      -77.5286973,
+      -9.5262441
+     ],
+     [
+      -77.5286856,
+      -9.5261781
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5299623,
+      -9.5353144
+     ],
+     [
+      -77.529948,
+      -9.5352037
+     ],
+     [
+      -77.5298464,
+      -9.5343654
+     ],
+     [
+      -77.5298372,
+      -9.5343073
+     ],
+     [
+      -77.5297774,
+      -9.5339297
+     ],
+     [
+      -77.5297161,
+      -9.53351
+     ],
+     [
+      -77.5296477,
+      -9.5330672
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.529337,
+      -9.5304456
+     ],
+     [
+      -77.5293696,
+      -9.5304732
+     ],
+     [
+      -77.5294418,
+      -9.5309455
+     ],
+     [
+      -77.5295075,
+      -9.5313945
+     ],
+     [
+      -77.5295648,
+      -9.5317951
+     ],
+     [
+      -77.5296213,
+      -9.5322247
+     ],
+     [
+      -77.5296472,
+      -9.5324042
+     ],
+     [
+      -77.5297198,
+      -9.5329526
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5296477,
+      -9.5330672
+     ],
+     [
+      -77.5296402,
+      -9.5330096
+     ],
+     [
+      -77.5296356,
+      -9.5329636
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5296356,
+      -9.5329636
+     ],
+     [
+      -77.5296066,
+      -9.5327224
+     ],
+     [
+      -77.5295676,
+      -9.5324182
+     ],
+     [
+      -77.5295472,
+      -9.5322475
+     ],
+     [
+      -77.5294853,
+      -9.5318044
+     ],
+     [
+      -77.5294675,
+      -9.5316598
+     ],
+     [
+      -77.5294378,
+      -9.5314039
+     ],
+     [
+      -77.5293785,
+      -9.5309542
+     ],
+     [
+      -77.5293227,
+      -9.5304811
+     ],
+     [
+      -77.529337,
+      -9.5304456
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5297198,
+      -9.5329526
+     ],
+     [
+      -77.5297254,
+      -9.5329978
+     ],
+     [
+      -77.529733,
+      -9.5330566
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.529733,
+      -9.5330566
+     ],
+     [
+      -77.529795,
+      -9.5334986
+     ],
+     [
+      -77.5298559,
+      -9.5339188
+     ],
+     [
+      -77.529913,
+      -9.5343573
+     ],
+     [
+      -77.5300228,
+      -9.5352018
+     ],
+     [
+      -77.5300341,
+      -9.53531
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "aniego_recurrente",
+    "lugar": "Av. Mariscal Toribio de Luzuriaga, entre Av. Antonio Raymondi y Av. Pedro Villón (centro de Huaraz)",
+    "descripcion": "Inundaciones y aniegos recurrentes con lluvias: el sistema de drenaje pluvial de la ciudad no garantiza la evacuación de las aguas pluviales en esta avenida.",
+    "fuente": "Contraloría General de la República – informe de control concurrente (Hito de Control N.° 7) a la obra de la Av. Luzuriaga; difundido por Áncash al Día el 20-05-2025",
+    "url_fuente": "https://ancashaldia.com/huaraz-contraloria-alerto-falta-de-acciones-para-reinicio-de-obras-de-avenida-luzuriaga-en/",
+    "fecha_fuente": "2025-05",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Trazado de la avenida en OpenStreetMap (© colaboradores de OpenStreetMap), recortado entre los cruces con Av. Raymondi y Av. Pedro Villón"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.529337,
+      -9.5304456
+     ],
+     [
+      -77.5293191,
+      -9.5303278
+     ],
+     [
+      -77.5292905,
+      -9.5301401
+     ],
+     [
+      -77.5292025,
+      -9.5295051
+     ],
+     [
+      -77.529194,
+      -9.5294439
+     ]
+    ]
+   }
+  }
+ ]
+}

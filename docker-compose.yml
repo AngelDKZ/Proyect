@@ -1,0 +1,26 @@
+# Base de datos local para desarrollo: PostgreSQL 17 + PostGIS 3.5.
+# Se usa imresamu/postgis (mismo contenido que postgis/postgis, publicado con soporte arm64
+# para Mac con Apple Silicon; la imagen oficial postgis/postgis solo existe para amd64).
+#
+# Uso:  docker-compose up -d     (detener: docker-compose down)
+#       (o "docker compose ..." si el complemento compose está instalado)
+services:
+  db:
+    image: imresamu/postgis:17-3.5-bookworm
+    container_name: mapa-riesgo-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-mapa_riesgo}
+      POSTGRES_USER: ${POSTGRES_USER:-mapa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mapa_dev}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db-data:

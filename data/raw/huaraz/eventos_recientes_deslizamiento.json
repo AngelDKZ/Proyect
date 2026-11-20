@@ -1,0 +1,522 @@
+{
+  "peligro": "deslizamiento",
+  "consultado": "2026-11-19",
+  "eventos": [
+    {
+      "fecha": "2026-10-24",
+      "lugar": "Urb. San Nicolás de Pongor, centro poblado Jatún Pongor",
+      "distrito": "Independencia",
+      "descripcion": "Lluvias intensas provocaron filtraciones, un deslizamiento de tierra y socavamiento del terreno bajo una vivienda de material rústico (aprox. 18:20 h). Reportado por COER Áncash; no se halló reporte INDECI abierto.",
+      "afectacion": "8 personas damnificadas; 1 vivienda inhabitable",
+      "coord": [
+        -77.5443391,
+        -9.5076987
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Pongor', barrio de Independencia; la urbanización San Nicolás de Pongor no está georreferenciada",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Independencia: lluvias intensas dejan una vivienda inhabitable y ocho damnificados",
+          "url": "https://ancashnoticias.com/2026/10/26/independencia-lluvias-intensas-dejan-una-vivienda-inhabitable-y-ocho-damnificados",
+          "fecha_publicacion": "2026-10-26",
+          "cita": "Las lluvias intensas registradas el 24 de octubre provocaron filtraciones, un deslizamiento de tierra y el socavamiento del terreno sobre el que se encuentra una vivienda de material rústico en el distrito de Independencia"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-06-29",
+      "lugar": "Centro poblado Acovichay (línea de conducción de agua)",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento de tierra en la madrugada, atribuido a la saturación del terreno por lluvias de meses previos; destruyó 69 m de la línea de conducción de agua potable.",
+      "afectacion": "69 m de línea de conducción destruidos; sin agua en 6 sectores (Valle Hermosa, Shocush, Miraflores, Masrapampa, Cochapampa, Marepampa)",
+      "coord": [
+        -77.5318847,
+        -9.5056598
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Urbanización Acovichay'; el punto exacto de la tubería es desconocido",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Áncash: Colapso de tubería por deslizamiento afecta servicio de agua en Independencia",
+          "url": "https://ancashnoticias.com/2026/07/01/ancash-colapso-de-tuberia-por-deslizamiento-afecta-servicio-de-agua-en-independencia/",
+          "fecha_publicacion": "2026-07-01",
+          "cita": "Un deslizamiento de tierra registrado durante la madrugada del 29 de junio en el centro poblado de Acovichay, distrito de Independencia, provincia de Huaraz, provocó severos daños en la infraestructura de agua potable"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-03-14",
+      "lugar": "Centro poblado Picup",
+      "distrito": "Independencia",
+      "descripcion": "Lluvias intensas ocasionaron un deslizamiento de tierra (aprox. 16:00 h) que afectó una vivienda de material rústico en Picup. La misma nota reporta otra vivienda afectada por filtraciones en Chontayoc (no es deslizamiento).",
+      "afectacion": "2 personas damnificadas y 1 afectada; 1 vivienda inhabitable (cifras EDAN, incluyen Chontayoc)",
+      "coord": [
+        -77.5366341,
+        -9.5117487
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Picup', barrio de Independencia",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Lluvias provocan deslizamiento y dejan vivienda inhabitable en Independencia",
+          "url": "https://ancashnoticias.com/2026/03/16/lluvias-provocan-deslizamiento-y-dejan-vivienda-inhabitable-en-independencia",
+          "fecha_publicacion": "2026-03-16",
+          "cita": "El evento se produjo aproximadamente a las 16:00 horas en el centro poblado de Picup, donde el movimiento de tierra afectó una vivienda de material rústico."
+        }
+      ]
+    },
+    {
+      "fecha": "2026-02-23",
+      "lugar": "Centro poblado Marcac (vías Valle Verde–Marcac–Chincay y Marcac–Arashwain)",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento de tierra por saturación del terreno tras lluvias intensas (aprox. 18:32 h); el material cayó sobre la vía vecinal peatonal. Tránsito restablecido tras limpieza.",
+      "afectacion": "Aprox. 300 m de vía vecinal peatonal afectados; sin daños a personas",
+      "coord": [
+        -77.5420409,
+        -9.4861386
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Marcac', barrio de Independencia",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Huaraz: Lluvias provocan deslizamiento en vía vecinal de Independencia",
+          "url": "https://ancashnoticias.com/2026/02/26/huaraz-lluvias-provocan-deslizamiento-en-via-vecinal-de-independencia",
+          "fecha_publicacion": "2026-02-26",
+          "cita": "Las lluvias intensas que se registraron el 23 de febrero alrededor de las 6:32 p.m. generaron un deslizamiento de tierra en el centro poblado de Marcac, en el distrito de Independencia"
+        }
+      ]
+    },
+    {
+      "fecha": "2025-10-23",
+      "lugar": "Sector Huamarín (vía vecinal Emp. PE-3N – caserío San Pedro – Huamarín)",
+      "distrito": "Huaraz",
+      "descripcion": "Deslizamiento por lluvias intensas (06:00 h) que dañó la vía vecinal; la Municipalidad Provincial de Huaraz limpió la vía el 24/10. SINPAD N.° 244611. Zona cercana al deslizamiento Quispar en reactivación (ver evento 2025-07-18).",
+      "afectacion": "120 m de vía vecinal afectados; sin daños a personas",
+      "coord": [
+        -77.51211896,
+        -9.61533079
+      ],
+      "metodo_ubicacion": "INEI centro poblado 'Huamarin' (búsqueda local)",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INDECI – COEN",
+          "titulo": "Reporte Complementario N.º 11323 - 27/10/2025 (Reporte N.º 2) Deslizamiento en el distrito de Huaraz - Áncash",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-11215-23-10-2025-coen-indeci-2120-horas-reporte-n-o-1-deslizamiento-en-el-distrito-de-huaraz-ancash/",
+          "fecha_publicacion": "2025-10-27",
+          "cita": "23/10/2025 06:00 horas. A consecuencia de las lluvias intensas, se registró un deslizamiento, que ocasionó daños materiales (infraestructura de transporte) en el sector de Huamarín, distrito y provincia de Huaraz."
+        },
+        {
+          "medio": "INDECI / Congreso (Oficina de Gestión del Riesgo de Desastres)",
+          "titulo": "Resumen de emergencias N.° 187 – 23 octubre 2025",
+          "url": "https://www3.congreso.gob.pe/Docs/riesgodesastres/files/resumenemergencias_n%C2%B0187_23_octubre_2025.pdf",
+          "fecha_publicacion": "2025-10-23",
+          "cita": "Fecha: 23/10/25 06:00 h. EVENTO • Deslizamiento. … Distrito: Huaraz/Sector Huamarín. EVALUACIÓN DE DAÑOS • Vías (carreteras/caminos) (120 m.) afectadas."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-07-18",
+      "lugar": "Sector Quispar, centro poblado Huamarín",
+      "distrito": "Huaraz",
+      "descripcion": "INGEMMET verificó en campo (18/07/2025) la reactivación de un deslizamiento rotacional antiguo (~2 ha) con grietas y escarpes secundarios; el riego con canales sin revestir favorece la inestabilidad. La fecha es la de la inspección, no de un evento puntual.",
+      "afectacion": "3 viviendas de adobe con grietas (aberturas 7–15 cm) y tramo de la carretera Huamarín–Santa Catalina con desplazamiento de 35 cm",
+      "coord": [
+        -77.513197,
+        -9.62016
+      ],
+      "metodo_ubicacion": "Coordenada central del evento principal indicada en la Opinión Técnica N.° 12-2025 (WGS84); coincide con INEI 'Quispar'",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Opinión Técnica N.° 12-2025: Deslizamiento en el sector Quispar, centro poblado Huamarín (distrito y provincia de Huaraz)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/21514/descargar",
+          "fecha_publicacion": null,
+          "cita": "la deformación del terreno es visible por las grietas en el cuerpo del deslizamiento, afectando tres viviendas de adobe ubicadas encima del escarpe principal en proceso de reactivación"
+        }
+      ]
+    },
+    {
+      "fecha": "2025-05-05",
+      "lugar": "Cerro Cóndor Wain",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento rotacional iniciado el 05/05/2025 (escarpa de 78 m, saltos de 1,5–2 m), evaluado por INGEMMET en octubre de 2025.",
+      "afectacion": "80 m de trocha carrozable afectados; podría afectar 4 buzones de agua, 1 captación y 35 m de canal de riego",
+      "coord": [
+        -77.590635,
+        -9.507939
+      ],
+      "metodo_ubicacion": "Coordenadas del Informe Técnico A7739 (cuadro 1); la longitud figura con errata '-7.590635' en el original y se corrigió a -77.590635 (concuerda con UTM 215569 E)",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Informe Técnico N.° A7739: Evaluación de peligros geológicos por movimientos en masa en los sectores El Pinar, Pasamayito y cerro Cóndor Wain (2025)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/storage/biblioteca/21774_informe-tecnico-n0-a7739-evaluacion-de-peligros-geologicos-en-los-sectores-de-el-pinar-pasamayito-y-cerro-condor-wain-distrito-independencia-provincia.pdf",
+          "fecha_publicacion": null,
+          "cita": "En el Cerro Condor Wain se identificó un deslizamiento rotacional, el evento se inició el 05 de mayo del 2025"
+        }
+      ]
+    },
+    {
+      "fecha": "2025-05-05",
+      "lugar": "Centro poblado Pongor (Cordillera Negra)",
+      "distrito": "Independencia",
+      "descripcion": "Proceso de reptación de suelos (movimiento lento de ladera) tras las lluvias del 4 y 5 de mayo, que rajó el piso de dos viviendas. La fuente lo denomina 'reptación', no 'deslizamiento'; fecha exacta no precisada.",
+      "afectacion": "2 viviendas con rajaduras en el piso",
+      "coord": [
+        -77.5443391,
+        -9.5076987
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Pongor', barrio de Independencia",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Radio RSD",
+          "titulo": "Áncash: viviendas dañadas y familias afectadas por lluvias intensas que siguen golpeando la sierra",
+          "url": "https://radiorsd.pe/noticias/ancash-viviendas-danadas-y-familias-afectadas-por-lluvias-intensas-que-siguen-golpeando-la",
+          "fecha_publicacion": "2025-05-06",
+          "cita": "en el centro poblado de Pongor, distrito de Independencia (Huaraz), donde se registró un proceso de reptación de suelos que provocó rajaduras en el piso de dos viviendas."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-04-11",
+      "lugar": "Caserío San Antonio, localidad de Marcac (vía vecinal Santa Casa – San Antonio)",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento por lluvias intensas (05:32 h) que afectó la vía vecinal; tránsito restablecido el mismo día (SINPAD 234651). El dato previo de '07-04-2025, 94 personas y 30 viviendas afectadas' NO se confirmó: INDECI solo registra daños a la vía y ninguno a personas.",
+      "afectacion": "300 m de vía vecinal afectados; sin daños a la vida y salud",
+      "coord": [
+        -77.5402618,
+        -9.4834663
+      ],
+      "metodo_ubicacion": "Nominatim: caserío 'Santa Casa' (Independencia), extremo del tramo Santa Casa–San Antonio; el caserío San Antonio no está georreferenciado",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INDECI – COEN",
+          "titulo": "Informe de Emergencia N.º 1456 - 25/5/2025 (Informe N.º 1) Deslizamiento en el distrito de Independencia - Áncash",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-n-o-4773-12-4-2025-coen-indeci-1830-horas-reporte-n-o-1-deslizamiento-en-el-distrito-de-independencia-ancash/",
+          "fecha_publicacion": "2025-05-25",
+          "cita": "11/4/2025 05:32 horas. A consecuencia de las lluvias intensas, se produjo un deslizamiento que afectó la vía vecinal (tramo Santa casa-San Antonio) en el caserío de San Antonio, de la localidad de Marcac"
+        },
+        {
+          "medio": "INDECI / Congreso (Oficina de Gestión del Riesgo de Desastres)",
+          "titulo": "Resumen de emergencias N.° 58 – 14 abril 2025",
+          "url": "https://www3.congreso.gob.pe/Docs/riesgodesastres/files/resumenemergencias_n%C2%B0_58_14_abril_2025.pdf",
+          "fecha_publicacion": "2025-04-14",
+          "cita": "Fecha: 11/04/2025 05:32 horas. EVENTO • Deslizamiento. … Distrito: Independencia/Caserío San Antonio. EVALUACIÓN DE DAÑOS • Vías (carreteras/caminos) (300 m.) afectadas."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-03-31",
+      "lugar": "Sectores Marca y cruce a Chavín",
+      "distrito": "Independencia",
+      "descripcion": "Dos inmuebles dañados por deslizamientos de tierra y rocas tras lluvias intensas de las 24 horas previas (informado por la Gerencia de Gestión de Riesgos de Independencia). Fecha aproximada (día de publicación); ubicación exacta de los sectores no confirmada.",
+      "afectacion": "2 viviendas dañadas",
+      "coord": [
+        -77.5420409,
+        -9.4861386
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Marcac' como aproximación del sector 'Marca' (no verificado que sean el mismo lugar)",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Cuatro emergencias en Independencia por lluvias, caída de árboles y deslizamientos",
+          "url": "https://ancashnoticias.com/2025/03/31/cuatro-emergencias-en-independencia-por-lluvias-caida-de-arboles-y-deslizamientos/",
+          "fecha_publicacion": "2025-03-31",
+          "cita": "dos inmuebles ubicados en los sectores de Marca y el cruce a Chavín sufrieron daños por deslizamientos de tierra y rocas."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-03-21",
+      "lugar": "Vivienda cerca del puente Antonio Raimondi, ciudad de Huaraz",
+      "distrito": "Huaraz",
+      "descripcion": "El deslizamiento del terreno causó el colapso de una pared de una vivienda rústica durante lluvias intensas.",
+      "afectacion": "1 vivienda con pared colapsada; 2 personas afectadas",
+      "coord": [
+        -77.5283547,
+        -9.52457
+      ],
+      "metodo_ubicacion": "Búsqueda local (OSM) 'Urbanización Antonio Raimondi' (Huaraz); el puente exacto no se ubicó",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Huaraz: lluvias intensas dejan viviendas inhabitables",
+          "url": "https://ancashnoticias.com/2025/03/22/huaraz-lluvias-intensas-dejan-viviendas-inhabitables/",
+          "fecha_publicacion": "2025-03-22",
+          "cita": "El mismo día, en la ciudad de Huaraz, el deslizamiento del terreno causó el colapso de una pared de una vivienda rústica ubicada cerca del puente Antonio Raimondi."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-03-16",
+      "lugar": "Sector El Pinar",
+      "distrito": "Independencia",
+      "descripcion": "Reactivación de un deslizamiento rotacional (escarpa de 48 m, saltos de 1,5–3 m) junto a viviendas; evaluado por INGEMMET en octubre de 2025.",
+      "afectacion": "Vereda, tuberías de agua y desagüe afectadas; podría afectar 5 viviendas, 1 poste y 15 m de carretera",
+      "coord": [
+        -77.518123,
+        -9.521265
+      ],
+      "metodo_ubicacion": "Coordenadas del Informe Técnico A7739 (cuadro 1); longitud corregida de la errata '-7.518123' (concuerda con UTM 223537 E)",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Informe Técnico N.° A7739: Evaluación de peligros geológicos por movimientos en masa en los sectores El Pinar, Pasamayito y cerro Cóndor Wain (2025)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/storage/biblioteca/21774_informe-tecnico-n0-a7739-evaluacion-de-peligros-geologicos-en-los-sectores-de-el-pinar-pasamayito-y-cerro-condor-wain-distrito-independencia-provincia.pdf",
+          "fecha_publicacion": null,
+          "cita": "El evento se reactivó el 16 de marzo del 2025, generando preocupación a los propietarios de las tres viviendas, próximas al escarpe activo."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-03-02",
+      "lugar": "Vía Huallcor – San Pedro (deslizamiento Desl_01, margen derecha de la quebrada Huallcor)",
+      "distrito": "Huaraz",
+      "descripcion": "Reactivación de un deslizamiento rotacional (escarpa de 18 m); los dueños desocuparon una vivienda de adobe a 5 m de la escarpa. El informe identifica otros dos deslizamientos activos (Desl_02, Desl_03) que afectan cultivos y cunetas.",
+      "afectacion": "1 vivienda de adobe deshabitada por precaución; ~70 m de vía y terrenos de cultivo afectados (conjunto de deslizamientos)",
+      "coord": [
+        -77.496267,
+        -9.600095
+      ],
+      "metodo_ubicacion": "Conversión de UTM 18S (226010 E, 8937806 N) del cuadro 8 del Informe A7658 para Desl_01; la 'coordenada central' del informe parece copiada del A7630 y no se usó",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Informe Técnico N.° A7658: Evaluación de peligros geológicos por movimientos en masa entre los centros poblados de Huallcor y San Pedro (2025)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/20341/descargar",
+          "fecha_publicacion": null,
+          "cita": "Vista del deslizamiento rotacional (Desl_01), generado el 02 de marzo del 2025, por temas de salvaguardar la seguridad de los dueños, ellos han deshabitado la vivienda."
+        }
+      ]
+    },
+    {
+      "fecha": "2025-02-10",
+      "lugar": "Sector Jatun Zanja, centro poblado Santa Cruz",
+      "distrito": "Huaraz",
+      "descripcion": "Deslizamiento rotacional activo desde hace ~6 años que se reactivó la segunda semana de febrero de 2025 (día exacto desconocido; se usa 10/02 como referencia). Evaluado por INGEMMET el 16/03/2025.",
+      "afectacion": "34 m de trocha carrozable Santa Cruz–Chilca y 15 m de tubería de agua potable afectados",
+      "coord": [
+        -77.531189,
+        -9.59807
+      ],
+      "metodo_ubicacion": "Coordenada central del evento en el Informe Técnico A7630 (UTM 222173 E, 8938002 N)",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Informe Técnico N.° A7630: Evaluación de peligros geológicos por movimientos en masa del sector Jatun Zanja, centro poblado Santa Cruz (2025)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/20313/descargar",
+          "fecha_publicacion": null,
+          "cita": "El deslizamiento, se reactivó la segunda semana de febrero del 2025; el cual afectó 34 m de la trocha carrozable entre Santa Cruz – Chilca, 15 m de la tubería de agua potable"
+        }
+      ]
+    },
+    {
+      "fecha": "2025-01-26",
+      "lugar": "Centro poblado Santa Rosa de Pacuash",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento por lluvias intensas (20:12 h) con daños a camino rural y tubería de agua potable; SINPAD N.° 219190. Tránsito restablecido.",
+      "afectacion": "3 m de camino rural afectados; 10 m de tubería de agua destruidos; sin daños a personas",
+      "coord": [
+        -77.4847,
+        -9.4714
+      ],
+      "metodo_ubicacion": "Coordenada de postalcodes.info para 'Santa Rosa de Pacuash' (fuente de baja fiabilidad); no hallado en búsqueda local ni Nominatim",
+      "confianza": "baja",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INDECI – COEN",
+          "titulo": "Reporte Complementario N.° 1361 - 1/2/2025 (Reporte N.º 1) Deslizamiento en el distrito de Independencia - Áncash",
+          "url": "https://portal.indeci.gob.pe/wp-content/uploads/2025/02/REPORTE-COMPLEMENTARIO-N.%C2%BA-1361-1FEB2025-DESLIZAMIENTO-EN-EL-DISTRITO-DE-INDEPENDENCIA-%C3%81NCASH-1.pdf",
+          "fecha_publicacion": "2025-02-01",
+          "cita": "26/1/2025 20:12 horas. A consecuencias de las lluvias intensas se registró un deslizamiento que ocasionó daños materiales (infraestructura de transporte e infraestructura de servicios básicos) en el centro poblado Santa Rosa de Pacuash"
+        }
+      ]
+    },
+    {
+      "fecha": "2024-04-02",
+      "lugar": "Barrio Chua Alto",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento de talud por lluvias intensas a las 04:30 h; la municipalidad retiró escombros con maquinaria y preparó terreno para módulos temporales de vivienda. Mismo barrio del deslizamiento de 2022.",
+      "afectacion": "3 familias damnificadas",
+      "coord": [
+        -77.5434071,
+        -9.52268368
+      ],
+      "metodo_ubicacion": "Coordenada del deslizamiento de Chua Alto (Opinión Técnica INGEMMET N.° 3-2023); punto exacto del evento 2024 no especificado",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "Ancash Noticias",
+          "titulo": "Deslizamiento de talud en Chua Alto deja tres familias damnificadas en Independencia",
+          "url": "https://ancashnoticias.com/2024/04/02/deslizamiento-de-talud-en-chua-alto-deja-tres-familias-damnificadas-en-independencia/",
+          "fecha_publicacion": "2024-04-02",
+          "cita": "Un deslizamiento de talud en Chua Alta, ubicado en el distrito de Independencia, ha dejado a tres familias en situación de damnificados."
+        }
+      ]
+    },
+    {
+      "fecha": "2023-02-07",
+      "lugar": "Caserío Llactash (ladera oeste del cerro Llactash, margen derecha del río Santa)",
+      "distrito": "Independencia",
+      "descripcion": "Reactivación de deslizamientos antiguos (rotacional D4 y traslacional E3) y reptación de suelos detonada por lluvias intensas desde el 07/02/2023, sumadas a cortes de talud; viviendas agrietadas. INGEMMET recomendó reubicar viviendas afectadas.",
+      "afectacion": "Viviendas agrietadas (número no precisado en el texto revisado)",
+      "coord": [
+        -77.535164,
+        -9.480505
+      ],
+      "metodo_ubicacion": "Coordenada central de la zona evaluada en el Informe Técnico A7375",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Informe Técnico N.° A7375: Evaluación de peligros geológicos por movimientos en masa en el caserío de Llactash (2023)",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/16193/descargar",
+          "fecha_publicacion": null,
+          "cita": "el principal factor que desencadeno la reactivación de los movimientos en masa fueron las precipitaciones intensas registradas desde el 07 de febrero del 2023"
+        }
+      ]
+    },
+    {
+      "fecha": "2022-07-29",
+      "lugar": "Barrio Chua Alto",
+      "distrito": "Independencia",
+      "descripcion": "Deslizamiento rotacional reactivado a las 15:30 h por movimiento de tierras con retroexcavadora (corte de talud), con grietas en cabeza y cuerpo. INDECI y INGEMMET difieren en cifras; se conserva la de INDECI (COER Áncash).",
+      "afectacion": "INDECI: 17 personas damnificadas, 1 vivienda destruida, 3 inhabitables, 8 viviendas expuestas. INGEMMET: 1 vivienda destruida, 3 en riesgo de colapso, 8 que podrían afectarse",
+      "coord": [
+        -77.5434071,
+        -9.52268368
+      ],
+      "metodo_ubicacion": "Coordenada principal del deslizamiento en la Opinión Técnica INGEMMET N.° 3-2023 (UTM 220769.5 E, 8946334.7 N)",
+      "confianza": "alta",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INDECI – COEN",
+          "titulo": "Reporte Complementario N.º 6758 - 29/8/2022 (Reporte N.º 3) Deslizamiento en el distrito de Independencia - Áncash",
+          "url": "https://portal.indeci.gob.pe/emergencias/reporte-complementario-no-6320-11-8-2022-coen-indeci-0050-horas-reporte-n-1-deslizamiento-en-el-distrito-de-independencia-ancash/",
+          "fecha_publicacion": "2022-08-29",
+          "cita": "El día 29 de julio de 2022, a las 15:30 horas, se produjo un deslizamiento, […] el cual viene causando daños a viviendas en el barrio de Chua Alto en el distrito Independencia"
+        },
+        {
+          "medio": "INGEMMET (vía SIGRID-CENEPRED)",
+          "titulo": "Opinión Técnica N.° 3-2023: Evaluación de peligros geológicos por deslizamiento en el barrio de Chua Alto",
+          "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/16325/descargar",
+          "fecha_publicacion": null,
+          "cita": "un deslizamiento de tipo rotacional reactivado el día 29 de julio del 2022, el cual afectó la vía pública, 1 vivienda destruida, pone en riesgo de colapso otras 3"
+        }
+      ]
+    },
+    {
+      "fecha": "2022-03-27",
+      "lugar": "Sector Shaurama Alto, centro poblado Shaurama",
+      "distrito": "Huaraz",
+      "descripcion": "Deslizamiento de tierras por lluvias intensas (aprox. 19:00 h) que dañó una vivienda de material rústico; la Municipalidad Provincial entregó ayuda humanitaria. SINPAD 151536.",
+      "afectacion": "4 personas damnificadas; 1 vivienda inhabitable",
+      "coord": [
+        -77.5275276,
+        -9.54551738
+      ],
+      "metodo_ubicacion": "INEI centro poblado 'Shaurama' (búsqueda local); el sector Shaurama Alto no está georreferenciado",
+      "confianza": "media",
+      "recorrido": null,
+      "fuentes": [
+        {
+          "medio": "INDECI – COEN",
+          "titulo": "Reporte Complementario N.º 3262 - 29/3/2022 (Reporte N.º 1) Lluvias intensas en el distrito de Huaraz - Áncash",
+          "url": "https://portal.indeci.gob.pe/wp-content/uploads/2022/03/REPORTE-COMPLEMENTARIO-N%C2%BA-3262-29MAR2022-LLUVIAS-INTENSAS-EN-EL-DISTRITO-DE-HUARAZ-%C3%81NCASH-1-002.pdf",
+          "fecha_publicacion": "2022-03-29",
+          "cita": "El día 27 de marzo del 2022, a las 19:00 horas aproximadamente, a consecuencia de lluvias intensas se produjo un deslizamiento de tierras que generó daños a una vivienda de material rústico en el sector Shaurama Alto"
+        }
+      ]
+    }
+  ],
+  "descartados": [
+    {
+      "lugar": "I.E. de Huanchac (Independencia), noviembre 2026",
+      "motivo": "Colapso de ~20 m del cerco perimétrico de un colegio por lluvias; aunque una nota municipal habla de 'deslizamiento de su cerco', es falla de un muro, no movimiento de ladera."
+    },
+    {
+      "lugar": "Sector Pasamayito (Independencia), 22-02-2025",
+      "motivo": "INGEMMET A7739 lo clasifica como derrumbe-flujo (3 viviendas afectadas); corresponde a los inventarios de derrumbes/flujos."
+    },
+    {
+      "lugar": "Huallcor – San Pedro (Huaraz), 06-03-2025",
+      "motivo": "Derrumbes D1 y D2 y caída de rocas en la vía (INGEMMET A7658); no son deslizamientos. Solo se incluyó el deslizamiento Desl_01."
+    },
+    {
+      "lugar": "CP Huallcor (Huaraz), mayo 2025 (Resumen INDECI N.° 68)",
+      "motivo": "Registrado por INDECI como 'Derrumbe' (2 personas y 1 vivienda afectadas)."
+    },
+    {
+      "lugar": "Barrio Chua Bajo (Independencia), 30-03-2022",
+      "motivo": "INGEMMET A7315 describe derrumbes recientes sobre un deslizamiento antiguo; no se identificó un evento de deslizamiento fechado."
+    },
+    {
+      "lugar": "Laguna en el nevado Vallunaraju / río Casca (Independencia), 28-04-2025",
+      "motivo": "Un deslizamiento de rocas cayó sobre una laguna glaciar y originó un aluvión/inundación; se trata como aluvión (otro inventario)."
+    },
+    {
+      "lugar": "CP Ichoca (Huaraz), 25-12-2023",
+      "motivo": "INGEMMET A7607 documenta un flujo de detritos (huaico), no un deslizamiento."
+    },
+    {
+      "lugar": "Barrio Nicrupampa (Independencia), 21-03-2025",
+      "motivo": "Colapso parcial de vivienda por filtraciones de lluvia, sin movimiento de ladera."
+    },
+    {
+      "lugar": "CP Cochac (Independencia), marzo 2024",
+      "motivo": "Derrumbe de vivienda rústica por lluvias (colapso estructural), no deslizamiento."
+    },
+    {
+      "lugar": "CP Atipayán (Independencia), febrero 2025",
+      "motivo": "Filtraciones e inundación en 4 viviendas por lluvias; no deslizamiento."
+    },
+    {
+      "lugar": "CP Macashca (Huaraz), 23-04-2024; sectores Tacllan y Vista Alegre (Huaraz), 06-11-2026; CP Nueva Esperanza (Independencia), 01-12-2025",
+      "motivo": "INDECI los registra como 'lluvias intensas' con daños a viviendas; los textos revisados no mencionan deslizamiento."
+    },
+    {
+      "lugar": "Santa Cruz – Cochamarca (Exitosa, agosto 2023)",
+      "motivo": "El deslizamiento ocurrió en el distrito de Santa Cruz, provincia de Huaylas; fuera del área."
+    },
+    {
+      "lugar": "Lluvias en Huaraz, marzo 2025 (30 viviendas afectadas, 10 inhabitables)",
+      "motivo": "Balance municipal agregado por lluvias y activación de quebradas, sin un deslizamiento identificable."
+    },
+    {
+      "lugar": "Caserío San Antonio, 07-04-2025, '94 personas y 30 viviendas afectadas'",
+      "motivo": "Dato no verificado: los documentos de INDECI abiertos fechan el deslizamiento el 11-04-2025 y solo reportan 300 m de vía afectados. Se registró con datos oficiales."
+    }
+  ]
+}

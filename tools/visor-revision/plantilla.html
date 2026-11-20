@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor de revisión – Huaraz</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>
+  :root { --bg:#fff; --fg:#1b1f24; --muted:#5b6470; --line:#d9dde3; --accent:#0b5cad; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--fg); background:var(--bg); }
+  #map { position:absolute; inset:0; }
+  .banner { position:absolute; top:0; left:0; right:0; z-index:3; background:#fff4d6; border-bottom:1px solid #e8cf86; padding:6px 12px; font-size:13px; line-height:1.35; }
+  .panel { position:absolute; z-index:2; top:52px; left:12px; width:320px; max-height:calc(100% - 64px); overflow:auto; background:var(--bg); border:1px solid var(--line); border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.12); padding:12px; font-size:14px; }
+  .panel h1 { font-size:16px; margin:0 0 4px; }
+  .panel p { margin:4px 0; color:var(--muted); font-size:12.5px; }
+  .panel h2 { font-size:12.5px; margin:12px 0 6px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  .escenarios { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+  .escenarios button { width:100%; margin:0; padding:8px 6px; font-size:13.5px; background:#fff; color:var(--fg); border:1px solid var(--line); border-radius:8px; cursor:pointer; text-align:left; }
+  .escenarios button[aria-pressed="true"] { border-color:#c00; background:#fdecec; font-weight:600; }
+  .escenarios button small { display:block; color:var(--muted); font-weight:400; font-size:11.5px; }
+  .info { margin-top:8px; padding:8px 10px; border-radius:8px; background:#f4f6f8; border:1px solid var(--line); font-size:13px; line-height:1.45; }
+  .info .fuente { color:var(--muted); font-size:11.5px; display:block; margin-top:4px; }
+  label.row, div.row { display:flex; align-items:center; gap:8px; padding:3px 0; }
+  label.row { cursor:pointer; }
+  .sw { width:14px; height:14px; border-radius:3px; border:1px solid rgba(0,0,0,.25); flex:none; }
+  .dot { width:14px; height:14px; border-radius:50%; border:3px solid; background:#fff; flex:none; }
+  button.accion { font:inherit; border:1px solid var(--accent); background:var(--accent); color:#fff; border-radius:8px; padding:7px 10px; cursor:pointer; width:100%; margin-top:6px; }
+  button.sec { font:inherit; background:#fff; color:var(--accent); border:1px solid var(--accent); border-radius:8px; padding:5px 8px; cursor:pointer; margin-top:6px; }
+  #resultado { margin-top:10px; padding:10px; border-radius:8px; background:#f4f6f8; border:1px solid var(--line); display:none; font-size:13.5px; line-height:1.45; }
+  #resultado .nivel { font-weight:700; font-size:15px; }
+  #resultado small { color:var(--muted); display:block; margin-top:6px; }
+  #resultado .bloque { margin-top:8px; padding-top:8px; border-top:1px solid var(--line); }
+  .toggle { display:none; width:100%; }
+  .maplibregl-popup-content { font-size:13px; line-height:1.4; max-width:260px; }
+  .maplibregl-popup-content b { font-size:14px; }
+  .estado { display:inline-block; margin-top:4px; font-size:11.5px; padding:1px 6px; border-radius:10px; background:#fff4d6; border:1px solid #e8cf86; }
+  @media (max-width: 640px) {
+    .panel { left:8px; right:8px; width:auto; top:auto; bottom:8px; max-height:50%; }
+    .panel.cerrado .cuerpo { display:none; }
+    .toggle { display:block; margin:0 0 6px; }
+    .banner { font-size:12px; }
+  }
+</style>
+</head>
+<body>
+<div class="banner">⚠️ <b>Visor de revisión, no es la app final.</b> Muestra datos oficiales; el mapa de aluvión fue digitalizado por el proyecto (±10–15 m) y está pendiente de revisión. Ante una emergencia, sigue las indicaciones de las autoridades.</div>
+<div id="map"></div>
+<div class="panel" id="panel">
+  <button class="toggle sec" id="toggle">Mostrar / ocultar panel</button>
+  <div class="cuerpo">
+  <h1>Huaraz e Independencia</h1>
+
+  <h2>Elige un peligro</h2>
+  <div class="escenarios" id="escenarios"></div>
+  <div class="info" id="info"></div>
+
+  <label class="row" style="margin-top:8px"><input type="checkbox" id="verManzanas" checked> Colorear cada manzana (cuadra) del distrito de Huaraz según el peligro elegido</label>
+
+  <h2>Consultar un lugar</h2>
+  <p>Toca cualquier punto del mapa o usa tu ubicación.</p>
+  <button class="accion" id="btnGps">📍 Usar mi ubicación</button>
+  <div id="resultado"></div>
+
+  <h2>Leyenda</h2>
+  <div id="leyenda"></div>
+  </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------- datos ----
+const PELIGRO = __PELIGRO__;
+const SEGURAS = __SEGURAS__;
+const FLECHAS = __FLECHAS__;
+const ING_AREAS = __ING_AREAS__;
+const ING_PUNTOS = { type:'FeatureCollection', features:[...__ING_INVENTARIO__.features, ...__ING_OTROS__.features] };
+const ING_CRITICAS = __ING_CRITICAS__;
+const SUSCEP = __ING_SUSCEP__;
+const CAUCES = __OSM_CAUCES__;
+const MUNI = __MUNI_LLUVIAS__;
+const ANIEGOS = __ANIEGOS_CENTRO__;
+const MANZANAS = __MANZANAS__;   // 1007 manzanas del INEI con el nivel de cada peligro (scripts/etl/huaraz_manzanas.py)
+const MZ_SIN = '#d6d6d6', MZ_EVAL = '#f3f6f8';
+const MZ_ESCALA = {   // nivel: [color, texto]   (-1 = evaluada sin peligro identificado, 0 = sin información)
+  aluvion:       { '-1':[MZ_EVAL,'Evaluada: sin peligro por aluvión identificado'], 1:['#fdd835','Peligro bajo'], 2:['#fb8c00','Peligro medio'], 3:['#e53935','Peligro alto'], 4:['#8e0000','Peligro muy alto'] },
+  lluvias:       { 1:['#ffcdd2','Canal de Tajamar (ubicación tentativa)'], 2:['#ef5350','Zona crítica municipal o inundación en noticias (sector)'], 3:['#b71c1c','Inundación registrada en el lugar (calle o cruce)'] },
+  huaico:        { 1:['#bbdefb','Borde del recorrido (peligro bajo)'], 2:['#64b5f6','Peligro medio o sector del Río Seco'], 3:['#1e88e5','Peligro alto'], 4:['#0d47a1','Peligro muy alto (núcleo, junto al cauce)'] },
+  deslizamiento: { '-1':[MZ_EVAL,'Evaluada: susceptibilidad baja'], 1:['#ffe082','Susceptibilidad media'], 2:['#fb8c00','Susceptibilidad alta o deslizamiento cercano'], 3:['#e53935','Susceptibilidad muy alta'], 4:['#8e0000','Dentro de un área de deslizamiento evaluada'] },
+  caida:         { 2:['#fb8c00','Caída de rocas o derrumbe ya ocurrido a menos de 50 m'], 4:['#8e0000','Dentro de un área evaluada'] },
+  erosion:       { 2:['#fb8c00','Erosión ya ocurrida a menos de 50 m'], 4:['#8e0000','Dentro de un área evaluada'] },
+};
+let verManzanas = true;
+function colorManzanas(k) {
+  const esc_ = MZ_ESCALA[k]; if (!esc_) return MZ_SIN;
+  const m = ['match', ['get', 'n_' + k]];
+  for (const [v, [c]] of Object.entries(esc_)) m.push(Number(v), c);
+  m.push(0, MZ_SIN, MZ_SIN);
+  return m;
+}
+function aplicarManzanas() {
+  if (!map.getLayer('manzanas-fill')) return;
+  const ver = verManzanas && !!MZ_ESCALA[escenario];
+  verCapas(['manzanas-fill','manzanas-borde'], ver);
+  if (ver) map.setPaintProperty('manzanas-fill', 'fill-color', colorManzanas(escenario));
+}
+function manzanaEn(pt) { return MANZANAS.features.find(f => contiene(f.geometry, pt)); }
+const NOTICIAS = __NOTICIAS__;            // lugares (para el mapa)
+const NOTICIAS_DET = __NOTICIAS_DET__;    // detalle de eventos por lugar y eventos sin lugar
+const RADIO_NOTICIA_M = { alta:60, media:150 };
+const RADIO_CALLE_M = 20;  // franja sombreada a cada lado del eje de la avenida
+const RADIO_MUNI_M = 500, RADIO_SINPAD_M = 300;
+const RADIO_SECTOR_M = 200, RADIO_CANAL_M = 30;  // área aproximada de un sector y franja del canal
+function circulo(c, r, n = 64) {
+  const k = Math.PI / 180, R = 6371008.8, pts = [];
+  for (let i = 0; i <= n; i++) {
+    const a = 2 * Math.PI * i / n;
+    pts.push([c[0] + (r * Math.cos(a)) / (R * Math.cos(c[1] * k)) / k, c[1] + (r * Math.sin(a)) / R / k]);
+  }
+  return [pts];
+}
+const NOTICIAS_AREAS = { type:'FeatureCollection', features: NOTICIAS.features.map(f => ({ type:'Feature', properties:f.properties,
+  geometry:{ type:'Polygon', coordinates:circulo(f.geometry.coordinates, RADIO_NOTICIA_M[f.properties.confianza_ubicacion] || 150) } })) };
+const RADIO_EVENTO_M = 50;  // área aproximada alrededor de un evento cuyo tamaño real no se midió
+const ING_PUNTOS_AREAS = { type:'FeatureCollection', features: ING_PUNTOS.features.map(f => ({ type:'Feature', properties:f.properties,
+  geometry:{ type:'Polygon', coordinates:circulo(f.geometry.coordinates, RADIO_EVENTO_M) } })) };
+const detalleNoticia = id => NOTICIAS_DET.lugares.find(l => l.id === id);
+const INUND_AREAS = { type:'FeatureCollection', features: MUNI.features.filter(f => f.properties.tipo === 'zona_critica_lluvia')
+  .map(f => ({ type:'Feature', properties:f.properties, geometry:{ type:'Polygon', coordinates:circulo(f.geometry.coordinates, RADIO_SECTOR_M) } })) };
+const SUSC_NIVELES = {  // LEYENDA del INGEMMET: 5 = muy alta … 1 = muy baja
+  5: { nombre:'Muy alta', color:'#99000d' },
+  4: { nombre:'Alta',     color:'#e34a33' },
+  3: { nombre:'Media',    color:'#fdae61' },
+};
+
+const NIVELES = {
+  muy_alto: { color:'#d7191c', nombre:'Muy alto', orden:4 },
+  alto:     { color:'#f28e2b', nombre:'Alto', orden:3 },
+  medio:    { color:'#f5d000', nombre:'Medio', orden:2 },
+  bajo:     { color:'#2b9348', nombre:'Bajo', orden:1 },
+};
+const TIPOS = {
+  zona_seguridad:   { color:'#0b6e3b', nombre:'Zona de seguridad' },
+  refugio_temporal: { color:'#d4a000', nombre:'Refugio temporal' },
+  centro_acopio:    { color:'#9b4dde', nombre:'Centro de acopio' },
+  atencion_medica:  { color:'#d7191c', nombre:'Atención médica' },
+  puesto_comando:   { color:'#5a1a7a', nombre:'Puesto de comando' },
+  atencion_animal:  { color:'#1fa3a3', nombre:'Atención de animales' },
+  gestion_cadaveres:{ color:'#222222', nombre:'Gestión de cadáveres' },
+};
+
+// Escenarios. Las descripciones solo dicen qué es cada peligro y de dónde salen los datos.
+const ESCENARIOS = {
+  lluvias: { nombre:'Inundación por lluvias', sub:'Lugares que se inundan',
+    info:'Lugares identificados oficialmente como <b>propensos a inundarse con lluvias intensas</b> (sombreados en rojo):'
+      + '<br>💧 <b>Río Seco</b> – Pedregal, Shaurama, Villón Alto, Chunamará y Bellavista (4660 personas, 400 viviendas, 35 colegios).'
+      + '<br>💧 <b>Río Santa – tramo Quechcap</b> (5000 personas, 200 viviendas).'
+      + '<br>💧 <b>Canal de Tajamar</b> – Urb. Las Terrazas (280 personas). <i>Ubicación tentativa a lo largo del Jr. Tajamar.</i>'
+      + '<br>💧 <b>Jauna</b> – Jauna central (40 personas).'
+      + '<br>📰 <b>Inundaciones reportadas en noticias (2018–2026):</b> ' + NOTICIAS.features.length + ' lugares y ' + NOTICIAS_DET.lugares.reduce((a,l) => a + l.eventos.length, 0) + ' eventos. Se repiten la <b>Av. 27 de Noviembre con Villón</b>, la <b>primera cuadra de la Av. Raymondi</b>, el <b>Mercado Central</b> y <b>Luzuriaga con Sucre</b>.'
+      + '<br>💧 <b>Centro de Huaraz – Av. Luzuriaga</b> (entre Av. Raymondi y Av. Pedro Villón): aniegos recurrentes; la Contraloría (2025) advirtió que el drenaje pluvial no evacúa el agua de lluvia. El 18-12-2023 el alcantarillado colapsó y el centro se inundó (Av. Luzuriaga con Jr. Sucre).'
+      + '<br>▲ Zona crítica del INGEMMET <b>Quebrada Río Seco</b>: flujo de detritos e inundación de detritos.'
+      + '<br><small>El documento municipal nombra los sectores, pero no dibuja la mancha de inundación. Cada sector se sombreó como un área aproximada de ' + RADIO_SECTOR_M + ' m alrededor de su ubicación (INEI para Shaurama, Chunamará, Quechcap y Jauna; OpenStreetMap o el mapa oficial para el resto).</small>',
+    fuente:'Municipalidad Provincial de Huaraz – Plan anual de GRD 2025, tabla de zonas críticas por lluvias intensas e inundación · Contraloría General de la República (2025) para la Av. Luzuriaga · Noticias: Andina, RSD, Ancash Noticias, Diario de Chimbote, Panamericana, Correo, RPP (2018–2026) · Ubicación: INEI (centros poblados, Censo 2007), OpenStreetMap y mapa oficial de 2025 · INGEMMET – zonas críticas.' },
+  aluvion: { nombre:'Aluvión', sub:'Laguna Palcacocha',
+    info:'Desborde de la laguna Palcacocha: lodo, rocas y agua bajan por el río Quillcay hasta la ciudad. El mapa muestra el nivel de peligro, las flechas de evacuación y las zonas seguras.',
+    fuente:'Mapa oficial de la Municipalidad Provincial de Huaraz, el INAIGEM y la Municipalidad de Independencia (mayo 2025), aprobado por la Plataforma Provincial de Defensa Civil. Digitalizado por el proyecto.' },
+  huaico: { nombre:'Huaico', sub:'Flujo de detritos',
+    info:'Lodo y piedras que bajan por una quebrada, normalmente con lluvias intensas. Los cauces (líneas azules) son su camino natural.'
+      + '<br>🔵 <b>Zonas azules: por dónde se desplazaría un flujo que llegue al centro.</b>'
+      + '<br>• <b>Río Quillcay:</b> área por donde avanzaría un flujo de lodo y piedras que baje por el Quillcay, según el modelo oficial del INAIGEM y la Municipalidad (mayo 2025). Azul intenso = peligro mayor (núcleo, junto al cauce); azul claro = borde del área. El modelo corresponde al <b>escenario máximo</b> (aluvión de Palcacocha), así que un huaico más pequeño cubriría menos superficie, empezando por el núcleo.'
+      + '<br>• <b>Río Seco:</b> sectores de la zona crítica por flujo e inundación de detritos (INGEMMET) donde la Municipalidad registra población expuesta: Pedregal, Shaurama, Villón Alto, Chunamará y Bellavista (área aproximada de cada sector).'
+      + '<br><small>Otras quebradas que llegan a la ciudad (Paria, Auqui, Casca) no tienen un estudio publicado que delimite su recorrido: el INAIGEM estudia los ríos Seco y Casca.</small>' },
+  deslizamiento: { nombre:'Deslizamiento', sub:'Laderas que se mueven',
+    info:'Una porción de ladera se desliza cerro abajo, sobre todo con lluvias intensas. Incluye la reptación: movimiento lento del suelo que agrieta casas y muros. '
+      + 'Los colores muestran la <b>susceptibilidad del terreno a moverse</b> (INGEMMET, escala regional: no sirve para evaluar un lote). Los puntos naranjas son emergencias por deslizamiento en la ciudad registradas en SINPAD (2024–2025), muchas en terrenos con cortes de cerro para construir.',
+    fuente:'INGEMMET – susceptibilidad a movimientos en masa y registros de peligros geológicos · Municipalidad Provincial de Huaraz – fichas SINPAD del Plan anual de GRD 2025.' },
+  caida: { nombre:'Caída de rocas', sub:'y derrumbes',
+    info:'Rocas o bloques que se desprenden de laderas empinadas.' },
+  erosion: { nombre:'Erosión', sub:'Cárcavas y riberas',
+    info:'El agua desgasta la ladera (cárcavas) o las orillas de los ríos (erosión fluvial) y debilita el terreno.' },
+  todos: { nombre:'Todos', sub:'Ver todo junto',
+    info:'Todos los peligros con datos para Huaraz e Independencia.' },
+};
+const FUENTE_ING = 'INGEMMET – áreas evaluadas en informes técnicos (2022–2025) e inventario de peligros geológicos (mayormente de 2007).';
+
+// Clasifica un elemento del INGEMMET en uno o varios escenarios.
+function categorias(p) {
+  const t = [p.PELIGRO_ES, p.NOM_PELIGRO_TXT, p.TIP_PELIGRO_TXT, p.PELIGROS_G].filter(Boolean).join(' ').toLowerCase();
+  const c = [];
+  if (/flujo|huaico/.test(t)) c.push('huaico');
+  if (/desliz|reptaci|movimiento complejo/.test(t)) c.push('deslizamiento');
+  if (/ca[ií]da|derrumbe|avalancha de rocas/.test(t)) c.push('caida');
+  if (/erosi|c[aá]rcava|bad lands/.test(t)) c.push('erosion');
+  if (/inundaci/.test(t)) c.push('inundacion');
+  return c;
+}
+for (const fc of [ING_AREAS, ING_PUNTOS, ING_CRITICAS])
+  for (const f of fc.features) f.properties.cats = categorias(f.properties).join('|');
+const tipoPunto = p => p.NOM_PELIGRO_TXT || p.TIP_PELIGRO_TXT || 'Peligro geológico';
+const MARGEN_BORDE_M = 15, RADIO_EVENTOS_M = 150, RADIO_CRITICAS_M = 300;
+
+let escenario = 'lluvias';
+const RADIO_CAUCE_M = 150;
+// Escenarios que usan registros del INGEMMET (y su filtro de categoría; null = todos)
+const FILTRO_ING = { lluvias:'inundacion', huaico:'huaico', deslizamiento:'deslizamiento', caida:'caida', erosion:'erosion', todos:null };
+const NOMBRE_CAT = { inundacion:'Inundación', huaico:'Huaico', deslizamiento:'Deslizamiento', caida:'Caída de rocas', erosion:'Erosión' };
+
+// ------------------------------------------------------------- interfaz ----
+const cont = document.getElementById('escenarios');
+for (const [k, e] of Object.entries(ESCENARIOS)) {
+  const b = document.createElement('button');
+  b.dataset.k = k; b.innerHTML = `${e.nombre}<small>${e.sub}</small>`;
+  b.addEventListener('click', () => elegir(k));
+  cont.appendChild(b);
+}
+document.getElementById('verManzanas').addEventListener('change', e => { verManzanas = e.target.checked; aplicarManzanas(); actualizarPanel(); if (ultimaConsulta) consultar(...ultimaConsulta); });
+document.getElementById('toggle').addEventListener('click', () => document.getElementById('panel').classList.toggle('cerrado'));
+
+function contar(k) {
+  const f = fc => fc.features.filter(x => x.properties.cats.split('|').includes(k)).length;
+  return { areas:f(ING_AREAS), puntos:f(ING_PUNTOS), criticas:f(ING_CRITICAS) };
+}
+
+function actualizarPanel() {
+  document.querySelectorAll('#escenarios button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === escenario));
+  const e = ESCENARIOS[escenario];
+  let html = e.info;
+  if (FILTRO_ING[escenario] && escenario !== 'lluvias') {
+    const n = contar(FILTRO_ING[escenario]);
+    html += `<br><b>En el mapa:</b> ${n.areas} área(s) evaluada(s), ${n.puntos} evento(s) registrado(s) y ${n.criticas} zona(s) crítica(s).`;
+    if (!n.areas) html += `<br><i>No hay áreas evaluadas de este tipo: solo puntos, cuya extensión no se midió.</i>`;
+  }
+  const fuente = e.fuente || (escenario === 'todos' ? `${ESCENARIOS.aluvion.fuente} ${ESCENARIOS.lluvias.fuente} ${ESCENARIOS.deslizamiento.fuente}` : FUENTE_ING + (escenario === 'huaico' ? ' Cauces: © colaboradores de OpenStreetMap.' : ''));
+  html += `<span class="fuente">Fuente: ${fuente}</span>`;
+  document.getElementById('info').innerHTML = html;
+
+  const ley = [];
+  if (['lluvias','todos'].includes(escenario)) {
+    ley.push('<b>Inundación por lluvias (Municipalidad de Huaraz, 2025)</b>');
+    ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:rgba(213,0,0,.38);border:1.5px dashed #8e0000"></span>Sector propenso a inundarse (área aproximada: ${RADIO_SECTOR_M} m alrededor del sector)</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span style="width:14px;height:7px;background:rgba(213,0,0,.4);border-radius:3px"></span>Calle con aniegos recurrentes registrados (Av. Luzuriaga, centro)</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span class="dot" style="border-color:#fff;background:#7f0000;width:12px;height:12px;border-width:2px"></span>Inundación reportada en noticias (zona de ${RADIO_NOTICIA_M.alta} m si el lugar es preciso, ${RADIO_NOTICIA_M.media} m si es un sector; el número indica cuántas veces)</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span style="width:14px;height:7px;background:rgba(213,0,0,.3);border-radius:3px"></span>Canal de Tajamar (franja de ±${RADIO_CANAL_M} m, ubicación tentativa)</div>`);
+  }
+  if (['deslizamiento','todos'].includes(escenario)) {
+    ley.push('<b>Susceptibilidad del terreno a moverse (INGEMMET, escala regional)</b>');
+    for (const n of Object.values(SUSC_NIVELES)) ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:${n.color};opacity:.7"></span>${n.nombre}</div>`);
+    ley.push(`<div class="row" style="padding-left:8px;color:var(--muted);font-size:12px">Baja y muy baja no se colorean.</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span class="dot" style="border-color:#fff;background:#ef6c00;width:12px;height:12px;border-width:2px"></span>Emergencia por deslizamiento en SINPAD (2024–2025)</div>`);
+  }
+  if (escenario === 'huaico') {
+    ley.push('<b>Por dónde se desplazaría un flujo que llegue al centro</b>');
+    for (const [c, o, t] of [['#0d47a1',.5,'Río Quillcay – peligro muy alto (núcleo, junto al cauce)'],['#1565c0',.42,'Río Quillcay – peligro alto'],['#42a5f5',.32,'Río Quillcay – peligro medio'],['#90caf9',.25,'Río Quillcay – peligro bajo (borde)']])
+      ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:${c};opacity:${o + .3}"></span>${t}</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:rgba(30,136,229,.3);border:1.5px dashed #0d47a1"></span>Río Seco – sector expuesto (área aproximada)</div>`);
+  }
+  if (['huaico','todos'].includes(escenario))
+    ley.push(`<div class="row"><span style="width:14px;height:4px;background:#1565c0;border-radius:2px"></span><b>Cauce de río o quebrada</b>&nbsp;(OSM)</div>`);
+  if (['aluvion','todos'].includes(escenario)) {
+    ley.push('<b>Aluvión</b>');
+    for (const n of Object.values(NIVELES)) ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:${n.color}"></span>Peligro ${n.nombre.toLowerCase()}</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span style="color:#10307a;width:14px;text-align:center">➜</span>Ruta de evacuación (${FLECHAS.features.length} flechas)</div>`);
+    for (const [k,t] of Object.entries(TIPOS)) ley.push(`<label class="row" style="padding-left:8px"><input type="checkbox" data-tipo="${k}" checked><span class="dot" style="border-color:${t.color}"></span>${t.nombre}</label>`);
+  }
+  if (escenario in FILTRO_ING) {
+    ley.push('<b>Peligros geológicos registrados (INGEMMET)</b>');
+    ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:rgba(200,0,0,.5);border-color:#7a0000"></span>Zona evaluada (extensión real)</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span class="sw" style="background:rgba(229,57,53,.22);border:1.5px dotted #b71c1c"></span>Peligro que ya ocurrió (registro INGEMMET): área aproximada de ${RADIO_EVENTO_M} m, tamaño real desconocido</div>`);
+    ley.push(`<div class="row" style="padding-left:8px"><span style="color:#c00;width:14px;text-align:center">▲</span>Zona crítica</div>`);
+  }
+  if (verManzanas && MZ_ESCALA[escenario]) {
+    const items = Object.entries(MZ_ESCALA[escenario]).sort((a,b) => Number(b[0]) - Number(a[0]));
+    ley.unshift(`<b>Manzanas (cuadras) del distrito de Huaraz</b>`
+      + items.map(([v,[c,t]]) => `<div class="row" style="padding-left:8px"><span class="sw" style="background:${c};opacity:.8"></span>${t}</div>`).join('')
+      + `<div class="row" style="padding-left:8px"><span class="sw" style="background:${MZ_SIN}"></span><b>Sin información</b>: ninguna fuente dice nada de esta manzana (no significa que sea segura)</div>`);
+  }
+  document.getElementById('leyenda').innerHTML = ley.join('');
+}
+
+// ----------------------------------------------------------------- mapa ----
+const map = new maplibregl.Map({
+  container:'map',
+  style:'https://tiles.openfreemap.org/styles/liberty',
+  bounds: bbox(PELIGRO.cobertura.coordinates[0]),
+  fitBoundsOptions:{ padding:40 },
+  attributionControl:{ compact:true, customAttribution:'Peligros: Municipalidad Provincial de Huaraz / INAIGEM (2025, digitalizado por el proyecto) · INGEMMET' },
+});
+map.addControl(new maplibregl.NavigationControl(), 'top-right');
+map.addControl(new maplibregl.ScaleControl({ unit:'metric' }), 'bottom-right');
+
+map.on('load', () => {
+  // Manzanas del INEI coloreadas según el peligro elegido (debajo de todas las demás capas)
+  map.addSource('manzanas', { type:'geojson', data:MANZANAS });
+  map.addLayer({ id:'manzanas-fill', type:'fill', source:'manzanas', paint:{ 'fill-color':MZ_SIN, 'fill-opacity':0.6 } });
+  map.addLayer({ id:'manzanas-borde', type:'line', source:'manzanas', paint:{ 'line-color':'#ffffff', 'line-width':0.8, 'line-opacity':0.9 } });
+  // Aluvión
+  map.addSource('cobertura', { type:'geojson', data:{ type:'Feature', geometry:PELIGRO.cobertura, properties:{} } });
+  map.addLayer({ id:'cobertura', type:'line', source:'cobertura', paint:{ 'line-color':'#555', 'line-width':1.5, 'line-dasharray':[3,2] } });
+  map.addSource('peligro', { type:'geojson', data:PELIGRO });
+  map.addLayer({ id:'peligro-fill', type:'fill', source:'peligro',
+    paint:{ 'fill-color':['match',['get','nivel_peligro'], ...Object.entries(NIVELES).flatMap(([k,n])=>[k,n.color]), '#999'], 'fill-opacity':0.5 } });
+  map.addLayer({ id:'peligro-line', type:'line', source:'peligro', paint:{ 'line-color':'#3a0000', 'line-width':1, 'line-opacity':0.6 } });
+
+  const c = document.createElement('canvas'); c.width = c.height = 40;
+  const g = c.getContext('2d'); g.translate(20,20); g.lineJoin='round';
+  g.beginPath(); g.moveTo(0,-15); g.lineTo(10,-2); g.lineTo(4,-2); g.lineTo(4,14); g.lineTo(-4,14); g.lineTo(-4,-2); g.lineTo(-10,-2); g.closePath();
+  g.lineWidth=5; g.strokeStyle='#fff'; g.stroke(); g.fillStyle='#10307a'; g.fill();
+  map.addImage('flecha', g.getImageData(0,0,40,40), { pixelRatio:2 });
+  map.addSource('flechas', { type:'geojson', data:FLECHAS });
+  map.addLayer({ id:'flechas', type:'symbol', source:'flechas',
+    layout:{ 'icon-image':'flecha', 'icon-rotate':['get','rumbo_grados'], 'icon-rotation-alignment':'map',
+             'icon-allow-overlap':true, 'icon-size':['interpolate',['linear'],['zoom'],14,0.6,17,1.2] } });
+
+  // Lluvias: susceptibilidad a movimientos en masa (solo media, alta y muy alta)
+  map.addSource('suscep', { type:'geojson', data:SUSCEP });
+  map.addLayer({ id:'suscep-fill', type:'fill', source:'suscep', filter:['>=', ['to-number',['get','LEYENDA']], 3],
+    paint:{ 'fill-color':['match',['to-number',['get','LEYENDA']], 5, SUSC_NIVELES[5].color, 4, SUSC_NIVELES[4].color, SUSC_NIVELES[3].color],
+            'fill-opacity':['interpolate',['linear'],['zoom'],11,0.55,16,0.35] } }, 'peligro-fill');
+
+  // Huaico: por dónde se desplazaría un flujo que llegue al centro por el Quillcay (modelo INAIGEM, mismo polígono del aluvión)
+  map.addLayer({ id:'huaico-cono', type:'fill', source:'peligro', layout:{ visibility:'none' },
+    paint:{ 'fill-color':['match',['get','nivel_peligro'],'muy_alto','#0d47a1','alto','#1565c0','medio','#42a5f5','#90caf9'],
+            'fill-opacity':['match',['get','nivel_peligro'],'muy_alto',0.5,'alto',0.42,'medio',0.32,0.25] } });
+  map.addLayer({ id:'huaico-cono-borde', type:'line', source:'peligro', layout:{ visibility:'none' },
+    paint:{ 'line-color':'#0d47a1', 'line-width':1, 'line-opacity':0.7 } });
+
+  // Cauces (OpenStreetMap)
+  map.addSource('cauces', { type:'geojson', data:CAUCES });
+  map.addLayer({ id:'cauces-halo', type:'line', source:'cauces',
+    paint:{ 'line-color':'#fff', 'line-width':['match',['get','tipo'],'river',7,5], 'line-opacity':0.9 } });
+  map.addLayer({ id:'cauces', type:'line', source:'cauces',
+    paint:{ 'line-color':'#1565c0', 'line-width':['match',['get','tipo'],'river',4,2.5] } });
+  map.addLayer({ id:'cauces-nombre', type:'symbol', source:'cauces', filter:['has','nombre'],
+    layout:{ 'symbol-placement':'line', 'text-field':['get','nombre'], 'text-size':12, 'text-font':['Noto Sans Regular'] },
+    paint:{ 'text-color':'#0d47a1', 'text-halo-color':'#fff', 'text-halo-width':1.5 } });
+
+  // INGEMMET: zonas en rojo, eventos y zonas críticas
+  map.addSource('ing-areas', { type:'geojson', data:ING_AREAS });
+  map.addLayer({ id:'ing-areas-fill', type:'fill', source:'ing-areas', paint:{ 'fill-color':'#c80000', 'fill-opacity':0.45 } });
+  map.addLayer({ id:'ing-areas-line', type:'line', source:'ing-areas', paint:{ 'line-color':'#7a0000', 'line-width':1.5 } });
+  map.addSource('ing-puntos-areas', { type:'geojson', data:ING_PUNTOS_AREAS });
+  map.addLayer({ id:'ing-puntos-zona', type:'fill', source:'ing-puntos-areas', paint:{ 'fill-color':'#e53935', 'fill-opacity':0.22 } });
+  map.addLayer({ id:'ing-puntos-borde', type:'line', source:'ing-puntos-areas', paint:{ 'line-color':'#b71c1c', 'line-width':1.2, 'line-dasharray':[1,1.5] } });
+  map.addSource('ing-puntos', { type:'geojson', data:ING_PUNTOS });
+  map.addLayer({ id:'ing-puntos', type:'circle', source:'ing-puntos',
+    paint:{ 'circle-radius':['interpolate',['linear'],['zoom'],12,3,17,7], 'circle-color':'#c62828', 'circle-stroke-color':'#fff', 'circle-stroke-width':1.5 } });
+  const tc = document.createElement('canvas'); tc.width = tc.height = 36;
+  const tg = tc.getContext('2d'); tg.beginPath(); tg.moveTo(18,3); tg.lineTo(33,31); tg.lineTo(3,31); tg.closePath();
+  tg.fillStyle='#d00'; tg.strokeStyle='#fff'; tg.lineWidth=3; tg.stroke(); tg.fill();
+  tg.fillStyle='#fff'; tg.font='bold 18px sans-serif'; tg.textAlign='center'; tg.fillText('!', 18, 28);
+  map.addImage('critica', tg.getImageData(0,0,36,36), { pixelRatio:2 });
+  map.addSource('ing-criticas', { type:'geojson', data:ING_CRITICAS });
+  map.addLayer({ id:'ing-criticas', type:'symbol', source:'ing-criticas',
+    layout:{ 'icon-image':'critica', 'icon-allow-overlap':true, 'icon-size':['interpolate',['linear'],['zoom'],12,0.8,17,1.3] } });
+
+  // Inundación por lluvias: sectores sombreados (área aproximada) y Canal de Tajamar (franja tentativa)
+  map.addSource('muni', { type:'geojson', data:MUNI });
+  map.addSource('muni-areas', { type:'geojson', data:INUND_AREAS });
+  map.addLayer({ id:'muni-zonas', type:'fill', source:'muni-areas',
+    paint:{ 'fill-color':'#d50000', 'fill-opacity':['match',['get','confianza_ubicacion'],'alta',0.38,0.3] } });
+  map.addLayer({ id:'huaico-rioseco', type:'fill', source:'muni-areas', filter:['==',['get','zona'],'Río Seco'], layout:{ visibility:'none' },
+    paint:{ 'fill-color':'#1e88e5', 'fill-opacity':0.3 } });
+  map.addLayer({ id:'huaico-rioseco-borde', type:'line', source:'muni-areas', filter:['==',['get','zona'],'Río Seco'], layout:{ visibility:'none' },
+    paint:{ 'line-color':'#0d47a1', 'line-width':1.5, 'line-dasharray':[3,2] } });
+  map.addLayer({ id:'muni-zonas-borde', type:'line', source:'muni-areas',
+    paint:{ 'line-color':'#8e0000', 'line-width':1.8, 'line-dasharray':[3,2] } });
+  // Canal de Tajamar: franja de ±RADIO_CANAL_M metros dibujada como línea ancha en metros reales
+  const mPorPx = 156543.03 * Math.cos(9.53 * Math.PI / 180);
+  map.addLayer({ id:'muni-canal', type:'line', source:'muni', filter:['==',['get','tipo'],'zona_critica_lluvia_linea'],
+    layout:{ 'line-cap':'round', 'line-join':'round' },
+    paint:{ 'line-color':'#d50000', 'line-opacity':0.3,
+            'line-width':['interpolate',['exponential',2],['zoom'], 10, 2*RADIO_CANAL_M*1024/mPorPx, 20, 2*RADIO_CANAL_M*1048576/mPorPx] } });
+  map.addSource('aniegos', { type:'geojson', data:ANIEGOS });
+  map.addLayer({ id:'aniegos-calle', type:'line', source:'aniegos', filter:['==',['get','tipo'],'aniego_recurrente'],
+    layout:{ 'line-cap':'round', 'line-join':'round' },
+    paint:{ 'line-color':'#d50000', 'line-opacity':0.4,
+            'line-width':['interpolate',['exponential',2],['zoom'], 10, 2*RADIO_CALLE_M*1024/mPorPx, 20, 2*RADIO_CALLE_M*1048576/mPorPx] } });
+  map.addSource('noticias-areas', { type:'geojson', data:NOTICIAS_AREAS });
+  map.addLayer({ id:'noticias-zona', type:'fill', source:'noticias-areas', paint:{ 'fill-color':'#b71c1c', 'fill-opacity':0.35 } });
+  map.addLayer({ id:'noticias-borde', type:'line', source:'noticias-areas', paint:{ 'line-color':'#7f0000', 'line-width':1.5, 'line-dasharray':[1,1.5] } });
+  map.addSource('noticias', { type:'geojson', data:NOTICIAS });
+  map.addLayer({ id:'noticias-punto', type:'circle', source:'noticias',
+    paint:{ 'circle-radius':['interpolate',['linear'],['zoom'],12,['+',3,['*',2,['get','n_eventos']]],17,['+',6,['*',3,['get','n_eventos']]]],
+            'circle-color':'#7f0000', 'circle-stroke-color':'#fff', 'circle-stroke-width':2 } });
+  map.addLayer({ id:'noticias-n', type:'symbol', source:'noticias', filter:['>',['get','n_eventos'],1],
+    layout:{ 'text-field':['to-string',['get','n_eventos']], 'text-size':11, 'text-font':['Noto Sans Regular'], 'text-allow-overlap':true },
+    paint:{ 'text-color':'#fff' } });
+  map.addLayer({ id:'muni-zonas-nombre', type:'symbol', source:'muni', filter:['==',['get','tipo'],'zona_critica_lluvia'],
+    layout:{ 'text-field':['get','sector'], 'text-size':13, 'text-font':['Noto Sans Regular'], 'text-allow-overlap':false },
+    paint:{ 'text-color':'#7f0000', 'text-halo-color':'#fff', 'text-halo-width':2 } });
+  map.addLayer({ id:'muni-sinpad', type:'circle', source:'muni', filter:['==',['get','tipo'],'emergencia_sinpad'],
+    paint:{ 'circle-radius':['interpolate',['linear'],['zoom'],12,4,17,8], 'circle-color':'#ef6c00', 'circle-stroke-color':'#fff', 'circle-stroke-width':2,
+            'circle-translate':[8,-8] } });
+
+  // Zonas seguras encima de todo
+  map.addSource('seguras', { type:'geojson', data:SEGURAS });
+  map.addLayer({ id:'seguras', type:'circle', source:'seguras',
+    paint:{ 'circle-radius':['interpolate',['linear'],['zoom'],13,5,17,11], 'circle-color':'#fff',
+            'circle-stroke-width':['interpolate',['linear'],['zoom'],13,2.5,17,4],
+            'circle-stroke-color':['match',['get','tipo'], ...Object.entries(TIPOS).flatMap(([k,t])=>[k,t.color]), '#000'] } });
+
+  for (const id of ['seguras','ing-areas-fill','ing-puntos','ing-criticas','muni-zonas','muni-canal','muni-sinpad','aniegos-calle','noticias-zona','noticias-punto','ing-puntos-zona']) {
+    map.on('mouseenter', id, () => map.getCanvas().style.cursor = 'pointer');
+    map.on('mouseleave', id, () => map.getCanvas().style.cursor = '');
+  }
+  elegir(escenario);
+});
+
+const CAPAS_ALUVION = ['cobertura','peligro-fill','peligro-line','flechas','seguras'];
+const CAPAS_ING = ['ing-areas-fill','ing-areas-line','ing-puntos-zona','ing-puntos-borde','ing-puntos','ing-criticas'];
+const CAPAS_SUSC = ['suscep-fill'];
+const CAPAS_CAUCES = ['cauces-halo','cauces','cauces-nombre'];
+
+function verCapas(ids, ver) { ids.forEach(id => map.setLayoutProperty(id, 'visibility', ver ? 'visible' : 'none')); }
+
+function elegir(k, mover = true) {
+  escenario = k;
+  verCapas(CAPAS_ALUVION, ['aluvion','todos'].includes(k));
+  verCapas(CAPAS_SUSC, ['deslizamiento','todos'].includes(k));
+  verCapas(CAPAS_CAUCES, ['huaico','todos'].includes(k));
+  verCapas(['muni-zonas','muni-zonas-borde','muni-canal','muni-zonas-nombre','aniegos-calle','noticias-zona','noticias-borde','noticias-punto','noticias-n'], ['lluvias','todos'].includes(k));
+  verCapas(['muni-sinpad'], ['deslizamiento','todos'].includes(k));
+  verCapas(CAPAS_ING, k in FILTRO_ING);
+  aplicarManzanas();
+  CAPAS_ING.forEach(id => map.setFilter(id, FILTRO_ING[k] ? ['in', FILTRO_ING[k], ['get','cats']] : null));
+  actualizarPanel();
+  verCapas(['huaico-cono','huaico-cono-borde','huaico-rioseco','huaico-rioseco-borde'], k === 'huaico');
+  filtrarTipos();
+  if (mover) encuadrar(k);
+  if (ultimaConsulta) consultar(...ultimaConsulta);
+}
+
+function encuadrar(k) {
+  let coords = [];
+  // la ciudad (área del mapa oficial) siempre se incluye, salvo en peligros que solo existen fuera de ella
+  if (['aluvion','todos','lluvias','huaico'].includes(k)) coords.push(...PELIGRO.cobertura.coordinates[0]);
+  if (k === 'lluvias') MUNI.features.filter(f => f.properties.tipo === 'zona_critica_lluvia').forEach(f => coords.push(f.geometry.coordinates));
+  if (k === 'lluvias') NOTICIAS.features.forEach(f => coords.push(f.geometry.coordinates));
+  if (FILTRO_ING[k]) {
+    const sel = f => f.properties.cats.split('|').includes(FILTRO_ING[k]);
+    ING_AREAS.features.filter(sel).forEach(f => coords.push(...f.geometry.coordinates.flat(f.geometry.type === 'Polygon' ? 1 : 2)));
+    ING_PUNTOS.features.concat(ING_CRITICAS.features).filter(sel).forEach(f => coords.push(f.geometry.coordinates));
+  }
+  if (coords.length) map.fitBounds(bbox(coords), { padding:60, maxZoom:16, duration:800 });
+}
+
+function filtrarTipos() {
+  if (!map.getLayer('seguras') || !document.querySelector('input[data-tipo]')) return;
+  const activos = [...document.querySelectorAll('input[data-tipo]:checked')].map(i => i.dataset.tipo);
+  map.setFilter('seguras', ['in', ['get','tipo'], ['literal', activos]]);
+}
+document.addEventListener('change', e => { if (e.target.dataset.tipo) filtrarTipos(); });
+
+// ------------------------------------------------------------------ clic ----
+let marcador, ultimaConsulta = null;
+map.on('click', e => {
+  const visible = id => map.getLayoutProperty(id, 'visibility') !== 'none';
+  const hit = id => visible(id) && map.queryRenderedFeatures(e.point, { layers:[id] })[0];
+  let f;
+  if ((f = hit('seguras'))) {
+    const p = f.properties, t = TIPOS[p.tipo];
+    return popup(f.geometry.coordinates, `<b>${p.nombre && p.nombre !== 'null' ? esc(p.nombre) : t.nombre}</b><br>${t.nombre}<br>${esc(p.referencia)}<br><span class="estado">Pendiente de revisión · ±${p.precision_aprox_m} m</span>`);
+  }
+  if ((f = hit('noticias-punto')) || (f = hit('noticias-zona'))) {
+    const l = detalleNoticia(f.properties.id);
+    return popup(e.lngLat, `<b>📰 Inundación por lluvia registrada en noticias</b><br>${esc(l.lugar)} (${esc(l.distrito)})`
+      + l.eventos.map(ev => `<br>• <b>${esc(ev.fecha)}</b>: ${esc(ev.tipo)}. <i>"${esc(ev.cita)}"</i> – <a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.medio)}</a>`).join('')
+      + `<br><span class="estado">Ubicación ${l.confianza === 'alta' ? 'precisa' : 'aproximada'}</span><br><small>${esc(l.metodo)}</small>`);
+  }
+  if ((f = hit('aniegos-calle'))) {
+    const p = f.properties;
+    return popup(e.lngLat, `<b>💧 Inundación por lluvia registrada en el centro</b><br>${esc(p.lugar)}${p.fecha ? '<br>Fecha: ' + esc(p.fecha) : ''}`
+      + `<br>${esc(p.descripcion)}<br><small>Fuente: ${esc(p.fuente)}</small>`);
+  }
+  if ((f = hit('muni-zonas')) || (f = hit('muni-canal'))) {
+    const p = f.properties;
+    return popup(e.lngLat, `<b>💧 Propenso a inundarse por lluvias: ${esc(p.zona)}</b><br>Sector: ${esc(p.sector)}`
+      + `<br>Expuestos en toda la zona: ${p.zona_poblacion} personas, ${p.zona_viviendas} viviendas, ${p.zona_iiee} instituciones educativas`
+      + `<br><span class="estado">${p.confianza_ubicacion === 'baja' ? 'Ubicación tentativa' : 'Área aproximada del sector'}, no es la mancha de inundación</span>`
+      + `<br><small>Municipalidad Provincial de Huaraz – Plan anual GRD 2025 · Ubicación: ${esc(p.metodo_ubicacion)}</small>`);
+  }
+  if ((f = hit('muni-sinpad'))) {
+    const p = f.properties;
+    return popup(f.geometry.coordinates, `<b>Emergencia SINPAD ${esc(p.codigo_sinpad)}</b><br>${esc(p.fecha)} · ${esc(p.sector)}<br>${esc(p.descripcion)}`
+      + `<br><small>Municipalidad Provincial de Huaraz – anexos del Plan anual GRD 2025 · ${esc(p.metodo_ubicacion)}</small>`);
+  }
+  if ((f = hit('ing-criticas'))) {
+    const p = f.properties;
+    return popup(f.geometry.coordinates, `<b>Zona crítica: ${esc(p.PARAJE)}</b><br>${esc(p.PELIGROS_G)}`
+      + (p.RECOMEND && p.RECOMEND.trim() ? `<br><i>Recomendación del INGEMMET:</i> ${esc(p.RECOMEND)}` : '')
+      + `<br><small>INGEMMET${p.BOLETIN && p.BOLETIN.trim() ? ' · ' + esc(p.BOLETIN) : ''}</small>`);
+  }
+  if ((f = hit('ing-puntos')) || (f = hit('ing-puntos-zona'))) {
+    const p = f.properties;
+    return popup(e.lngLat, `<b>${esc(tipoPunto(p))}</b>${p.NM_SECTOR && p.NM_SECTOR !== 'null' ? '<br>' + esc(p.NM_SECTOR) : ''}<br>Registrado: ${esc(p.FECHA_TXT || 's/f')}<br><span class="estado">Ya ocurrió aquí. Tamaño real desconocido: el sombreado de ${RADIO_EVENTO_M} m es aproximado</span><br><small>INGEMMET – inventario de peligros geológicos</small>`);
+  }
+  consultar(e.lngLat.lng, e.lngLat.lat);
+});
+function popup(ll, html) { new maplibregl.Popup({ offset:10 }).setLngLat(ll).setHTML(html).addTo(map); }
+
+document.getElementById('btnGps').addEventListener('click', () => {
+  if (!navigator.geolocation) return mostrar('<b>Tu navegador no permite obtener la ubicación.</b>');
+  mostrar('Obteniendo ubicación…');
+  navigator.geolocation.getCurrentPosition(
+    pos => { consultar(pos.coords.longitude, pos.coords.latitude, pos.coords.accuracy); map.flyTo({ center:[pos.coords.longitude,pos.coords.latitude], zoom:16 }); },
+    () => mostrar('<b>No se pudo obtener tu ubicación.</b> Toca un punto del mapa.'),
+    { enableHighAccuracy:true, timeout:10000 });
+});
+
+// ------------------------------------------------------------- consulta ----
+function consultar(lon, lat, precisionGps) {
+  ultimaConsulta = [lon, lat, precisionGps];
+  if (marcador) marcador.remove();
+  marcador = new maplibregl.Marker({ color:'#0b5cad' }).setLngLat([lon,lat]).addTo(map);
+  const pt = [lon, lat];
+  let html = '';
+  if (verManzanas && MZ_ESCALA[escenario]) html += bloqueManzana(pt);
+
+  if (['aluvion','todos'].includes(escenario)) html += bloqueAluvion(pt);
+  if (['lluvias','todos'].includes(escenario)) html += bloqueInundacion(pt);
+  if (['deslizamiento','todos'].includes(escenario)) html += bloqueSuscep(pt) + bloqueSinpad(pt);
+  if (escenario === 'huaico') html += bloqueHuaicoCentro(pt);
+  if (['huaico','todos'].includes(escenario)) html += bloqueCauce(pt);
+  if (escenario in FILTRO_ING && escenario !== 'lluvias') html += bloqueIngemmet(pt, FILTRO_ING[escenario]);
+
+  if (precisionGps) html += `<small>Precisión de tu GPS: ±${Math.round(precisionGps)} m</small>`;
+  html += `<small>Esta consulta no reemplaza una evaluación técnica. Antes de construir, consulta a la municipalidad.</small>`;
+  mostrar(html);
+}
+
+function bloqueAluvion(pt) {
+  let html = `<div><b>Aluvión (laguna Palcacocha)</b><br>`;
+  if (!pointInPolygon(pt, PELIGRO.cobertura.coordinates))
+    return html + `Fuera del área del mapa oficial de aluvión (línea punteada). <b>Sin datos no significa sin peligro.</b></div>`;
+  let nivel = null, cercano = null;
+  for (const f of PELIGRO.features) {
+    const n = f.properties.nivel_peligro;
+    if (f.geometry.coordinates.some(poly => pointInPolygon(pt, poly)) && (!nivel || NIVELES[n].orden > NIVELES[nivel].orden)) nivel = n;
+    const d = distAPoligonos(pt, f.geometry.coordinates);
+    if (d <= MARGEN_BORDE_M && (!cercano || NIVELES[n].orden > NIVELES[cercano].orden)) cercano = n;
+  }
+  const ef = cercano && (!nivel || NIVELES[cercano].orden > NIVELES[nivel].orden) ? cercano : nivel;
+  if (ef) {
+    const n = NIVELES[ef];
+    html += `<div class="nivel" style="color:${n.color}">Peligro ${n.nombre.toLowerCase()}</div>`;
+    if (ef !== nivel) html += `A menos de ${MARGEN_BORDE_M} m del límite de esta zona; por precisión se muestra el nivel más alto.<br>`;
+    html += `Si hay alerta, evacúa siguiendo las flechas hacia una zona de seguridad.`;
+  } else {
+    html += `<div class="nivel">No se identificó peligro por aluvión en este mapa</div>`;
+  }
+  const destinos = SEGURAS.features.filter(f => ['zona_seguridad','refugio_temporal'].includes(f.properties.tipo))
+    .map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).sort((a,b) => a.d - b.d).slice(0,3);
+  html += `<small><b>Zonas de seguridad y refugios más cercanos (en línea recta):</b><br>` + destinos.map(x =>
+    `• ${esc(x.f.properties.nombre || x.f.properties.referencia)} – ${fmtDist(x.d)}`).join('<br>') + `</small></div>`;
+  return html;
+}
+
+function cercaMuni(pt, tipo, radio) {
+  return MUNI.features.filter(f => f.properties.tipo === tipo)
+    .map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).filter(x => x.d <= radio).sort((a,b) => a.d - b.d);
+}
+
+function bloqueInundacion(pt) {
+  const zonas = cercaMuni(pt, 'zona_critica_lluvia', RADIO_MUNI_M);
+  const canal = MUNI.features.filter(f => f.properties.tipo === 'zona_critica_lluvia_linea')
+    .map(f => ({ f, d:distALinea(pt, f.geometry.coordinates) })).sort((a,b) => a.d - b.d)[0];
+  const crit = ING_CRITICAS.features.filter(f => f.properties.cats.split('|').includes('inundacion'))
+    .map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).filter(x => x.d <= RADIO_CRITICAS_M);
+  const desc = p => `La Municipalidad de Huaraz la incluye en la zona crítica <b>${esc(p.zona)}</b> por lluvias intensas e inundación (${p.zona_poblacion} personas y ${p.zona_viviendas} viviendas expuestas).<br>`;
+  let html = `<div><b>Inundación por lluvias</b><br>`, algo = false;
+  if (zonas.length) {
+    const z = zonas[0], p = z.f.properties, dentro = z.d <= RADIO_SECTOR_M;
+    html += `<div class="nivel" style="color:${dentro ? '#c62828' : '#e65100'}">💧 ${dentro ? 'Dentro del área sombreada' : 'Cerca del área sombreada'} del sector ${esc(p.sector)}</div>`
+      + (dentro ? '' : `A ${fmtDist(z.d - RADIO_SECTOR_M)} del borde del área aproximada del sector.<br>`) + desc(p);
+    algo = true;
+  }
+  if (canal && canal.d <= 150) {
+    const p = canal.f.properties, dentro = canal.d <= RADIO_CANAL_M;
+    html += `<div class="nivel" style="color:${dentro ? '#c62828' : '#e65100'}">💧 ${dentro ? 'Sobre' : `A ${fmtDist(canal.d)} de`} la franja del Canal de Tajamar (ubicación tentativa)</div>` + desc(p);
+    algo = true;
+  }
+  const calle = ANIEGOS.features.filter(f => f.properties.tipo === 'aniego_recurrente')
+    .map(f => ({ f, d:distALinea(pt, f.geometry.coordinates) })).sort((a,b) => a.d - b.d)[0];
+  if (calle && calle.d <= 150) {
+    const dentro = calle.d <= RADIO_CALLE_M;
+    html += `<div class="nivel" style="color:${dentro ? '#c62828' : '#e65100'}">💧 ${dentro ? 'Sobre' : `A ${fmtDist(calle.d)} de`} la Av. Luzuriaga, tramo con aniegos recurrentes</div>`
+      + `La Contraloría (2025) advirtió que el drenaje pluvial no garantiza evacuar el agua de lluvia en este tramo (Av. Raymondi – Av. Pedro Villón).<br>`;
+    algo = true;
+  }
+  NOTICIAS.features.map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).filter(x => x.d <= 250).sort((a,b) => a.d - b.d)
+    .forEach(x => { const l = detalleNoticia(x.f.properties.id);
+      html += `📰 <b>${esc(l.lugar)}</b> (a ${fmtDist(x.d)}): ` + l.eventos.map(ev => `${esc(ev.fecha)} – ${esc(ev.tipo)} (<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.medio)}</a>)`).join('; ') + '.<br>';
+      algo = true; });
+  crit.forEach(x => { html += `▲ A ${fmtDist(x.d)} de la zona crítica del INGEMMET ${esc(x.f.properties.PARAJE)}: ${esc(x.f.properties.PELIGROS_G.toLowerCase())}.<br>`; algo = true; });
+  if (!algo)
+    html += `Este punto no está cerca de los lugares identificados oficialmente como propensos a inundarse. <b>Eso no garantiza que no se inunde:</b> el registro no incluye cada calle.<br>`;
+  return html + `<small>Las áreas sombreadas son una aproximación del sector (${RADIO_SECTOR_M} m alrededor de su ubicación oficial o conocida): el documento municipal no trae la mancha de inundación.</small></div>`;
+}
+
+function bloqueManzana(pt) {
+  const f = manzanaEn(pt);
+  if (!f) return `<div style="margin-bottom:6px;color:var(--muted);font-size:12.5px">Este punto no está dentro de una manzana del INEI (calle, río o zona sin manzanas).</div>`;
+  const p = f.properties, v = p['n_' + escenario], esc_ = MZ_ESCALA[escenario];
+  const [c, t] = v === 0 ? [MZ_SIN, 'Sin información'] : (esc_[v] || [MZ_SIN, 'Sin información']);
+  const det = (p['d_' + escenario] || '').split(' | ').filter(Boolean);
+  return `<div style="margin-bottom:8px;padding:8px;border-radius:6px;border-left:6px solid ${c};background:#fff">`
+    + `<b>Manzana ${esc(p.manzana)} · zona censal ${esc(p.zona)}</b> <small style="display:inline">(INEI)</small><br><b>${esc(t)}</b>`
+    + (det.length ? '<br>' + det.map(d => '• ' + esc(d)).join('<br>') : (v === 0 ? '<br>Ninguna fuente tiene datos de esta manzana para este peligro. <b>No significa que sea segura.</b>' : ''))
+    + `</div>`;
+}
+
+function bloqueSinpad(pt) {
+  const emerg = cercaMuni(pt, 'emergencia_sinpad', RADIO_SINPAD_M);
+  if (!emerg.length) return '';
+  return `<div class="bloque"><b>Emergencias por deslizamiento cercanas (SINPAD 2024–2025)</b><br>`
+    + emerg.map(x => `🟠 A ${fmtDist(x.d)}: ${esc(x.f.properties.descripcion)} (${esc(x.f.properties.fecha)}, ${esc(x.f.properties.sector)}).`).join('<br>')
+    + `<small>Ubicación aproximada por sector.</small></div>`;
+}
+
+function bloqueSuscep(pt) {
+  let nivel = 0;
+  for (const f of SUSCEP.features) {
+    const v = Number(f.properties.LEYENDA);
+    if (v > nivel && contiene(f.geometry, pt)) nivel = v;
+  }
+  const nombres = { 5:'muy alta', 4:'alta', 3:'media', 2:'baja', 1:'muy baja' };
+  let html = `<div class="bloque"><b>Susceptibilidad del terreno a moverse (INGEMMET)</b><br>`;
+  if (!nivel) return html + `Sin dato de susceptibilidad para este punto.</div>`;
+  const color = (SUSC_NIVELES[nivel] || {}).color || '#555';
+  html += `<div class="nivel" style="color:${color}">Susceptibilidad ${nombres[nivel]}</div>`;
+  html += nivel >= 4 ? 'Con lluvias intensas, el terreno de esta zona tiene alta probabilidad de moverse (deslizamientos, huaicos, derrumbes).'
+       : nivel === 3 ? 'Probabilidad media de que el terreno se mueva con lluvias intensas.'
+       : 'Probabilidad baja de que el terreno se mueva con lluvias, según este mapa regional.';
+  return html + `<small>Mide si el <b>terreno se mueve</b> (deslizamientos, huaicos), no si el <b>agua se acumula</b>: una zona plana puede inundarse aunque su susceptibilidad sea baja. Mapa de escala regional: describe la zona, no un lote o una calle.</small></div>`;
+}
+
+function bloqueHuaicoCentro(pt) {
+  const TXT = { muy_alto:['#0d47a1','peligro muy alto','Núcleo del recorrido, junto al cauce: es la zona más expuesta a un flujo que baje por el Quillcay.'],
+                alto:['#1565c0','peligro alto','Zona alcanzada por el flujo en el modelo, con peligro alto.'],
+                medio:['#1e88e5','peligro medio','Zona alcanzada en el modelo con peligro medio, más alejada del núcleo.'],
+                bajo:['#42a5f5','peligro bajo','Borde del área modelada: menos expuesta.'] };
+  let html = `<div><b>Huaico que llegue al centro</b><br>`;
+  if (pointInPolygon(pt, PELIGRO.cobertura.coordinates)) {
+    let nivel = null;
+    for (const f of PELIGRO.features)
+      if (f.geometry.coordinates.some(poly => pointInPolygon(pt, poly)) && (!nivel || NIVELES[f.properties.nivel_peligro].orden > NIVELES[nivel].orden)) nivel = f.properties.nivel_peligro;
+    if (nivel) {
+      const [c, t, d] = TXT[nivel];
+      html += `<div class="nivel" style="color:${c}">🔵 Río Quillcay: ${t}</div>${d}<br><small>Según el área modelada por el INAIGEM para un flujo por el Quillcay (escenario máximo: aluvión de Palcacocha, mayo 2025).</small>`;
+    } else html += `Fuera del área por donde se desplazaría un flujo que baje por el Quillcay.<br>`;
+  }
+  const rs = INUND_AREAS.features.filter(f => f.properties.zona === 'Río Seco')
+    .map(f => ({ f, d:haversine(pt, circuloCentro(f)) })).filter(x => x.d <= RADIO_SECTOR_M).sort((a,b) => a.d - b.d)[0];
+  if (rs) html += `<div class="nivel" style="color:#1565c0">🔵 Río Seco: sector ${esc(rs.f.properties.sector)}</div>Zona crítica por flujo e inundación de detritos (INGEMMET); la Municipalidad registra población expuesta en este sector. Área aproximada del sector.<br>`;
+  return html + `</div>`;
+}
+function circuloCentro(f) { const r = f.geometry.coordinates[0]; const n = r.length - 1; return [r.slice(0,n).reduce((a,p)=>a+p[0],0)/n, r.slice(0,n).reduce((a,p)=>a+p[1],0)/n]; }
+
+function bloqueCauce(pt) {
+  let mejor = null;
+  for (const f of CAUCES.features) {
+    const d = distALinea(pt, f.geometry.coordinates);
+    if (!mejor || d < mejor.d || (d - mejor.d < 20 && f.properties.nombre && !mejor.f.properties.nombre)) mejor = { f, d };
+  }
+  if (!mejor) return '';
+  const p = mejor.f.properties;
+  const nombre = p.nombre ? esc(p.nombre) : (p.tipo === 'river' ? 'un río sin nombre en el mapa' : 'una quebrada sin nombre en el mapa');
+  let html = `<div class="bloque"><b>Cauce más cercano</b><br>`;
+  if (mejor.d <= RADIO_CAUCE_M) {
+    html += `<div class="nivel" style="color:#1565c0">A ${fmtDist(mejor.d)} de ${p.nombre ? 'el cauce ' + nombre : nombre}</div>`
+      + `Los cauces de ríos y quebradas son el camino natural de los huaicos y las crecidas. <b>No hay un estudio oficial publicado que delimite hasta dónde llegaría un huaico en este punto.</b>`;
+  } else {
+    html += `El cauce más cercano (${nombre}) está a ${fmtDist(mejor.d)}.`;
+  }
+  return html + `<small>Cauces: © colaboradores de OpenStreetMap. Puede haber quebradas no mapeadas.</small></div>`;
+}
+
+function bloqueIngemmet(pt, cat) {
+  const sel = f => !cat || f.properties.cats.split('|').includes(cat);
+  const nombre = cat ? NOMBRE_CAT[cat].toLowerCase() : 'peligros geológicos';
+  const enAreas = ING_AREAS.features.filter(sel).filter(f => contiene(f.geometry, pt));
+  const cercaArea = ING_AREAS.features.filter(sel).filter(f => !enAreas.includes(f))
+    .map(f => ({ f, d:distAPoligonos(pt, f.geometry.coordinates) })).filter(x => x.d <= RADIO_EVENTOS_M).sort((a,b) => a.d - b.d);
+  const eventos = ING_PUNTOS.features.filter(sel).map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).filter(x => x.d <= RADIO_EVENTOS_M).sort((a,b) => a.d - b.d);
+  const criticas = ING_CRITICAS.features.filter(sel).map(f => ({ f, d:haversine(pt, f.geometry.coordinates) })).filter(x => x.d <= RADIO_CRITICAS_M).sort((a,b) => a.d - b.d);
+
+  let html = `<div class="bloque"><b>${cat ? NOMBRE_CAT[cat] : 'Peligros geológicos'} – registros del INGEMMET</b><br>`;
+  if (enAreas.length) {
+    const p = enAreas[0].properties;
+    html += `<div class="nivel" style="color:#c80000">Dentro de una zona de ${esc(p.PELIGRO_ES.toLowerCase())}</div>`
+      + `${p.GPELIGRO && p.GPELIGRO.trim() ? `Peligro ${esc(p.GPELIGRO.toLowerCase())}. ` : ''}${p.EAM && p.EAM.trim() ? `Estado: ${esc(p.EAM.toLowerCase())}. ` : ''}Evaluada en ${esc(p.FECHA_EVAL)} (informe ${esc(p.CODIGO)}).<br>`;
+  } else if (cercaArea.length) {
+    html += `⚠️ A ${fmtDist(cercaArea[0].d)} de una zona de ${esc(cercaArea[0].f.properties.PELIGRO_ES.toLowerCase())} evaluada por el INGEMMET.<br>`;
+  }
+  criticas.slice(0,2).forEach(x => html += `▲ Zona crítica a ${fmtDist(x.d)}: ${esc(x.f.properties.PELIGROS_G.toLowerCase())} (${esc(x.f.properties.PARAJE)}).<br>`);
+  if (eventos.length) {
+    html += (eventos[0].d <= RADIO_EVENTO_M ? `<div class="nivel" style="color:#c62828">Dentro del área aproximada de un ${esc(tipoPunto(eventos[0].f.properties).toLowerCase())} que ya ocurrió</div>` : '')
+      + `• ${eventos.length} peligro(s) ya ocurrido(s) a menos de ${RADIO_EVENTOS_M} m; el más cercano, ${esc(tipoPunto(eventos[0].f.properties).toLowerCase())} a ${fmtDist(eventos[0].d)}.<br>`;
+    if (eventos.some(x => (x.f.properties.FECHA_TXT || '') < '2020')) html += `<small>Hay registros anteriores a 2020; la situación actual puede ser distinta.</small>`;
+  }
+  if (!enAreas.length && !cercaArea.length && !criticas.length && !eventos.length)
+    html += `No hay registros de ${nombre} del INGEMMET cerca de este punto. <b>Eso no significa que no exista el peligro.</b>`;
+  return html + `</div>`;
+}
+
+function mostrar(html) { const r = document.getElementById('resultado'); r.style.display='block'; r.innerHTML = html; document.getElementById('panel').classList.remove('cerrado'); }
+
+// --- utilidades geométricas -------------------------------------------------
+function bbox(coords){ const xs=coords.map(p=>p[0]), ys=coords.map(p=>p[1]); return [[Math.min(...xs),Math.min(...ys)],[Math.max(...xs),Math.max(...ys)]]; }
+function inRing(pt, ring){ let x=pt[0], y=pt[1], ins=false; for(let i=0,j=ring.length-1;i<ring.length;j=i++){ const [xi,yi]=ring[i],[xj,yj]=ring[j]; if(((yi>y)!==(yj>y)) && (x<(xj-xi)*(y-yi)/(yj-yi)+xi)) ins=!ins; } return ins; }
+function pointInPolygon(pt, poly){ return inRing(pt, poly[0]) && !poly.slice(1).some(h => inRing(pt, h)); }
+function contiene(geom, pt){ return geom.type === 'Polygon' ? pointInPolygon(pt, geom.coordinates) : geom.coordinates.some(p => pointInPolygon(pt, p)); }
+function distALinea(pt, coords){ let best=Infinity; for(let i=1;i<coords.length;i++){ const a=toM(coords[i-1],pt), b=toM(coords[i],pt); const dx=b[0]-a[0], dy=b[1]-a[1]; const t=Math.max(0,Math.min(1,-(a[0]*dx+a[1]*dy)/((dx*dx+dy*dy)||1))); best=Math.min(best, Math.hypot(a[0]+t*dx, a[1]+t*dy)); } return best; }
+function toM(p, ref){ const k=Math.PI/180, R=6371008.8; return [ (p[0]-ref[0])*k*R*Math.cos(ref[1]*k), (p[1]-ref[1])*k*R ]; }
+function distAPoligonos(pt, polys){
+  // acepta Polygon (lista de anillos) o MultiPolygon (lista de polígonos)
+  const lista = typeof polys[0][0][0] === 'number' ? [polys] : polys;
+  let best=Infinity;
+  for(const poly of lista) for(const ring of poly) for(let i=1;i<ring.length;i++){ const a=toM(ring[i-1],pt), b=toM(ring[i],pt); const dx=b[0]-a[0], dy=b[1]-a[1]; const t=Math.max(0,Math.min(1,-(a[0]*dx+a[1]*dy)/((dx*dx+dy*dy)||1))); best=Math.min(best, Math.hypot(a[0]+t*dx, a[1]+t*dy)); }
+  return best;
+}
+function haversine(a,b){ const k=Math.PI/180, R=6371008.8; const dl=(b[1]-a[1])*k, dn=(b[0]-a[0])*k; const h=Math.sin(dl/2)**2+Math.cos(a[1]*k)*Math.cos(b[1]*k)*Math.sin(dn/2)**2; return 2*R*Math.asin(Math.sqrt(h)); }
+function fmtDist(d){ return d<1000 ? `${Math.round(d/10)*10} m` : `${(d/1000).toFixed(1)} km`; }
+function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+</script>
+</body>
+</html>

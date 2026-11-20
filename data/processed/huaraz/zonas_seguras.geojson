@@ -1,0 +1,1014 @@
+{
+ "type": "FeatureCollection",
+ "name": "huaraz_zonas_seguras_2025",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-001",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "Colegio Fe y Alegría",
+    "referencia": "Jr. Aija / Jr. Pedro Cochachín, Pedregal",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5207342,
+     -9.5350049
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-002",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "I.E. La Soledad",
+    "referencia": "Soledad Alta",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5222695,
+     -9.5335629
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-003",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "Universidad Nacional Santiago Antúnez de Mayolo (UNASAM)",
+    "referencia": "Shancayán",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5243074,
+     -9.5167421
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-004",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "Centro Cultural",
+    "referencia": "Junto a la Plaza de Armas de Huaraz",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5295723,
+     -9.5308044
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-005",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga",
+    "referencia": "Centenario",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5302049,
+     -9.5135255
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-006",
+    "tipo": "centro_acopio",
+    "descripcion_tipo": "Centro de acopio: lugar donde se reciben y distribuyen donativos",
+    "nombre": "U.P. San Pedro",
+    "referencia": "Centenario (borde del mapa)",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "manual",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": "Parcialmente tapado por la leyenda; ubicado a mano."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.528956,
+     -9.5111412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-007",
+    "tipo": "atencion_medica",
+    "descripcion_tipo": "Atención prehospitalaria y hospitalaria: atención médica de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Av. Las Flores",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.523375,
+     -9.5217699
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-008",
+    "tipo": "atencion_medica",
+    "descripcion_tipo": "Atención prehospitalaria y hospitalaria: atención médica de personas ante un desastre",
+    "nombre": "Parque Perú",
+    "referencia": "Villón Alto",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5274744,
+     -9.5376617
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-009",
+    "tipo": "atencion_medica",
+    "descripcion_tipo": "Atención prehospitalaria y hospitalaria: atención médica de personas ante un desastre",
+    "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga",
+    "referencia": "Centenario",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5288446,
+     -9.5138086
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-010",
+    "tipo": "atencion_medica",
+    "descripcion_tipo": "Atención prehospitalaria y hospitalaria: atención médica de personas ante un desastre",
+    "nombre": "I.S.T. Eleazar Guzmán Barrón",
+    "referencia": "Av. Los Eucaliptos, Shancayán",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "manual",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": "La etiqueta de texto tapa el ícono; ubicado a mano."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5255642,
+     -9.5148469
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-011",
+    "tipo": "puesto_comando",
+    "descripcion_tipo": "Puesto de comando: lugar para coordinar todas las actividades durante la emergencia",
+    "nombre": "Parque Lawn Tennis",
+    "referencia": "Pedregal Medio / Villón Alto",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.524866,
+     -9.5374725
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-012",
+    "tipo": "puesto_comando",
+    "descripcion_tipo": "Puesto de comando: lugar para coordinar todas las actividades durante la emergencia",
+    "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga",
+    "referencia": "Centenario",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5289947,
+     -9.514627
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-013",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": null,
+    "referencia": "Jr. Horacio Zevallos",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5190416,
+     -9.5239345
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-014",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": "Parque Bicentenario",
+    "referencia": "Pedregal Medio",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5226748,
+     -9.5370201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-015",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": null,
+    "referencia": "Entre UNASAM y el I.S.T. Eleazar Guzmán Barrón, Shancayán",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": "Verificar a qué local corresponde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5253234,
+     -9.5159543
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-016",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": "Ministerio de Transportes y Comunicaciones",
+    "referencia": "Av. Confraternidad Internacional Sur, Villón Alto",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5277149,
+     -9.5400794
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-017",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": "U.P. San Pedro",
+    "referencia": "Centenario",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5284104,
+     -9.5117695
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-018",
+    "tipo": "refugio_temporal",
+    "descripcion_tipo": "Refugio temporal: lugar momentáneo para brindar alojamiento y resguardo a personas evacuadas",
+    "nombre": "I.E. Gran Mariscal Toribio de Luzuriaga",
+    "referencia": "Jr. Francisco Araoz, Centenario",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5303356,
+     -9.5152676
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-019",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde junto a Av. Confraternidad Internacional Este, Pedregal",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.521037,
+     -9.5369799
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-020",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde junto a Av. Confraternidad Internacional Este, Nicrupampa",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5222021,
+     -9.5226109
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-021",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Soledad Alta (Jr. Ramón Castilla)",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5226857,
+     -9.5313746
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-022",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Cerca de Av. Las Flores, Nicrupampa",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.523208,
+     -9.5204443
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-023",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": "Universidad Nacional Santiago Antúnez de Mayolo (UNASAM)",
+    "referencia": "Shancayán",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5242906,
+     -9.518017
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-024",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Jr. José de Sucre / Jr. Ramón Castilla",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5244369,
+     -9.5307896
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-025",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Av. Ramón Castilla, Soledad Baja",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.525027,
+     -9.5326584
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-026",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Av. Los Eucaliptos, Shancayán",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5256085,
+     -9.5137409
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-027",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Av. Simón Bolívar, Belén",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5282469,
+     -9.5322709
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-028",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": "Plaza de Armas de Huaraz",
+    "referencia": "Centro",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.528769,
+     -9.5302379
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-029",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Av. Mariscal Toribio de Luzuriaga, Belén",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5293902,
+     -9.5327569
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-030",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Huarupampa",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5308249,
+     -9.5301189
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-031",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": "Parque Santa Rosa",
+    "referencia": "Huarupampa",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5313657,
+     -9.5324043
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-032",
+    "tipo": "zona_seguridad",
+    "descripcion_tipo": "Zona de seguridad: refugio provisional de personas ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde junto a Av. 27 de Noviembre",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5318824,
+     -9.533181
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-033",
+    "tipo": "atencion_animal",
+    "descripcion_tipo": "Centro de atención de vida animal: atención de animales ante un desastre",
+    "nombre": null,
+    "referencia": "Área verde, Av. 28 de Julio, Soledad Baja",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5240682,
+     -9.5340962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-034",
+    "tipo": "atencion_animal",
+    "descripcion_tipo": "Centro de atención de vida animal: atención de animales ante un desastre",
+    "nombre": "Hotel Huascarán",
+    "referencia": "Centenario, cerca de Av. Confraternidad Internacional Oeste",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5315975,
+     -9.5122927
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-035",
+    "tipo": "gestion_cadaveres",
+    "descripcion_tipo": "Centro de gestión de cadáveres: lugar de recuperación e identificación de cadáveres después del desastre",
+    "nombre": "I.E. Jorge Basadre",
+    "referencia": "Av. Las Flores / Av. Los Girasoles",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5248992,
+     -9.5206142
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huaraz-2025-036",
+    "tipo": "gestion_cadaveres",
+    "descripcion_tipo": "Centro de gestión de cadáveres: lugar de recuperación e identificación de cadáveres después del desastre",
+    "nombre": null,
+    "referencia": "Av. Agustín Gamarra / Av. Simón Bolívar, Belén",
+    "fuente": "Mapa de zonas seguras y rutas de evacuación ante aluviones en Huaraz e Independencia – Zona baja, subcuenca río Quillcay",
+    "institucion": "Municipalidad Provincial de Huaraz (OGRDyDC), INAIGEM, Municipalidad Distrital de Independencia",
+    "fecha_fuente": "2025-05",
+    "validacion": "Aprobado por la Plataforma Provincial de Defensa Civil de Huaraz, 26-05-2025",
+    "url_fuente": "https://sinia.minam.gob.pe/mapas/mapa-zonas-seguras-rutas-evacuacion-ante-aluviones-huaraz-independencia",
+    "tipo_peligro": "aluvion",
+    "metodo": "Digitalizado por el proyecto: punta del ícono en la imagen oficial georreferenciada con la grilla UTM 18S",
+    "origen_digitalizacion": "deteccion",
+    "precision_aprox_m": 15,
+    "estado_verificacion": "pendiente_revision_humana",
+    "observaciones": null
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5276746,
+     -9.5346164
+    ]
+   }
+  }
+ ]
+}

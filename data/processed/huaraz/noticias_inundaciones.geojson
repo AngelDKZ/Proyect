@@ -1,0 +1,272 @@
+{
+ "type": "FeatureCollection",
+ "name": "huaraz_inundaciones_noticias",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "luzuriaga-sucre",
+    "lugar": "Av. Luzuriaga con Jr. Sucre, junto a la Plaza de Armas",
+    "distrito": "Huaraz",
+    "n_eventos": 2,
+    "ultima_fecha": "2023-12-18",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Cruce de ambas vías en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.529194,
+     -9.5294439
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "mercado-central",
+    "lugar": "Mercado Central de Huaraz (puertas del Jr. Juan de la Cruz Romero)",
+    "distrito": "Huaraz",
+    "n_eventos": 2,
+    "ultima_fecha": "2023-12-18",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Mercado Central de Huaraz en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5307899,
+     -9.5267917
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "raymondi",
+    "lugar": "Av. Raymondi, primera cuadra",
+    "distrito": "Huaraz",
+    "n_eventos": 2,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Cruce Av. Raymondi – Av. Luzuriaga en OpenStreetMap (© colaboradores de OpenStreetMap); la cuadra exacta no está confirmada"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5286667,
+     -9.5260615
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "27nov-villon",
+    "lugar": "Av. 27 de Noviembre con Jr./Av. Villón",
+    "distrito": "Huaraz",
+    "n_eventos": 2,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Cruce de ambas vías en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5319846,
+     -9.5351942
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "confraternidad-villon",
+    "lugar": "Av. Confraternidad con Av. Villón",
+    "distrito": "Huaraz",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Cruce Av. Confraternidad Internacional – Av. Pedro Villón en OpenStreetMap (© colaboradores de OpenStreetMap) (la nota dice 'Millón', probable errata de Villón)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5215016,
+     -9.5384516
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "ie-raimondi",
+    "lugar": "I.E. Antonio Raimondi",
+    "distrito": "Huaraz",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "I.E. 86017 Sabio Antonio Raimondi en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5295135,
+     -9.5223191
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "tacllan",
+    "lugar": "Sector Tacllán",
+    "distrito": "Huaraz",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Sector Tacllán en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5291649,
+     -9.5427596
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "nicrupampa",
+    "lugar": "Nicrupampa",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Urbanización Nicrupampa en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.523755,
+     -9.5206586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "el-pinar",
+    "lugar": "Ingreso a la urbanización El Pinar",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Condominio El Pinar en OpenStreetMap (© colaboradores de OpenStreetMap) (la nota habla del ingreso al sector)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.512577,
+     -9.5132083
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "quinuacocha",
+    "lugar": "Quinuacocha (Av. Centenario)",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Urbanización Quinuacocha en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5335506,
+     -9.5123428
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "sierra-hermosa",
+    "lugar": "Sierra Hermosa",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11-06",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Urbanización Sierra Hermosa en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5299751,
+     -9.5099036
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "centenario-confraternidad",
+    "lugar": "Cruce de Av. Centenario, Av. Confraternidad Internacional Oeste y Av. Independencia",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11 (f",
+    "confianza_ubicacion": "alta",
+    "metodo_ubicacion": "Cruce de las vías en OpenStreetMap (© colaboradores de OpenStreetMap)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5319159,
+     -9.512693
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "shancayan",
+    "lugar": "Av. Universitaria, barrio de Shancayán",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2026-11 (a",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Urbanización Shancayán en OpenStreetMap (© colaboradores de OpenStreetMap) (la vivienda exacta no se conoce)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5248708,
+     -9.5138796
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "huacrajirca",
+    "lugar": "Barrio de Huacrajirca",
+    "distrito": "Independencia",
+    "n_eventos": 1,
+    "ultima_fecha": "2018-04-14",
+    "confianza_ubicacion": "media",
+    "metodo_ubicacion": "Centro poblado 'Huacrajirca' (registro MINEDU/IGN en GEOCATMIN-INGEMMET), dentro del casco urbano"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.528158,
+     -9.510147
+    ]
+   }
+  }
+ ]
+}

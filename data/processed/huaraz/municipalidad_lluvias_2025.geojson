@@ -1,0 +1,828 @@
+{
+ "type": "FeatureCollection",
+ "name": "huaraz_lluvias_intensas_municipalidad_2025",
+ "metadata": {
+  "fuente": "Municipalidad Provincial de Huaraz – Plan del Programa Anual de Actividades del Grupo de Trabajo para la Gestión del Riesgo de Desastres, año 2025 (anexo de la Resolución de Alcaldía N.° 59-2025-MPH/A). Tabla 8 (zonas críticas por lluvias intensas – inundación) y anexos con fichas SINPAD.",
+  "url": "https://cdn.www.gob.pe/uploads/document/file/8093943/6631517-resolucion-de-alcaldia-n-59-2025-mph-a-anexo.pdf",
+  "fecha_documento": "2025-04-01",
+  "nota_ubicacion": "El documento solo da nombres de sectores. Cada punto se ubicó como indica 'metodo_ubicacion' (INEI = centro poblado oficial; OSM o rótulo del mapa oficial = aproximado). Las áreas sombreadas en el visor son aproximaciones del sector, no la mancha de inundación.",
+  "zonas_criticas_sin_ubicar": [
+   {
+    "zona": "Quebrada Lloclla",
+    "sector": "Taricá",
+    "distrito": "Taricá",
+    "poblacion": 250,
+    "viviendas": 80,
+    "nota": "Fuera del área del visor"
+   },
+   {
+    "zona": "Quebrada Puchcoc manzana",
+    "sector": "Buenos Aires",
+    "distrito": "Taricá",
+    "poblacion": 180,
+    "viviendas": 100,
+    "nota": "Fuera del área del visor"
+   },
+   {
+    "zona": "Quebrada Uchuyacu",
+    "sector": "Uchuyacu",
+    "distrito": "Taricá",
+    "poblacion": 120,
+    "viviendas": 50,
+    "nota": "Fuera del área del visor"
+   }
+  ],
+  "resumen": "En el cercado de Huaraz se reportaron 25 emergencias por activación de quebradas, desbordes de ríos e inundaciones por lluvias intensas (registradas en SINPAD, temporada 2024–2025)."
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Pedregal",
+    "zona": "Río Seco",
+    "zona_poblacion": 4660,
+    "zona_viviendas": 400,
+    "zona_iiee": 35,
+    "zona_comisarias": 2,
+    "metodo_ubicacion": "OpenStreetMap: Urbanización El Pedregal (coincide a ~55 m con el rótulo del mapa oficial de 2025)",
+    "confianza_ubicacion": "media"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5197779,
+     -9.5357667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Villón Alto",
+    "zona": "Río Seco",
+    "zona_poblacion": 4660,
+    "zona_viviendas": 400,
+    "zona_iiee": 35,
+    "zona_comisarias": 2,
+    "metodo_ubicacion": "OpenStreetMap: Urbanización Villón Alto (coincide a ~100 m con el rótulo del mapa oficial de 2025)",
+    "confianza_ubicacion": "media"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5280278,
+     -9.5378871
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Bellavista",
+    "zona": "Río Seco",
+    "zona_poblacion": 4660,
+    "zona_viviendas": 400,
+    "zona_iiee": 35,
+    "zona_comisarias": 2,
+    "metodo_ubicacion": "Rótulo 'BELLAVISTA' del mapa oficial de zonas seguras (mayo 2025), georreferenciado por el proyecto",
+    "confianza_ubicacion": "media"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5201743,
+     -9.5408104
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Shaurama",
+    "zona": "Río Seco",
+    "zona_poblacion": 4660,
+    "zona_viviendas": 400,
+    "zona_iiee": 35,
+    "zona_comisarias": 2,
+    "metodo_ubicacion": "INEI – centros poblados, Censo 2007 (capa 'Centro Poblado' de GEOCATMIN-INGEMMET): SHAURAMA (0201010155)",
+    "confianza_ubicacion": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.523384737,
+     -9.548583978
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Chunamará",
+    "zona": "Río Seco",
+    "zona_poblacion": 4660,
+    "zona_viviendas": 400,
+    "zona_iiee": 35,
+    "zona_comisarias": 2,
+    "metodo_ubicacion": "INEI – centros poblados, Censo 2007 (capa 'Centro Poblado' de GEOCATMIN-INGEMMET): CHUNA MARA (0201010017)",
+    "confianza_ubicacion": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.518043987,
+     -9.538981228
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Quechcap",
+    "zona": "Río Santa – tramo Quechcap",
+    "zona_poblacion": 5000,
+    "zona_viviendas": 200,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "metodo_ubicacion": "INEI – centros poblados, Censo 2007 (capa 'Centro Poblado' de GEOCATMIN-INGEMMET): QUECHCAP (0201010022)",
+    "confianza_ubicacion": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.534671862,
+     -9.539601603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia",
+    "sector": "Jauna central",
+    "zona": "Jauna",
+    "zona_poblacion": 40,
+    "zona_viviendas": 21,
+    "zona_iiee": 0,
+    "zona_comisarias": 0,
+    "metodo_ubicacion": "INEI – centros poblados, Censo 2007 (capa 'Centro Poblado' de GEOCATMIN-INGEMMET): JAUNA (JAUNA CENTRAL) (0201010078)",
+    "confianza_ubicacion": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.477232362,
+     -9.601720603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Calle Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5204727,
+      -9.5303398
+     ],
+     [
+      -77.5205649,
+      -9.530262
+     ],
+     [
+      -77.5206169,
+      -9.5302117
+     ],
+     [
+      -77.5210826,
+      -9.5299114
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Jirón Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5200171,
+      -9.5319183
+     ],
+     [
+      -77.5200379,
+      -9.5318402
+     ],
+     [
+      -77.5201566,
+      -9.5315132
+     ],
+     [
+      -77.5202072,
+      -9.5312734
+     ],
+     [
+      -77.5202487,
+      -9.5310618
+     ],
+     [
+      -77.5203301,
+      -9.5307846
+     ],
+     [
+      -77.5204083,
+      -9.5304692
+     ],
+     [
+      -77.5204727,
+      -9.5303398
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Jirón Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5178682,
+      -9.5410249
+     ],
+     [
+      -77.5180694,
+      -9.5408911
+     ],
+     [
+      -77.5181821,
+      -9.540788
+     ],
+     [
+      -77.5184208,
+      -9.5406253
+     ],
+     [
+      -77.5185227,
+      -9.5405433
+     ],
+     [
+      -77.5185653,
+      -9.5404967
+     ],
+     [
+      -77.5186059,
+      -9.5403806
+     ],
+     [
+      -77.5186195,
+      -9.5402526
+     ],
+     [
+      -77.5187781,
+      -9.5396875
+     ],
+     [
+      -77.5187977,
+      -9.539636
+     ],
+     [
+      -77.5188594,
+      -9.539513
+     ],
+     [
+      -77.5189316,
+      -9.5393994
+     ],
+     [
+      -77.5190753,
+      -9.539206
+     ],
+     [
+      -77.5191172,
+      -9.5390157
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Jirón Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5197276,
+      -9.5319378
+     ],
+     [
+      -77.5196755,
+      -9.5327669
+     ],
+     [
+      -77.5196869,
+      -9.5331434
+     ],
+     [
+      -77.5196954,
+      -9.5334213
+     ],
+     [
+      -77.519572,
+      -9.5336659
+     ],
+     [
+      -77.5195319,
+      -9.5337116
+     ],
+     [
+      -77.519491,
+      -9.5337393
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Pasaje Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5195422,
+      -9.5384578
+     ],
+     [
+      -77.5192322,
+      -9.5384603
+     ],
+     [
+      -77.5191101,
+      -9.538455
+     ],
+     [
+      -77.5190109,
+      -9.5384285
+     ],
+     [
+      -77.5189345,
+      -9.5383902
+     ],
+     [
+      -77.5188929,
+      -9.5383518
+     ],
+     [
+      -77.5188661,
+      -9.5382936
+     ],
+     [
+      -77.51885,
+      -9.5381376
+     ],
+     [
+      -77.5188448,
+      -9.5381033
+     ],
+     [
+      -77.5188272,
+      -9.5379881
+     ],
+     [
+      -77.5188231,
+      -9.5378757
+     ],
+     [
+      -77.5188017,
+      -9.5377858
+     ],
+     [
+      -77.5187856,
+      -9.5377633
+     ],
+     [
+      -77.5187561,
+      -9.5377296
+     ],
+     [
+      -77.5187346,
+      -9.5376806
+     ],
+     [
+      -77.5187286,
+      -9.5376383
+     ],
+     [
+      -77.5187286,
+      -9.537596
+     ],
+     [
+      -77.5187581,
+      -9.537545
+     ],
+     [
+      -77.5188339,
+      -9.537475
+     ],
+     [
+      -77.5188908,
+      -9.5373861
+     ],
+     [
+      -77.5189278,
+      -9.5372938
+     ],
+     [
+      -77.5189787,
+      -9.5370795
+     ],
+     [
+      -77.5189874,
+      -9.5369876
+     ],
+     [
+      -77.5189901,
+      -9.5369095
+     ],
+     [
+      -77.5189954,
+      -9.5368223
+     ],
+     [
+      -77.5190055,
+      -9.536737
+     ],
+     [
+      -77.5190149,
+      -9.5365868
+     ],
+     [
+      -77.5190297,
+      -9.5364976
+     ],
+     [
+      -77.519087,
+      -9.5363348
+     ],
+     [
+      -77.5190859,
+      -9.5362581
+     ],
+     [
+      -77.5190842,
+      -9.5361288
+     ],
+     [
+      -77.5190674,
+      -9.5359772
+     ],
+     [
+      -77.5190485,
+      -9.5358839
+     ],
+     [
+      -77.5190511,
+      -9.535831
+     ],
+     [
+      -77.5190817,
+      -9.5357887
+     ],
+     [
+      -77.5191725,
+      -9.535711
+     ],
+     [
+      -77.5192362,
+      -9.5356167
+     ],
+     [
+      -77.5193356,
+      -9.5353392
+     ],
+     [
+      -77.5193355,
+      -9.5350903
+     ],
+     [
+      -77.5193181,
+      -9.5349572
+     ],
+     [
+      -77.5193012,
+      -9.5348455
+     ],
+     [
+      -77.5192912,
+      -9.5347068
+     ],
+     [
+      -77.5193033,
+      -9.5345177
+     ],
+     [
+      -77.5193556,
+      -9.5344542
+     ],
+     [
+      -77.5194279,
+      -9.534433
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Pasaje Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5194367,
+      -9.5337453
+     ],
+     [
+      -77.5193891,
+      -9.5338994
+     ],
+     [
+      -77.5193609,
+      -9.5339351
+     ],
+     [
+      -77.5193207,
+      -9.5339543
+     ],
+     [
+      -77.5192731,
+      -9.533947
+     ],
+     [
+      -77.5191043,
+      -9.5338488
+     ],
+     [
+      -77.5190051,
+      -9.5337351
+     ],
+     [
+      -77.5189267,
+      -9.5336498
+     ],
+     [
+      -77.5188716,
+      -9.5335816
+     ],
+     [
+      -77.518832,
+      -9.5335428
+     ],
+     [
+      -77.5187838,
+      -9.5334851
+     ],
+     [
+      -77.5187383,
+      -9.5334485
+     ],
+     [
+      -77.5186604,
+      -9.5333859
+     ],
+     [
+      -77.5185813,
+      -9.533284
+     ],
+     [
+      -77.5185518,
+      -9.5332338
+     ],
+     [
+      -77.5185089,
+      -9.5331598
+     ],
+     [
+      -77.5184606,
+      -9.5330725
+     ],
+     [
+      -77.518423,
+      -9.5330328
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "zona_critica_lluvia_linea",
+    "sector": "Urb. Las Terrazas",
+    "zona": "Canal de Tajamar",
+    "zona_poblacion": 280,
+    "zona_viviendas": 70,
+    "zona_iiee": 2,
+    "zona_comisarias": 0,
+    "osm_nombre": "Calle Tajamar",
+    "metodo_ubicacion": "Tentativa: trazado del Jr./Calle/Pasaje Tajamar en OpenStreetMap (© colaboradores de OpenStreetMap), asumiendo que la vía sigue al canal. Las noticias de 2019 y 2023 indican que el canal Tajamar también pasa por el Mercado Central (oeste de la Av. Luzuriaga), por lo que su recorrido real es más largo. Urb. Las Terrazas no figura en fuentes abiertas.",
+    "confianza_ubicacion": "baja"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.5211344,
+      -9.5297599
+     ],
+     [
+      -77.5211984,
+      -9.5297166
+     ],
+     [
+      -77.521333,
+      -9.5296206
+     ],
+     [
+      -77.5213785,
+      -9.5295661
+     ],
+     [
+      -77.5217923,
+      -9.5291053
+     ],
+     [
+      -77.522123,
+      -9.5289348
+     ],
+     [
+      -77.5222144,
+      -9.5288403
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "emergencia_sinpad",
+    "codigo_sinpad": "216675 / 222871",
+    "fecha": "2025-01-01 y 2025-02-18",
+    "sector": "Shaurama",
+    "descripcion": "Deslizamiento y colapso de la calle Luis Pardo Novoa por lluvias intensas y cortes de terreno.",
+    "metodo_ubicacion": "Coordenadas impresas en la foto de la ficha SINPAD 216675"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.52763,
+     -9.54401
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "emergencia_sinpad",
+    "codigo_sinpad": "216676",
+    "fecha": "2025-01-02",
+    "sector": "Tacllán Alto",
+    "descripcion": "Deslizamiento de material entre viviendas con desnivel de unos 5 m (Psj. Arcoiris).",
+    "metodo_ubicacion": "OpenStreetMap/Nominatim: Tacllán (sector, no la vivienda)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5291649,
+     -9.5427596
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "emergencia_sinpad",
+    "codigo_sinpad": "221506",
+    "fecha": "2025-02-12",
+    "sector": "Asociación Cruz de Rataquenua",
+    "descripcion": "Deslizamiento por lluvias intensas con viviendas en riesgo.",
+    "metodo_ubicacion": "OpenStreetMap/Nominatim: Rataquenua (sector)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5154741,
+     -9.5367045
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "emergencia_sinpad",
+    "codigo_sinpad": "223169",
+    "fecha": "2025-02-18",
+    "sector": "Los Pinos",
+    "descripcion": "Deslizamiento constante por lluvias que afecta viviendas de la parte baja del Psje. Virgen del Carmen.",
+    "metodo_ubicacion": "Rótulo 'LOS PINOS' del mapa oficial de zonas seguras (mayo 2025), georreferenciado por el proyecto"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.5101966,
+     -9.5343526
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "emergencia_sinpad",
+    "codigo_sinpad": "216494 / 220683",
+    "fecha": "2024-12-31 y 2025-02-10",
+    "sector": "Chunamará",
+    "descripcion": "Deslizamiento entre viviendas con desnivel de unos 5 m y colapso de un muro de contención sobre una vivienda (prolongación Túpac Amaru).",
+    "metodo_ubicacion": "INEI – centros poblados, Censo 2007 (capa 'Centro Poblado' de GEOCATMIN-INGEMMET): CHUNA MARA (sector, no la vivienda)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.518043987,
+     -9.538981228
+    ]
+   }
+  }
+ ]
+}

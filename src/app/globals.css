@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Paleta base. Los colores de peligro se definirán en la fase de interfaces. */
+:root {
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --foreground: #1b1f24;
+  --muted: #5b6470;
+  --line: #d9dde3;
+  --accent: #0b5cad;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0f1419;
+    --surface: #161c23;
+    --foreground: #e6e9ed;
+    --muted: #9aa4b1;
+    --line: #2a323c;
+    --accent: #5aa2ec;
+  }
+}
+
+:root[data-theme="dark"] {
+  --background: #0f1419;
+  --surface: #161c23;
+  --foreground: #e6e9ed;
+  --muted: #9aa4b1;
+  --line: #2a323c;
+  --accent: #5aa2ec;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  /* Fuentes del sistema: rápidas, sin conexión y sin enviar datos a terceros */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

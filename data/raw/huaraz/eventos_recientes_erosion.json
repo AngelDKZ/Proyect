@@ -1,0 +1,250 @@
+{
+ "peligro": "erosion",
+ "consultado": "2026-11-19",
+ "eventos": [
+  {
+   "fecha": "2026-11-09",
+   "lugar": "Puente Calicanto (puente histórico), ciudad de Huaraz",
+   "distrito": "Independencia",
+   "descripcion": "Socavación en la cimentación del puente histórico Calicanto por erosión del cauce; en julio de 2026 el Colegio de Ingenieros (CIP Áncash-Huaraz) la detectó en una inspección, y en noviembre se advirtió que la erosión ya deja expuestas piedras de la base, cerca de la quebrada de Corrientes.",
+   "afectacion": "Riesgo estructural del puente; sin víctimas reportadas.",
+   "coord": [
+    -77.53575,
+    -9.52701
+   ],
+   "metodo_ubicacion": "Búsqueda local (OpenStreetMap, 'Puente Calicanto', asignado a Independencia). Las notas no nombran el río; por la ubicación OSM sería el río Quillcay, cerca de su desembocadura en el Santa (no confirmado en la fuente).",
+   "confianza": "alta",
+   "recorrido": [
+    "cauce bajo el puente Calicanto (probablemente río Quillcay)"
+   ],
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: Advierten que las lluvias podrían socavar las bases del puente Calicanto",
+     "url": "https://ancashnoticias.com/2026/11/09/huaraz-advierten-que-las-lluvias-podrian-socavar-las-bases-del-puente-calicanto",
+     "fecha_publicacion": "2026-11-09",
+     "cita": "la erosión viene dejando expuestas algunas piedras de la base"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: Puente Calicanto presenta riesgo estructural por socavación",
+     "url": "https://ancashnoticias.com/2026/07/09/huaraz-puente-calicanto-presenta-riesgo-estructural-por-socavacion",
+     "fecha_publicacion": "2026-07-09",
+     "cita": "deterioro progresivo asociado a procesos de socavación provocados por la erosión del cauce del río"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-08",
+   "lugar": "Sector Quechcap, margen del río Santa (incluye sector ISCU)",
+   "distrito": "Huaraz",
+   "descripcion": "Erosión y socavamiento de la ribera del río Santa en Quechcap durante la temporada de lluvias 2025-2026. La Municipalidad Provincial de Huaraz lo considera punto crítico, contrató la recuperación de la margen afectada y está reforzando con rocas de más de 1 m. En octubre de 2026 seguía pendiente.",
+   "afectacion": "Servicios básicos expuestos; unas 50 viviendas notificadas por ocupar la faja marginal (dic. 2025).",
+   "coord": [
+    -77.54899,
+    -9.55354
+   ],
+   "metodo_ubicacion": "INEI centro poblado 'QUECHCAP' (0201010022). El punto marca el centro poblado, no el tramo exacto de ribera erosionada.",
+   "confianza": "media",
+   "recorrido": [
+    "río Santa, tramo del sector Quechcap"
+   ],
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: cuatro puntos críticos aún esperan trabajos para prevenir desbordes",
+     "url": "https://ancashnoticias.com/2026/10/08/huaraz-cuatro-puntos-criticos-aun-esperan-trabajos-para-prevenir-desbordes",
+     "fecha_publicacion": "2026-10-08",
+     "cita": "permanecen expuestas al riesgo de desbordes debido a la erosión de las riberas provocada por las lluvias"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: puentes afectados en Macashca y Chamanayoc preocupan ante posible Fenómeno El Niño",
+     "url": "https://ancashnoticias.com/2026/07/06/huaraz-puentes-afectados-en-macashca-y-chamanayoc-preocupan-ante-posible-fenomeno-el-nino",
+     "fecha_publicacion": "2026-07-06",
+     "cita": "procesos de erosión, socavamiento y afectación en las riberas de los ríos"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: notifican a 50 viviendas por riesgo en la faja marginal del río Santa en Quechcap",
+     "url": "https://ancashnoticias.com/2025/12/01/huaraz-notifican-a-50-viviendas-por-riesgo-en-la-faja-marginal-del-rio-santa-en-quechcap/",
+     "fecha_publicacion": "2025-12-01",
+     "cita": "zona considerada intangible y expuesta a erosión"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-03-04",
+   "lugar": "Río Casca, puentes Jinua, Lirio y Curuas (acceso a Paria Wilcahuain)",
+   "distrito": "Independencia",
+   "descripcion": "Las lluvias activaron la quebrada Casca y la crecida dañó los diques de ambas márgenes por erosión hidráulica, socavamiento y desestabilización de rocas en varios tramos. Tres puentes quedaron en riesgo.",
+   "afectacion": "Diques de contención dañados; puentes Jinua, Lirio y Curuas en riesgo.",
+   "coord": [
+    -77.51275,
+    -9.4985
+   ],
+   "metodo_ubicacion": "Búsqueda local: barrio 'Jinua' (OpenStreetMap). Los puentes Lirio y Curuas no se encontraron; el punto representa el tramo de forma aproximada.",
+   "confianza": "media",
+   "recorrido": [
+    "río Casca, tramo de los puentes Jinua, Lirio y Curuas"
+   ],
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Activación de quebrada Casca afecta diques y pone en riesgo tres puentes en Independencia",
+     "url": "https://ancashnoticias.com/2026/03/04/activacion-de-quebrada-casca-afecta-diques-y-pone-en-riesgo-tres-puentes-en-independencia",
+     "fecha_publicacion": "2026-03-04",
+     "cita": "erosión hidráulica [...] socavamiento y desestabilización de rocas"
+    }
+   ]
+  },
+  {
+   "fecha": "2025-12-01",
+   "lugar": "Río Seco, malecón entre los puentes Tacllán",
+   "distrito": "Huaraz",
+   "descripcion": "La Administración Local del Agua (ALA) declaró zona crítica un tramo del río Seco donde la erosión ya dañó parte de la plataforma del malecón. En octubre de 2026 seguían los trabajos de enrocado en el río Seco por la erosión de sus riberas.",
+   "afectacion": "Plataforma del malecón dañada en parte; viviendas ribereñas expuestas.",
+   "coord": [
+    -77.53181,
+    -9.54099
+   ],
+   "metodo_ubicacion": "Nominatim: 'Puente Tacllan' (OSM way 100225592). El tramo afectado está entre los puentes Tacllán; la fuente no precisa el punto exacto.",
+   "confianza": "media",
+   "recorrido": [
+    "río Seco, malecón entre los puentes Tacllán"
+   ],
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: notifican a 50 viviendas por riesgo en la faja marginal del río Santa en Quechcap",
+     "url": "https://ancashnoticias.com/2025/12/01/huaraz-notifican-a-50-viviendas-por-riesgo-en-la-faja-marginal-del-rio-santa-en-quechcap/",
+     "fecha_publicacion": "2025-12-01",
+     "cita": "ALA declaró como zona crítica un tramo del río Seco, donde la erosión ya afectó parte de la plataforma del malecón"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: cuatro puntos críticos aún esperan trabajos para prevenir desbordes",
+     "url": "https://ancashnoticias.com/2026/10/08/huaraz-cuatro-puntos-criticos-aun-esperan-trabajos-para-prevenir-desbordes",
+     "fecha_publicacion": "2026-10-08",
+     "cita": "permanecen expuestas al riesgo de desbordes debido a la erosión de las riberas provocada por las lluvias"
+    }
+   ]
+  },
+  {
+   "fecha": "2024-01-19",
+   "lugar": "Río Seco: puentes Tacllán, Shaurama, Lombardo y Azul",
+   "distrito": "Huaraz",
+   "descripcion": "Dirigentes del río Seco denunciaron gaviones caídos en las márgenes por las lluvias, sin reconstruir, en cuatro puntos críticos. La nota no usa la palabra 'erosión': describe un colapso de defensa ribereña.",
+   "afectacion": "Gaviones de defensa ribereña caídos; según los dirigentes, más de 7 mil personas estarían expuestas si hay lluvias fuertes.",
+   "coord": [
+    -77.52753,
+    -9.54552
+   ],
+   "metodo_ubicacion": "INEI centro poblado 'Shaurama' (punto intermedio del tramo citado). Los puentes Lombardo y Azul no se pudieron geolocalizar.",
+   "confianza": "baja",
+   "recorrido": [
+    "río Seco entre el puente Tacllán y el puente Azul (parte alta)"
+   ],
+   "fuentes": [
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Huaraz: solicitan ayuda a autoridades para descolmatar el río seco",
+     "url": "https://ancashnoticias.com/2024/01/19/huaraz-solicitan-ayuda-a-autoridades-para-descolmatar-el-rio-seco/",
+     "fecha_publicacion": "2024-01-19",
+     "cita": "los gaviones que se han caído esperamos que las autoridades lo reconstruyan inmediatamente"
+    }
+   ]
+  },
+  {
+   "fecha": "2022-03-12",
+   "lugar": "Sector Quechcap II, puente peatonal sobre el río Santa (sur de Huaraz)",
+   "distrito": "Huaraz",
+   "descripcion": "Colapso de un puente peatonal de madera con estribos de concreto armado por erosión fluvial durante una crecida del río Santa por lluvias intensas (COER Áncash). La fecha es la de publicación; la nota no da la fecha exacta del colapso.",
+   "afectacion": "Puente peatonal colapsado; pobladores de Quechcap, Antapampa y Purucuta afectados en su tránsito; sin daños a personas.",
+   "coord": [
+    -77.54195,
+    -9.55682
+   ],
+   "metodo_ubicacion": "INEI centro poblado 'Moradores Predio 2 de Quechcap' (asociado a 'Quechcap II'; esta asociación es una suposición).",
+   "confianza": "media",
+   "recorrido": [
+    "río Santa a la altura de Quechcap II"
+   ],
+   "fuentes": [
+    {
+     "medio": "La República",
+     "titulo": "Áncash: puente peatonal colapsa por incremento del caudal del río Santa",
+     "url": "https://larepublica.pe/sociedad/2022/03/12/ancash-puente-peatonal-colapsa-por-incremento-del-caudal-del-rio-santa-lrnd",
+     "fecha_publicacion": "2022-03-12",
+     "cita": "debido a la erosión fluvial"
+    }
+   ]
+  }
+ ],
+ "descartados": [
+  {
+   "lugar": "Puente Auqui, ríos Auqui/Paria/Quillcay (Andina, La República)",
+   "motivo": "Vivienda colapsada por socavamiento y 50 m de plataforma perdida, pero el evento es del 8/12/2021, fuera del rango de fechas."
+  },
+  {
+   "lugar": "Ribera del río Quilcay, Huaraz (Panamericana / AP Noticias)",
+   "motivo": "Colapso de una vivienda con un fallecido, publicado el 07/12/2021: fuera de rango y sin mención de erosión."
+  },
+  {
+   "lugar": "Puente Llacllin, Chamanayoc (Huaraz)",
+   "motivo": "Puente arrasado por la crecida del río Santa (feb. 2026). La nota no menciona erosión ni socavamiento; corresponde a inundación o crecida."
+  },
+  {
+   "lugar": "Puentes de Macashca y Chamanayoc",
+   "motivo": "La nota del 06/07/2026 habla de puentes 'arrastrados', sin fecha ni proceso de erosión atribuido a cada sitio."
+  },
+  {
+   "lugar": "Confluencia ríos Paria y Quillcay (Sol TV, 19/02/2026)",
+   "motivo": "'El enmallado de protección empezó a ceder', sin mención de erosión ni ubicación precisa. Sería, a lo sumo, un indicio de falla de defensa."
+  },
+  {
+   "lugar": "Cerco de institución educativa en Huanchac (Independencia)",
+   "motivo": "Colapso de 20 m de cerco por lluvias (nov. 2026); la fuente no menciona erosión ni socavamiento."
+  },
+  {
+   "lugar": "Av. Raimondi, Huaraz (puente y estribo)",
+   "motivo": "Nota de inundación (19/11/2026) sin mención de erosión o socavamiento."
+  },
+  {
+   "lugar": "Río Casca, aluvión del 28/04/2025 (Paria Wilcahuain, Jinua, Cachipampa, Palmira)",
+   "motivo": "Es un aluvión o flujo por desembalse de la laguna Vallunaraju; le corresponde a otro agente. No se halló una fuente que describa erosión de riberas como evento propio."
+  },
+  {
+   "lugar": "Río Seco entre puentes Tacllán y Lombardo (13/11/2025)",
+   "motivo": "Recuperación de faja marginal ocupada; no describe erosión."
+  },
+  {
+   "lugar": "Tesis ULADECH: muro del río Quillcay en el puente Huascarán (progresivas 1+100 a 1+800, Independencia, 2025)",
+   "motivo": "Evaluación técnica, no un evento fechado. Reporta 'socavación severa en los extremos, erosión moderada'. Puede servir como punto de susceptibilidad (puente Huascarán: -77.53078, -9.52297)."
+  },
+  {
+   "lugar": "Tesis ULADECH: río Quillcay, C.P. Nueva Florida (Independencia, 2024)",
+   "motivo": "Evaluación técnica sin fecha de evento. Reporta 'continuas lluvias vienen provocando socavaciones, colapso de muros'."
+  },
+  {
+   "lugar": "Tesis ULADECH: gaviones del río Santa, sector Tunaspampa (margen izquierda, Huaraz, 2024)",
+   "motivo": "Evaluación técnica (publicada el 17/07/2024) con socavación y rotura de malla, sin fecha de evento. No se geolocalizó Tunaspampa."
+  },
+  {
+   "lugar": "Tesis ULADECH: río Santa en Picup / puente Santo Toribio, puentes Gamarra y Comercio, Palmira, San Pedro, Quechcap (Independencia)",
+   "motivo": "Evaluaciones de defensas ribereñas; solo vistas en resúmenes de búsqueda o sin un evento fechado."
+  },
+  {
+   "lugar": "INGEMMET Informe Técnico A7739 (El Pinar, Pasamayito, Cerro Cóndor Wain, Independencia)",
+   "motivo": "Se descargó el PDF, pero no se pudo extraer el texto (faltan herramientas de PDF). Según el fragmento de búsqueda, menciona cárcavas y erosión fluvial; no se verificaron ni la fecha ni el contenido."
+  },
+  {
+   "lugar": "Defensa ribereña del río Santa en el puente Santo Toribio, margen derecha (Res. Gerencial 037-2025-MDI-GI)",
+   "motivo": "El PDF en gob.pe devolvió 403 y no se pudo abrir. Además, es una autorización de obra, no un evento."
+  },
+  {
+   "lugar": "Urbanización San Nicolás de Pongor, centro poblado Jatún Pongor",
+   "motivo": "Revisión: es el mismo evento registrado como deslizamiento (socavamiento de ladera por lluvia, no erosión fluvial)."
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+ALTER TYPE "public"."feature_category" ADD VALUE 'camino_aguas_abajo';

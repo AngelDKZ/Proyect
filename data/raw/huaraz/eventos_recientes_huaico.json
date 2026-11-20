@@ -1,0 +1,281 @@
+{
+ "peligro": "huaico",
+ "consultado": "2026-11-19",
+ "eventos": [
+  {
+   "fecha": "2026-11-06",
+   "lugar": "Sector Vista Alegre, carretera Piedras Azules – Huaraz",
+   "distrito": "Huaraz",
+   "descripcion": "Las lluvias intensas con granizo de la tarde del 6 de noviembre generaron un huaico en el sector Vista Alegre que dañó cerca de 1 km de la carretera Piedras Azules – Huaraz y restringió el tránsito vehicular (reporte del COER Áncash).",
+   "afectacion": "Aprox. 1 km de la carretera Piedras Azules – Huaraz dañado; tránsito restringido. No se reportan viviendas afectadas por el huaico.",
+   "coord": [
+    -77.5374162,
+    -9.5293926
+   ],
+   "metodo_ubicacion": "Buscador local de lugares (barrio 'Vista Alegre', OpenStreetMap, distrito Huaraz); próximo al centro poblado INEI Piedras Azules (-77.5385, -9.5339).",
+   "confianza": "media",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Panamericana",
+     "titulo": "Áncash: intensas lluvias inundan calles y afectan viviendas en Huaraz",
+     "url": "https://panamericana.pe/nacionales/477075-ancash-intensas-lluvias-inundan-calles-afectan-viviendas-huaraz",
+     "fecha_publicacion": "2026-11-07",
+     "cita": "las lluvias del 6 de noviembre generaron un huaico en el sector Vista Alegre, el cual dañó aproximadamente un kilómetro de la carretera Piedras Azules - Huaraz"
+    },
+    {
+     "medio": "The Rio Times",
+     "titulo": "Huaraz floods, hail, rain (Peru)",
+     "url": "https://www.riotimesonline.com/huaraz-floods-hail-rain-peru/",
+     "fecha_publicacion": "2026-11-08",
+     "cita": "(en inglés) damaged about one kilometre of the Piedras Azules to Huaraz road near Vista Alegre"
+    },
+    {
+     "medio": "AP Noticias",
+     "titulo": "Fuertes lluvias e inundaciones provocan huaicos y daños en viviendas, colegios y avenidas en Huaraz",
+     "url": "https://www.apnoticias.pe/fuertes-lluvias-e-inundaciones-provocan-huaicos-y-danos-en-viviendas-colegios-y-avenidas-en-huaraz-1523016",
+     "fecha_publicacion": "2026-11-07",
+     "cita": "De acuerdo con el reporte del Centro de Operaciones de Emergencia Regional de Áncash, las lluvias provocaron un huaico."
+    }
+   ]
+  },
+  {
+   "fecha": "2025-04-28",
+   "lugar": "Quebrada Llaca – río Casca (quebrada Paria): Paria-Willcahuain, Jinua, Ucru, Cachipampa, Lirio y Palmira",
+   "distrito": "Independencia",
+   "descripcion": "Hacia las 03:00–03:30 h un derrumbe de ~400 000 m³ de la ladera derecha (cerro San Cristóbal, nevado Vallunaraju) cayó sobre la laguna glaciar 'A', que se vació sobre la laguna 'B' y la desbordó; el flujo de detritos bajó por la quebrada Llaca y el río Casca más de 12 km, atravesó la zona urbana de Independencia (sector Palmira) y llegó hasta el río Santa. Cifras discrepantes: INDECI 2 fallecidos, 9 heridos y 1 desaparecido; COER/DIRESA iniciales 2 fallecidos (menores) y 5 desaparecidos; afectados ~100 a 318 según la fuente.",
+   "afectacion": "INDECI: 2 fallecidos, 9 heridos, 1 desaparecido. Municipalidad de Independencia (preliminar): 100 viviendas afectadas y 300 m de vía urbana. COER: ~300 personas afectadas, 3 puentes vehiculares destruidos y 1 dañado, 10 ha de cultivos perdidas, agua potable cortada (~13 000 personas según Canal N/RSD) y electricidad en Palmira. Infobae: 10 viviendas colapsadas y 50 con daños.",
+   "coord": [
+    -77.5127549,
+    -9.4984961
+   ],
+   "metodo_ubicacion": "Buscador local de lugares (barrio 'Jinua', OpenStreetMap, distrito Independencia), localidad central del tramo poblado afectado; el recorrido completo va desde la quebrada Llaca hasta la confluencia con el río Santa.",
+   "confianza": "media",
+   "recorrido": [
+    "Derrumbe en la ladera derecha (cerro San Cristóbal), al suroeste del nevado Vallunaraju (~5052 m s.n.m.)",
+    "Laguna glaciar A (desaparece) → laguna B (desborde)",
+    "Microcuenca / quebrada Llaca (cono en su desembocadura y embalse temporal; carretera Huaraz–laguna Llaca dañada)",
+    "Río Casca (subcuenca Casca; llamada 'quebrada Paria' por Andina): puente desvío Llaca–Willcahuain y carretera Willcahuain–Llaca",
+    "Canal Cachipampa y campos de cultivo (Cachipampa)",
+    "Puente a Uquia y puente Ucramaran (Ucru)",
+    "Paria-Willcahuain, Jinua, Lirio",
+    "Zona urbana de Independencia: sector Palmira, puente del cruce con la Av. Independencia, defensa ribereña parte baja",
+    "Confluencia con el río Santa"
+   ],
+   "fuentes": [
+    {
+     "medio": "INAIGEM – INGEMMET (informe técnico, vía CENEPRED SIGRID)",
+     "titulo": "Inspección técnica del aluvión en la subcuenca Casca debido al desborde de lagunas glaciares el 28 de abril de 2025",
+     "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/19153/descargar",
+     "fecha_publicacion": "2025",
+     "cita": "el flujo continuó su recorrido por el fondo del valle […] depositados en la parte baja y llana de la subcuenca Casca, donde se localiza la zona urbana del distrito de Independencia. Finalmente, el flujo continuó su trayecto hasta llegar al río Santa."
+    },
+    {
+     "medio": "INAIGEM – INGEMMET (informe técnico, vía CENEPRED SIGRID)",
+     "titulo": "Inspección técnica del aluvión en la subcuenca Casca… (conclusiones)",
+     "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/19153/descargar",
+     "fecha_publicacion": "2025",
+     "cita": "el aluvión del 28 de abril afectó principalmente a las localidades de Paria Wilcahuain, Lirio, Ucrumaran, Jinua, Cachipampa y el sector de Palmira en el área urbana del distrito de independencia"
+    },
+    {
+     "medio": "Andina",
+     "titulo": "Áncash: sepa cómo un aluvión desapareció laguna glaciar cerca de Huaraz hace dos meses",
+     "url": "https://andina.pe/agencia/noticia-ancash-sepa-como-un-aluvion-desaparecio-laguna-glaciar-cerca-huaraz-hace-dos-meses-1034169.aspx",
+     "fecha_publicacion": "2025-06-19",
+     "cita": "El flujo de lodo, agua y rocas recorrió más de 12 kilómetros […] arrasando canales de riego, carreteras, viviendas"
+    },
+    {
+     "medio": "Andina",
+     "titulo": "Autoridades ejecutan acciones de respuesta ante inundación por desborde de río en Áncash",
+     "url": "https://andina.pe/agencia/noticia-autoridades-ejecutan-acciones-respuesta-ante-inundacion-desborde-rio-ancash-1027680.aspx",
+     "fecha_publicacion": "2025-04-28",
+     "cita": "la emergencia ha dejado 2 personas fallecidas, 9 heridos y 1 desaparecido […] esta emergencia afectó 100 viviendas, 300 metros de vía urbana"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Independencia en emergencia: daños en vías, puentes y servicios tras el desborde del río Casca",
+     "url": "https://ancashnoticias.com/2025/04/28/independencia-en-emergencia-danos-en-vias-puentes-y-servicios-tras-el-desborde-del-rio-casca/",
+     "fecha_publicacion": "2025-04-28",
+     "cita": "dos personas fallecidas —ambas menores de edad—, cinco desaparecidos y alrededor de 300 personas afectadas en las localidades de Jinua, Palmira, Paria-Willcahuain, Cachipampa, Lirio y Ucru."
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Desborde del río Casca en Independencia deja dos fallecidos, cinco desaparecidos y múltiples daños",
+     "url": "https://ancashnoticias.com/2025/04/28/desborde-del-rio-casca-en-independencia-deja-dos-fallecidos-cinco-desaparecidos-y-multiples-danos/",
+     "fecha_publicacion": "2025-04-28",
+     "cita": "La emergencia comenzó alrededor de las 3:00 horas, cuando el deslizamiento de tierra desde el cerro Vallunaraju generó un bloqueo en la quebrada Llaca, lo que derivó en el desborde del río Casca."
+    },
+    {
+     "medio": "Infobae",
+     "titulo": "Desastre en Áncash: desborde en Huaraz deja dos niños fallecidos, cinco desaparecidos y decenas de familias damnificadas",
+     "url": "https://www.infobae.com/peru/2025/04/29/desastre-en-ancash-desborde-en-huaraz-deja-dos-ninos-fallecidos-cinco-desaparecidos-y-decenas-de-familias-damnificadas/",
+     "fecha_publicacion": "2025-04-28",
+     "cita": "diez viviendas colapsadas y otras cincuenta con daños considerables"
+    },
+    {
+     "medio": "Canal N",
+     "titulo": "Huaico en Huaraz deja más de 300 damnificados y dos muertos",
+     "url": "https://canaln.pe/peru/huaico-huaraz-deja-mas-300-damnificados-y-dos-muertos-n483022",
+     "fecha_publicacion": null,
+     "cita": "La masa de lodo y piedras descendió con fuerza por la quebrada Casca"
+    }
+   ],
+   "geometria_recorrido": {
+    "cauces_osm": [
+     371457866,
+     370828702
+    ],
+    "conectores": [
+     [
+      [
+       -77.4987775,
+       -9.4963066
+      ],
+      [
+       -77.5092468,
+       -9.4943717
+      ]
+     ]
+    ],
+    "nota": "Quebrada Llaca (OSM 371457866) y Río Paria (OSM 370828702, hasta el río Santa por Palmira). OSM no tiene el tramo del río Casca entre ambos (~1,1 km): se trazó en línea recta, ubicación aproximada."
+   }
+  },
+  {
+   "fecha": "2025-02-03",
+   "lugar": "Centro poblado Macashca, vía vecinal AN-1148 tramo Pariac – Carman",
+   "distrito": "Huaraz",
+   "descripcion": "Las lluvias intensas provocaron un huaico que bloqueó la vía vecinal AN-1148 en el tramo Pariac – 'Carman', en el centro poblado de Macashca; la Municipalidad Provincial de Huaraz habilitó un carril durante la noche.",
+   "afectacion": "Vía vecinal AN-1148 bloqueada; tránsito restablecido en un carril. No se reportan viviendas afectadas.",
+   "coord": [
+    -77.49164533,
+    -9.56578783
+   ],
+   "metodo_ubicacion": "Archivo INEI de centros poblados (Macashca, distrito Huaraz), confirmado por el buscador local; punto del centro poblado, no del tramo exacto de la vía.",
+   "confianza": "media",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "Radio Santo Domingo (RSD)",
+     "titulo": "Áncash: huaicos y deslizamientos bloquean vías vecinales en Huaraz, Yungay y Huari",
+     "url": "https://radiorsd.pe/noticias/ancash-huaicos-y-deslizamientos-bloquean-vias-vecinales-en-huaraz-yungay-y-huari",
+     "fecha_publicacion": "2025-02-04",
+     "cita": "ocurrió en el tramo Pariac-Carman de la red vial vecinal AN-1148, en el centro poblado de Macashca, donde un huaico bloqueó la carretera."
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Lluvias intensas afectan vías vecinales en Huaraz, Yungay y Huari",
+     "url": "https://ancashnoticias.com/2025/02/04/lluvias-intensas-afectan-vias-vecinales-en-huaraz-yungay-y-huari/",
+     "fecha_publicacion": "2025-02-04",
+     "cita": "En Huaraz, un huaico afectó la red vecinal AN-1148, en el tramo Pariac – Carman, del centro poblado de Macashca."
+    }
+   ]
+  },
+  {
+   "fecha": "2023-12-25",
+   "lugar": "Centro poblado Ichoca (quebrada s/n 'Kawuack Cruz', faldas del cerro Rataquenua), junto a la I.E. N° 86079",
+   "distrito": "Huaraz",
+   "descripcion": "Lluvias intensas reactivaron una quebrada en Ichoca; el huaico (lodo y bloques de 0,2–1 m) alcanzó 1,8 m de altura en las paredes de dos viviendas, obstruyó la vía Ichoca – Huaraz y el canal de riego y llegó a la plataforma de la I.E. N° 86079. Ancash Noticias indica que fue la segunda vez que Ichoca era afectado; INGEMMET registra flujos previos en 2018, 2022 y 2023. El punto de inventario INGEMMET tiene fecha 28-03-2025, que corresponde al registro/informe, no al evento.",
+   "afectacion": "2 viviendas afectadas; 10–13 m de la vía Ichoca – Huaraz y 14 m de canal de riego (INGEMMET A7607).",
+   "coord": [
+    -77.4984448,
+    -9.5279673
+   ],
+   "metodo_ubicacion": "Coordenadas UTM del inventario INGEMMET (225713 E, 8945786 N, zona 18S) para el flujo de Ichoca; el pie del flujo en el informe A7607 está a ~40 m (225681 E, 8945817 N).",
+   "confianza": "alta",
+   "recorrido": [
+    "Cabecera con erosión de ladera y derrumbe (~3372 m s.n.m.)",
+    "Quebrada s/n (Kawuack Cruz) en dirección noroeste",
+    "Viviendas en ambas márgenes y vía Ichoca – Huaraz",
+    "Canal de riego y plataforma de la I.E. N° 86079 Ichoca (~3211 m s.n.m.)"
+   ],
+   "fuentes": [
+    {
+     "medio": "INGEMMET (Informe Técnico A7607, vía CENEPRED SIGRID)",
+     "titulo": "Evaluación de peligros geológicos por movimientos en masa del centro poblado de Ichoca y alrededores",
+     "url": "https://sigrid.cenepred.gob.pe/sigridv3/documento/20381/descargar",
+     "fecha_publicacion": "2025",
+     "cita": "El flujo de detritos, es el principal peligro en la zona, y corresponde a un evento reactivado en diciembre del 2023; el cual causó daños en dos viviendas, 14m de canal de riego"
+    },
+    {
+     "medio": "Radio Santo Domingo (RSD)",
+     "titulo": "Huaraz: huaico afecta vías de acceso y viviendas en centro poblado de Ichoca",
+     "url": "https://radiorsd.pe/noticias/huaraz-huaico-afecta-vias-de-acceso-y-viviendas-en-centro-poblado-de-ichoca",
+     "fecha_publicacion": "2023-12-26",
+     "cita": "Las fuertes lluvias ocurridas el último lunes 25 de diciembre ocasionaron el deslizamiento de lodo y rocas de las faldas del cerro Rataquenua, del centro poblado Ichoca"
+    },
+    {
+     "medio": "Ancash Noticias",
+     "titulo": "Recomiendan trabajos de estabilización en Ichoca por huaicos",
+     "url": "https://ancashnoticias.com/2023/12/26/recomiendan-ejecutar-trabajos-de-estabilizacion-en-ichoca-para-evitar-huaicos/",
+     "fecha_publicacion": "2023-12-26",
+     "cita": "por segunda vez el centro poblado de Ichoca fue afectado por un huaico que se originó en la activación de una quebrada."
+    }
+   ]
+  },
+  {
+   "fecha": "2023-09-22",
+   "lugar": "Al costado del cementerio municipal de Independencia",
+   "distrito": "Independencia",
+   "descripcion": "INGEMMET registró un movimiento complejo derrumbe–flujo junto al cementerio municipal: un corte de talud de 28 m para abrir una calle rellenó dos quebradas y se evidencian flujos en las calles. OJO: 22-09-2023 es la fecha de registro de la inspección de INGEMMET, no una fecha de evento confirmada; registro 'en revisión' y sin cobertura periodística encontrada.",
+   "afectacion": null,
+   "coord": [
+    -77.512453306,
+    -9.517799843
+   ],
+   "metodo_ubicacion": "Coordenadas UTM del inventario INGEMMET (224166 E, 8946900 N, zona 18S), copia local data/processed/huaraz/ingemmet_inventario_puntos.geojson.",
+   "confianza": "alta",
+   "recorrido": null,
+   "fuentes": [
+    {
+     "medio": "INGEMMET – Inventario de peligros geológicos (GEOCATMIN), registro 2010510066",
+     "titulo": "Al costado del cementerio municipal independencia – Derrumbe - Flujo (Asistencia técnica en evaluación de peligros geológicos 2023)",
+     "url": "https://geocatmin.ingemmet.gob.pe/geocatmin/",
+     "fecha_publicacion": "2023-09-22",
+     "cita": "El corte de talud provoco el relleno de 2 quebradas ubicadas en ambas márgenes de la zona cortaron un talud de 28m de altura se evidencia flujos en las calles"
+    }
+   ]
+  }
+ ],
+ "descartados": [
+  {
+   "lugar": "Quebrada Llaca (lagunas A y B, nevado Vallunaraju), 26-03-2025",
+   "motivo": "Primer desborde de baja magnitud; el flujo se disipó en la quebrada Llaca y solo dañó 20 m de la carretera Huaraz – laguna Llaca, sin llegar a zonas pobladas (INAIGEM)."
+  },
+  {
+   "lugar": "Sectores El Pinar, Pasamayito y cerro Cóndor Wain (Independencia)",
+   "motivo": "El inventario INGEMMET (registro 15-03-2026) menciona un flujo de detritos no canalizado que afectó 3 viviendas en Pasamayito, pero no da fecha del evento y no se encontró el informe ni noticias; el registro principal es un deslizamiento."
+  },
+  {
+   "lugar": "Caserío Churap, CP Monterrey (Independencia), 16-02-2026",
+   "motivo": "Daños por lluvias intensas en muros y techos de 5 viviendas; no se describe huaico ni flujo por quebrada."
+  },
+  {
+   "lugar": "Av. Centenario, Quinuacocha, Sierra Hermosa, El Pinar, Chúa Alto (Independencia), 06-11-2026",
+   "motivo": "Inundación pluvial por escorrentía y colapso de alcantarillas, no un huaico."
+  },
+  {
+   "lugar": "Shancayán, Las Lomas, Acovichay, Huanchac (Independencia), 18-11-2026",
+   "motivo": "Inundaciones pluviales y colapso de un cerco perimétrico; no es un huaico."
+  },
+  {
+   "lugar": "Centro poblado Paccha (Independencia), 22-04-2025",
+   "motivo": "Derrumbe de rocas sobre una vía vecinal y una red de agua; no es un huaico."
+  },
+  {
+   "lugar": "Rurascha, vía Huaraz – Casma, 28-10-2025",
+   "motivo": "Distrito de Pariacoto (fuera del ámbito); además el origen fue el desborde de un canal."
+  },
+  {
+   "lugar": "San Martín de Jaqui – Quillapampa, diciembre de 2023",
+   "motivo": "Distrito de Huanchay (fuera del ámbito)."
+  },
+  {
+   "lugar": "Caserío Shinua",
+   "motivo": "Distrito de Taricá (fuera del ámbito)."
+  },
+  {
+   "lugar": "Barrio Chua Bajo (Independencia), 2022",
+   "motivo": "INGEMMET A7315 describe derrumbes puntuales, no flujos de detritos (solo visto en el resumen de búsqueda)."
+  }
+ ]
+}

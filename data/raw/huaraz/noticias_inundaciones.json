@@ -1,0 +1,339 @@
+{
+ "descripcion": "Inundaciones y aniegos por lluvia en Huaraz e Independencia reportados por la prensa. Cada nota fue abierta y verificada el 19-11-2026; 'cita' es textual.",
+ "lugares": [
+  {
+   "id": "luzuriaga-sucre",
+   "lugar": "Av. Luzuriaga con Jr. Sucre, junto a la Plaza de Armas",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.529194,
+    -9.5294439
+   ],
+   "confianza": "alta",
+   "metodo": "Cruce de ambas vías en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2021-12-03",
+     "tipo": "Aniego por colapso de buzones",
+     "medio": "Radio Santo Domingo (RSD)",
+     "url": "https://radiorsd.pe/noticias/ancash-lluvia-torrencial-inunda-calles-en-huaraz",
+     "cita": "Esta situación también se observó en las avenidas Pedro Villón y Mariscal Toribio de Luzuriaga y el jirón José de Sucre"
+    },
+    {
+     "fecha": "2023-12-18",
+     "tipo": "Colapso del alcantarillado; calles del centro convertidas en río",
+     "medio": "Agencia Andina / RSD",
+     "url": "https://radiorsd.pe/noticias/urgente-ancash-torrencial-lluvia-inunda-el-centro-de-huaraz",
+     "cita": "reportó desde la avenida Luzuriaga con el jirón Sucre, por inmediaciones de la plaza de Armas, que el sistema de alcantarillado ha colapsado"
+    }
+   ]
+  },
+  {
+   "id": "mercado-central",
+   "lugar": "Mercado Central de Huaraz (puertas del Jr. Juan de la Cruz Romero)",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5307899,
+    -9.5267917
+   ],
+   "confianza": "alta",
+   "metodo": "Mercado Central de Huaraz en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2019-02-21",
+     "tipo": "Inundación por colapso del canal Tajamar",
+     "medio": "Ancash Noticias / Andina / Correo",
+     "url": "https://ancashnoticias.com/2019/02/25/comerciantes-del-mercado-central-piden-reubicacion-de-canal-tajamar/",
+     "cita": "Las dos puertas laterales del centro de abastos, ubicadas en el jirón Juan de la Cruz Romero, fueron los espacios más afectados"
+    },
+    {
+     "fecha": "2023-12-18",
+     "tipo": "Más de 20 puestos inundados (canal Tajamar y buzones)",
+     "medio": "Ancash Noticias / Huaraz Noticias",
+     "url": "https://ancashnoticias.com/2023/12/22/huaraz-mas-de-20-puestos-de-venta-fueron-afectados-por-inundacion-en-el-mercado-central",
+     "cita": "fueron más de 20 puestos de bazar y juguetería que fueron afectados por la inundación producto de las lluvias"
+    }
+   ]
+  },
+  {
+   "id": "raymondi",
+   "lugar": "Av. Raymondi, primera cuadra",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5286667,
+    -9.5260615
+   ],
+   "confianza": "media",
+   "metodo": "Cruce Av. Raymondi – Av. Luzuriaga en OpenStreetMap (© colaboradores de OpenStreetMap); la cuadra exacta no está confirmada",
+   "eventos": [
+    {
+     "fecha": "2026-03 (antes del 02-03)",
+     "tipo": "Inundación de locales por colapso de buzones; pérdidas mayores a S/ 300 mil",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/03/02/huaraz-comerciantes-denuncian-perdidas-superiores-a-s-300-mil-por-inundacion-en-avenida-raimondi",
+     "cita": "Comerciantes de la primera cuadra de la avenida Raimondi… tras una inundación registrada durante las lluvias recientes"
+    },
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Inundación de viviendas y locales por colapso de alcantarillas",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/11/09/huaraz-vecinos-afectados-por-inundacion-en-avenida-raimondi-denuncian-reduccion-de-rejillas-de-drenaje",
+     "cita": "la primera cuadra de la avenida Raimondi, en Huaraz, resultaron afectados por la inundación"
+    }
+   ]
+  },
+  {
+   "id": "27nov-villon",
+   "lugar": "Av. 27 de Noviembre con Jr./Av. Villón",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5319846,
+    -9.5351942
+   ],
+   "confianza": "alta",
+   "metodo": "Cruce de ambas vías en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2025-10-07",
+     "tipo": "Aniego por colapso del sistema pluvial",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2025/10/07/huaraz-colapsa-red-de-agua-y-sistema-pluvial-por-intensas-lluvias/",
+     "cita": "El colapso en la intersección de Villón y 27 de Noviembre generó un aniego con aguas servidas"
+    },
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Aniego",
+     "medio": "Diario de Chimbote",
+     "url": "https://diariodechimbote.com/2026/11/07/lluvia-torrencial-inunda-viviendas-mercados-y-hasta-oficinas-de-la-divincri/",
+     "cita": "La avenida 27 de Noviembre, en su intersección con el jirón Villón, quedó completamente anegada"
+    }
+   ]
+  },
+  {
+   "id": "confraternidad-villon",
+   "lugar": "Av. Confraternidad con Av. Villón",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5215016,
+    -9.5384516
+   ],
+   "confianza": "media",
+   "metodo": "Cruce Av. Confraternidad Internacional – Av. Pedro Villón en OpenStreetMap (© colaboradores de OpenStreetMap) (la nota dice 'Millón', probable errata de Villón)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Aniego que alcanzó vías y viviendas",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/11/09/ancash-lluvias-provocan-colapso-de-alcantarillas-y-afectan-viviendas-y-vias-en-huaraz",
+     "cita": "intersección de Confraternidad con Millón, donde el desplazamiento del agua alcanzó las vías y viviendas cercanas"
+    }
+   ]
+  },
+  {
+   "id": "ie-raimondi",
+   "lugar": "I.E. Antonio Raimondi",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5295135,
+    -9.5223191
+   ],
+   "confianza": "alta",
+   "metodo": "I.E. 86017 Sabio Antonio Raimondi en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Losa deportiva anegada",
+     "medio": "Agencia Andina",
+     "url": "https://andina.pe/agencia/noticia-ancash-lluvias-intensas-inundan-calles-y-afectan-viviendas-y-locales-publicos-huaraz-1098984.aspx",
+     "cita": "En la institución educativa Antonio Raimondi, de Huaraz, la losa deportiva quedó completamente anegada"
+    }
+   ]
+  },
+  {
+   "id": "tacllan",
+   "lugar": "Sector Tacllán",
+   "distrito": "Huaraz",
+   "coord": [
+    -77.5291649,
+    -9.5427596
+   ],
+   "confianza": "media",
+   "metodo": "Sector Tacllán en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Inundación de vivienda de adobe",
+     "medio": "Agencia Andina",
+     "url": "https://andina.pe/agencia/noticia-ancash-lluvias-intensas-inundan-calles-y-afectan-viviendas-y-locales-publicos-huaraz-1098984.aspx",
+     "cita": "en el sector Tacllán, las inundaciones afectaron una vivienda construida con adobe y techo de calaminas"
+    }
+   ]
+  },
+  {
+   "id": "nicrupampa",
+   "lugar": "Nicrupampa",
+   "distrito": "Independencia",
+   "coord": [
+    -77.523755,
+    -9.5206586
+   ],
+   "confianza": "media",
+   "metodo": "Urbanización Nicrupampa en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Calles inundadas y agua dentro de viviendas",
+     "medio": "Diario de Chimbote",
+     "url": "https://diariodechimbote.com/2026/11/07/lluvia-torrencial-inunda-viviendas-mercados-y-hasta-oficinas-de-la-divincri/",
+     "cita": "Nicrupampa, en el distrito de Independencia, donde varias calles quedaron inundadas y el agua ingresó a las viviendas"
+    }
+   ]
+  },
+  {
+   "id": "el-pinar",
+   "lugar": "Ingreso a la urbanización El Pinar",
+   "distrito": "Independencia",
+   "coord": [
+    -77.512577,
+    -9.5132083
+   ],
+   "confianza": "media",
+   "metodo": "Condominio El Pinar en OpenStreetMap (© colaboradores de OpenStreetMap) (la nota habla del ingreso al sector)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Ingreso de agua a viviendas",
+     "medio": "Diario de Chimbote",
+     "url": "https://diariodechimbote.com/2026/11/07/lluvia-torrencial-inunda-viviendas-mercados-y-hasta-oficinas-de-la-divincri/",
+     "cita": "en el sector de ingreso al Pinar, donde los vecinos vivieron momentos de preocupación por el ingreso de agua a sus inmuebles"
+    }
+   ]
+  },
+  {
+   "id": "quinuacocha",
+   "lugar": "Quinuacocha (Av. Centenario)",
+   "distrito": "Independencia",
+   "coord": [
+    -77.5335506,
+    -9.5123428
+   ],
+   "confianza": "media",
+   "metodo": "Urbanización Quinuacocha en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Escorrentía y colapso de alcantarillas; 7 familias afectadas en el distrito",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/11/09/huaraz-lluvias-dejaron-siete-familias-afectadas-y-danos-en-vias-del-distrito-de-independencia",
+     "cita": "la avenida Centenario y las zonas de Quinuacocha y Sierra Hermosa, donde las escorrentías descendieron… debido… al colapso de las alcantarillas"
+    }
+   ]
+  },
+  {
+   "id": "sierra-hermosa",
+   "lugar": "Sierra Hermosa",
+   "distrito": "Independencia",
+   "coord": [
+    -77.5299751,
+    -9.5099036
+   ],
+   "confianza": "media",
+   "metodo": "Urbanización Sierra Hermosa en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11-06",
+     "tipo": "Escorrentía y colapso de alcantarillas",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/11/09/huaraz-lluvias-dejaron-siete-familias-afectadas-y-danos-en-vias-del-distrito-de-independencia",
+     "cita": "la avenida Centenario y las zonas de Quinuacocha y Sierra Hermosa, donde las escorrentías descendieron… debido… al colapso de las alcantarillas"
+    }
+   ]
+  },
+  {
+   "id": "centenario-confraternidad",
+   "lugar": "Cruce de Av. Centenario, Av. Confraternidad Internacional Oeste y Av. Independencia",
+   "distrito": "Independencia",
+   "coord": [
+    -77.5319159,
+    -9.512693
+   ],
+   "confianza": "alta",
+   "metodo": "Cruce de las vías en OpenStreetMap (© colaboradores de OpenStreetMap)",
+   "eventos": [
+    {
+     "fecha": "2026-11 (fecha exacta no confirmada)",
+     "tipo": "Inundación",
+     "medio": "Panamericana",
+     "url": "https://m.panamericana.pe/buenosdiasperu/nacionales/477650-lluvias-intensas-afectan-huaraz-granizada-deja-viviendas-vulnerables-vias-inundadas",
+     "cita": "el distrito de Independencia, específicamente en la intersección de las avenidas Centenario, Fraternidad Internacional Oeste e Independencia"
+    }
+   ]
+  },
+  {
+   "id": "shancayan",
+   "lugar": "Av. Universitaria, barrio de Shancayán",
+   "distrito": "Independencia",
+   "coord": [
+    -77.5248708,
+    -9.5138796
+   ],
+   "confianza": "media",
+   "metodo": "Urbanización Shancayán en OpenStreetMap (© colaboradores de OpenStreetMap) (la vivienda exacta no se conoce)",
+   "eventos": [
+    {
+     "fecha": "2026-11 (ayuda entregada el 18-11)",
+     "tipo": "Inundación de vivienda",
+     "medio": "Ancash Noticias",
+     "url": "https://ancashnoticias.com/2026/11/19/independencia-brinda-ayuda-a-seis-familias-y-despliega-maquinaria-pesada-por-lluvias-intensas",
+     "cita": "dejaron seis familias afectadas por inundaciones… en una vivienda de la avenida Universitaria, en el barrio de Shancayán"
+    }
+   ]
+  },
+  {
+   "id": "huacrajirca",
+   "lugar": "Barrio de Huacrajirca",
+   "distrito": "Independencia",
+   "coord": [
+    -77.528158,
+    -9.510147
+   ],
+   "confianza": "media",
+   "metodo": "Centro poblado 'Huacrajirca' (registro MINEDU/IGN en GEOCATMIN-INGEMMET), dentro del casco urbano",
+   "eventos": [
+    {
+     "fecha": "2018-04-14",
+     "tipo": "Tres viviendas inundadas; una colapsó por filtraciones",
+     "medio": "Agencia Andina",
+     "url": "https://andina.pe/agencia/noticia-lluvias-intensas-causan-danos-severos-tres-viviendas-huaraz-706644.aspx",
+     "cita": "inundaron tres viviendas en el distrito de Independencia… La vivienda que se vino abajo… se encuentra ubicada en el barrio de Huacrajirca"
+    }
+   ]
+  }
+ ],
+ "sin_lugar_preciso": [
+  {
+   "fecha": "2021-12-05",
+   "texto": "Sector Cushuruyoc (parte alta de Huaraz): agua dentro de 15 viviendas. No se pudo ubicar en el mapa.",
+   "medio": "Agencia Andina",
+   "url": "https://andina.pe/agencia/noticia-ancash-fuertes-lluvias-danan-viviendas-provincia-pomabamba-872252.aspx"
+  },
+  {
+   "fecha": "2023-12-18",
+   "texto": "Calles del centro convertidas en pequeños ríos (Gestión, Exitosa).",
+   "medio": "Agencia Andina",
+   "url": "https://andina.pe/agencia/noticia-emergencia-huaraz-lluvia-intensa-inunda-calles-del-centro-y-colapsa-alcantarillado-967227.aspx"
+  },
+  {
+   "fecha": "2026-09-24",
+   "texto": "Primeras lluvias de la temporada anegan varias calles de Huaraz.",
+   "medio": "Agencia Andina",
+   "url": "https://andina.pe/agencia/noticia-ancash-primeras-lluvias-temporada-anegan-calles-de-ciudad-huaraz-1093344.aspx"
+  },
+  {
+   "fecha": "2026-11-06",
+   "texto": "Calles y pasajes de Huaraz e Independencia anegados (Correo, RPP).",
+   "medio": "RPP",
+   "url": "https://rpp.pe/peru/actualidad/ancash-intensa-lluvia-con-granizada-inunda-calles-de-huaraz-video-noticia-1716432"
+  }
+ ]
+}

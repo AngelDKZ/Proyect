@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        # En CI (amd64) se usa la imagen oficial; en Mac con Apple Silicon, docker-compose usa imresamu/postgis.
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_DB: mapa_riesgo
+          POSTGRES_USER: mapa
+          POSTGRES_PASSWORD: mapa_dev
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U mapa -d mapa_riesgo"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgres://mapa:mapa_dev@localhost:5433/mapa_riesgo
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run db:migrate
+      - run: npm run test
+      - run: npm run build

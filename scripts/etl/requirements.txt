@@ -1,0 +1,6 @@
+# Herramientas solo para los scripts de digitalización (no son dependencias de la app).
+# Instalar en un entorno virtual aparte:  python3 -m venv .venv-etl && .venv-etl/bin/pip install -r scripts/etl/requirements.txt
+pillow==13.0.0
+numpy==2.5.5
+opencv-python-headless==5.1.0
+pyproj==3.8.0
