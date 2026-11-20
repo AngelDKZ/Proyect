@@ -16,9 +16,11 @@ type Props = {
   onElegirPeligro: (p: Peligro) => void;
   onCerrar: () => void;
   onConstruir: () => void;
+  onLugarSeguro: () => void;
+  onSalud: () => void;
 };
 
-export function TarjetaResultado({ resultado, peligro, onElegirPeligro, onCerrar, onConstruir }: Props) {
+export function TarjetaResultado({ resultado, peligro, onElegirPeligro, onCerrar, onConstruir, onLugarSeguro, onSalud }: Props) {
   const v = resultado.veredictos[peligro];
   const color = colorNivel(peligro, v.nivel);
   const otros = PELIGROS.filter((p) => p !== peligro)
@@ -109,6 +111,22 @@ export function TarjetaResultado({ resultado, peligro, onElegirPeligro, onCerrar
           </svg>
           ¿Puedo construir aquí?
         </button>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={onLugarSeguro}
+            className="flex min-h-11 items-center justify-center rounded-xl border border-[#2e7d32] px-2 text-center text-sm font-semibold text-[#1b5e20] hover:bg-[#e8f5e9] dark:text-green-300 dark:hover:bg-green-950/30"
+          >
+            Ir al lugar seguro
+          </button>
+          <button
+            type="button"
+            onClick={onSalud}
+            className="flex min-h-11 items-center justify-center rounded-xl border border-[#c62828] px-2 text-center text-sm font-semibold text-[#c62828] hover:bg-red-50 dark:hover:bg-red-950/30"
+          >
+            Centros de salud
+          </button>
+        </div>
       </div>
 
       {v.detalle.length > 0 && (

@@ -1,0 +1,177 @@
+{
+  "verificado_el": "2026-11-20",
+  "nota_911": "La Central Única de Emergencias 911 (D. Leg. 1590) todavía NO opera en Áncash ni en Huaraz. Según Infobae (26/06/2026), solo funciona en fase de pruebas en Lima Metropolitana y el Callao. El Peruano (18/09/2026) la describe como la 'futura Central de Emergencias 911', con ámbito en Lima y Callao. DPL News (23/09/2026, que cita al MTC) informa un avance de obra del 63 %, con culminación prevista para el primer trimestre de 2027 y operación desde el segundo trimestre de 2027. Cuando funcione, concentrará las llamadas a 105, 116, 106 y 100, pero ninguna fuente fija una fecha de baja para esos números. Por eso, en Huaraz se debe seguir marcando 105, 116, 106 y 115. No se debe mostrar el 911 como número operativo en la app.",
+  "nacionales": [
+    {
+      "numero": "105",
+      "nombre": "Policía Nacional del Perú (Central policial)",
+      "descripcion": "Delitos en curso, seguridad ciudadana, accidentes. Gratuito a nivel nacional.",
+      "fuentes": [
+        {"url": "https://www.gob.pe/547", "cita": "Principales números de emergencia a nivel nacional ... Central policial: 105", "fecha": "Último cambio 14 enero 2024"},
+        {"url": "https://elperuano.pe/noticia/305020-del-105-al-911-gobierno-avanza-hacia-un-sistema-integrado-para-atender-emergencias-mas-rapido", "cita": "servicios 105 de la Policía Nacional del Perú", "fecha": "2026-09-18"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "116",
+      "nombre": "Bomberos (Cuerpo General de Bomberos Voluntarios del Perú)",
+      "descripcion": "Incendios, rescates, accidentes vehiculares, materiales peligrosos.",
+      "fuentes": [
+        {"url": "https://www.gob.pe/547", "cita": "Bomberos: 116", "fecha": "Último cambio 14 enero 2024"},
+        {"url": "https://www.infobae.com/peru/2026/06/26/numeros-de-emergencia-en-peru-cuando-llamar-a-la-policia-bomberos-samu-linea-100-y-911/", "cita": "El 116 es la central de emergencia del Cuerpo General de Bomberos Voluntarios del Perú.", "fecha": "2026-06-26"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "106",
+      "nombre": "SAMU – Sistema de Atención Móvil de Urgencia (Minsa)",
+      "descripcion": "Urgencias y emergencias médicas y ambulancia. Gratuito. gob.pe lista a Áncash entre las regiones atendidas.",
+      "fuentes": [
+        {"url": "https://www.gob.pe/547", "cita": "Para atención en las regiones: Amazonas, Ancash, Ayacucho, ... puedes llamar al 106", "fecha": "Último cambio 14 enero 2024"},
+        {"url": "https://www.gob.pe/institucion/regionancash-drtc/contacto-y-numeros-de-emergencias", "cita": "Servicio de Atención Móvil de Urgencia (SAMU) 106 Llama al 106 si tienes una urgencia o emergencia médica", "fecha": "no visible"},
+        {"url": "https://elperuano.pe/noticia/305020-del-105-al-911-gobierno-avanza-hacia-un-sistema-integrado-para-atender-emergencias-mas-rapido", "cita": "106 del Sistema de Atención Móvil de Urgencia (SAMU)", "fecha": "2026-09-18"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "115",
+      "nombre": "Defensa Civil (INDECI)",
+      "descripcion": "Línea nacional de Defensa Civil para emergencias y desastres.",
+      "fuentes": [
+        {"url": "https://www.gob.pe/547", "cita": "Defensa Civil: 115", "fecha": "Último cambio 14 enero 2024"},
+        {"url": "https://elperuano.pe/noticia/219815-mas-de-3-mil-lineas-suspendidas-por-llamadas-malintencionadas-a-centrales-de-emergencia", "cita": "84 líneas a la Línea 115 (Defensa Civil)", "fecha": "2023-08-04"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "113",
+      "nombre": "Línea 113 Salud (Minsa) – opción 5: salud mental",
+      "descripcion": "Orientación en salud gratuita las 24 horas, desde cualquier teléfono fijo o celular del país. La opción 5 es Salud mental y psicología. No es una línea de ambulancias (para eso, el 106).",
+      "fuentes": [
+        {"url": "https://www.gob.pe/555", "cita": "Marca el 113 desde cualquier teléfono fijo o celular a nivel nacional de forma gratuita ... Opción 5: Salud mental y psicología.", "fecha": "Último cambio 07 setiembre 2026"},
+        {"url": "https://www.gob.pe/547", "cita": "Infosalud: 113", "fecha": "Último cambio 14 enero 2024"}
+      ],
+      "confianza": "alta"
+    }
+  ],
+  "locales": [
+    {
+      "numero": "(043) 632364",
+      "nombre": "Serenazgo – Municipalidad Provincial de Huaraz (fijo)",
+      "descripcion": "Serenazgo de Huaraz. Su móvil es el 935799957 (ver la siguiente entrada).",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/munihuaraz/contacto-y-numeros-de-emergencias", "cita": "Serenazgo 043632364 935799957 Serenzago Huaraz", "fecha": "no visible"},
+        {"url": "https://www.gob.pe/institucion/hvrg/contacto-y-numeros-de-emergencias", "cita": "Serenazgo - Municipalidad de Huaraz 043-632364 935799957", "fecha": "no visible"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "935799957",
+      "nombre": "Serenazgo – Municipalidad Provincial de Huaraz (móvil)",
+      "descripcion": "Celular del serenazgo de Huaraz.",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/munihuaraz/contacto-y-numeros-de-emergencias", "cita": "Serenazgo 043632364 935799957 Serenzago Huaraz", "fecha": "no visible"},
+        {"url": "https://www.gob.pe/institucion/hvrg/contacto-y-numeros-de-emergencias", "cita": "Serenazgo - Municipalidad de Huaraz 043-632364 935799957", "fecha": "no visible"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "(043) 396262",
+      "nombre": "Serenazgo – Municipalidad Distrital de Independencia (fijo)",
+      "descripcion": "Número fijo del serenazgo de Independencia. El POE 2023-2026 de la municipalidad también lista el 043-396404.",
+      "distrito": "Independencia",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/muniindependencia-huaraz/contacto-y-numeros-de-emergencias", "cita": "Serenazgo (fijo) 043396262 Número fijo del Serenazgo de Independencia", "fecha": "no visible"},
+        {"url": "https://www.gob.pe/institucion/hvrg/contacto-y-numeros-de-emergencias", "cita": "Serenazgo - Municipalidad de Independencia 043-396262 943999270", "fecha": "no visible"},
+        {"url": "https://cdn.www.gob.pe/uploads/document/file/5118056/PLAN%20DE%20OPERACIONES%20DE%20EMERCENCIA%20DISTRITO%20DE%20INDEPENDENCIA%202023-2026.pdf", "cita": "Serenazgo de Independencia 043-396404/396262", "fecha": "Plan 2023-2026, p. 105"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "943999270",
+      "nombre": "Serenazgo – Municipalidad Distrital de Independencia (móvil)",
+      "descripcion": "Número móvil del serenazgo de Independencia.",
+      "distrito": "Independencia",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/muniindependencia-huaraz/contacto-y-numeros-de-emergencias", "cita": "Serenazgo (móvil) 943999270 Número móvil del Serenazgo de Independencia", "fecha": "no visible"},
+        {"url": "https://www.gob.pe/institucion/hvrg/contacto-y-numeros-de-emergencias", "cita": "Serenazgo - Municipalidad de Independencia 043-396262 943999270", "fecha": "no visible"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "943980808",
+      "nombre": "Oficina de Gestión del Riesgo – Municipalidad Distrital de Independencia",
+      "descripcion": "Celular de la oficina de Gestión del Riesgo de Desastres de Independencia. Solo aparece en el Plan de Operaciones de Emergencia 2023-2026 y no se confirmó en otra fuente.",
+      "distrito": "Independencia",
+      "fuentes": [
+        {"url": "https://cdn.www.gob.pe/uploads/document/file/5118056/PLAN%20DE%20OPERACIONES%20DE%20EMERCENCIA%20DISTRITO%20DE%20INDEPENDENCIA%202023-2026.pdf", "cita": "Oficina de Gestión de Riesgo - MD Independencia 943980808", "fecha": "Plan 2023-2026, p. 105"}
+      ],
+      "confianza": "media"
+    },
+    {
+      "numero": "956274557",
+      "nombre": "Hospital Víctor Ramos Guardia – Emergencia",
+      "descripcion": "Número de emergencia publicado por el propio hospital en su página de gob.pe. Una sola fuente, aunque oficial.",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/hvrg/contacto-y-numeros-de-emergencias", "cita": "Hospital Víctor Ramos Guardia ... Números de emergencia Emergencia 956274557", "fecha": "no visible"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "(043) 421861",
+      "nombre": "Hospital Víctor Ramos Guardia – teléfonos fijos",
+      "descripcion": "Fijos del hospital: 043-42-1861 y 043-42-1290. La página no dice si son de emergencia o de la central, y el propio hospital no los lista en su página de gob.pe. Para emergencias, usar primero el 956274557.",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/regionancash-drtc/contacto-y-numeros-de-emergencias", "cita": "Hospital Víctor Ramos Guardia -Huaraz 043-42-1861 043-42-1290", "fecha": "no visible"}
+      ],
+      "confianza": "media"
+    },
+    {
+      "numero": "(043) 421330",
+      "nombre": "Policía Nacional – Huaraz (comisaría / central PNP)",
+      "descripcion": "Teléfono fijo de la PNP en Huaraz. La página de la DRTC también da el celular 964605570, y el POE de Independencia da el 42-1592 (cada uno con una sola fuente). Ninguna fuente dice con precisión a qué comisaría corresponde. Una guía no oficial (huayhuash.com) lo ubica en la comisaría del Jr. José de Sucre cdra. 2.",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/regionancash-drtc/contacto-y-numeros-de-emergencias", "cita": "Policía Nacional del Perú 043-42-1330 964605570", "fecha": "no visible"},
+        {"url": "https://cdn.www.gob.pe/uploads/document/file/5118056/PLAN%20DE%20OPERACIONES%20DE%20EMERCENCIA%20DISTRITO%20DE%20INDEPENDENCIA%202023-2026.pdf", "cita": "PNP central de emergencias 105 / (043) 42-1330/42-1592", "fecha": "Plan 2023-2026, p. 105"},
+        {"url": "https://huayhuash.com/emergency_public_contacts.html", "cita": "Police station Jr. José de Sucre, Cdra. 2. Tel. (043) 42-1330", "fecha": "no visible (fuente no oficial)"}
+      ],
+      "confianza": "alta"
+    },
+    {
+      "numero": "(043) 723333",
+      "nombre": "Compañía de Bomberos Voluntarios Santiago Antúnez de Mayolo N.º 84 (Huaraz)",
+      "descripcion": "DUDA: las fuentes no coinciden. La página de gob.pe de la DRTC Áncash publica 043-723333, mientras que el POE 2023-2026 de Independencia publica '423333' sin código de área. Para emergencias, marcar primero el 116. El nombre y el número de la compañía (N.º 84) están confirmados por Radio RSD y por la DRTC.",
+      "distrito": "Huaraz",
+      "fuentes": [
+        {"url": "https://www.gob.pe/institucion/regionancash-drtc/contacto-y-numeros-de-emergencias", "cita": "Bomberos voluntarios del Perú b-84 - Santiago Antúnez de Mayolo 043-723333 ... Calle José de Sucre 2da Cdra.", "fecha": "no visible"},
+        {"url": "https://cdn.www.gob.pe/uploads/document/file/5118056/PLAN%20DE%20OPERACIONES%20DE%20EMERCENCIA%20DISTRITO%20DE%20INDEPENDENCIA%202023-2026.pdf", "cita": "Compañía de Bomberos 423333/116", "fecha": "Plan 2023-2026, p. 105 (número distinto)"},
+        {"url": "https://radiorsd.pe/noticias/ancash-entregan-equipos-de-comunicacion-bomberos-voluntarios-de-huaraz", "cita": "Compañía de Bomberos Voluntarios Santiago Antúnez de Mayolo N.º 84, de Huaraz", "fecha": "2025-02-27 (confirma el nombre, no el teléfono)"}
+      ],
+      "confianza": "media"
+    },
+    {
+      "numero": "(043) 422940",
+      "nombre": "EsSalud Huaraz (Hospital II Huaraz)",
+      "descripcion": "Teléfono de EsSalud tomado del directorio del POE 2023-2026 de Independencia. La fuente no dice si es la línea de emergencia o la central, y no se confirmó en ninguna fuente de EsSalud. El hospital está en Av. Independencia N° 2161, Barrio Vichay, Independencia.",
+      "distrito": "Independencia",
+      "fuentes": [
+        {"url": "https://cdn.www.gob.pe/uploads/document/file/5118056/PLAN%20DE%20OPERACIONES%20DE%20EMERCENCIA%20DISTRITO%20DE%20INDEPENDENCIA%202023-2026.pdf", "cita": "ESSALUD (043) 422940", "fecha": "Plan 2023-2026, p. 105"}
+      ],
+      "confianza": "media"
+    }
+  ],
+  "no_verificados": [
+    {"nombre": "COER Áncash (Centro de Operaciones de Emergencia Regional)", "motivo": "No se encontró ningún número publicado del COER. La página de gob.pe del Gobierno Regional de Áncash solo da su central administrativa, 043-429998 ('Central telefónica 043- 429998'), que no es una línea de emergencia. El POE 2023-2026 de Independencia lista 'Defensa Civil Regional 043-426099', pero no dice que sea el COER, es de 2023 y ninguna otra fuente lo confirma."},
+    {"nombre": "Municipalidad Provincial de Huaraz – Oficina de Gestión del Riesgo de Desastres y Defensa Civil", "motivo": "Su página de gob.pe solo lista el SAMU (106) y el serenazgo (043632364 / 935799957). No se encontró un teléfono propio de la oficina, aunque su existencia está confirmada por resoluciones de 2025."},
+    {"nombre": "Comisaría PNP Independencia", "motivo": "No se encontró ningún teléfono publicado. El POE de Independencia menciona comisarías en Av. Centenario y en la zona de San ..., pero sin números."},
+    {"nombre": "Comisaría PNP Huaraz (número específico)", "motivo": "El (043) 421330 figura como PNP Huaraz en la lista principal, pero ninguna fuente oficial dice explícitamente 'Comisaría Huaraz'. El celular 964605570 (DRTC) y el (043) 42-1592 (POE MDI) tienen una sola fuente cada uno."},
+    {"nombre": "Hospital II EsSalud Huaraz – línea de emergencia específica", "motivo": "No se encontró una línea de emergencia publicada por EsSalud. Solo está el (043) 422940 del POE de Independencia (2023), incluido en la lista principal con confianza media."},
+    {"nombre": "INAIGEM / Sistema de Alerta Temprana de la laguna Palcacocha", "motivo": "No se encontró una línea pública de contacto para alertas. Las fuentes (Andina, presentación de INAIGEM) describen un sistema piloto de monitoreo, sin teléfono para la ciudadanía."},
+    {"nombre": "911 (número único de emergencias)", "motivo": "No opera en Áncash. Solo funciona en fase de pruebas en Lima y Callao, y su puesta en marcha completa está prevista para 2027 (ver nota_911)."}
+  ]
+}

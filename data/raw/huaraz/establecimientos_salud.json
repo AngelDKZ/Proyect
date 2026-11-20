@@ -1,0 +1,1442 @@
+{
+  "fuente": "Registro Nacional de IPRESS (RENIPRESS) - Superintendencia Nacional de Salud (SUSALUD), publicado en la Plataforma Nacional de Datos Abiertos (datosabiertos.gob.pe), corte 30-10-2026. Coordenadas faltantes o erróneas completadas con OpenStreetMap (Overpass/Nominatim); límites distritales: INEI.",
+  "url_descarga": "https://www.datosabiertos.gob.pe/sites/default/files/RENIPRESS_30-10-2026.csv",
+  "pagina_dataset": "https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-entidades-prestadoras-de-servicios-de-salud-renipress",
+  "archivo_crudo": "data/raw/susalud/RENIPRESS_30-10-2026.csv",
+  "fecha_descarga": "2026-11-20",
+  "notas": [
+    "Solo IPRESS en estado ACTIVO de los distritos Huaraz (020101) e Independencia (020105).",
+    "teléfono y horario se copian tal como figuran en RENIPRESS (sin verificar vigencia).",
+    "emergencia_24h se deduce del horario registrado en RENIPRESS (\"24 HORAS\" o 00:00-24:00); false si el horario registrado es limitado; no confirma la existencia formal de un servicio de emergencia.",
+    "categoria null cuando RENIPRESS indica 0 o no categorizado.",
+    "Las IPRESS de FFAA/PNP atienden principalmente a su personal y familiares."
+  ],
+  "establecimientos": [
+    {
+      "codigo_renipress": "00001543",
+      "nombre": "HOSPITAL \"VICTOR RAMOS GUARDIA\" - HUARAZ",
+      "tipo": "hospital",
+      "categoria": "II-2",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "AV. LUZURIAGA S/N CUADRA 12",
+      "telefono": "043-421290",
+      "horario": "24 HORAS",
+      "emergencia_24h": true,
+      "coord": [
+        -77.529311,
+        -9.534568
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM w777196741 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00009053",
+      "nombre": "HOSPITAL II HUARAZ",
+      "tipo": "hospital",
+      "categoria": null,
+      "institucion": "ESSALUD",
+      "distrito": "Independencia",
+      "direccion": "AV INDEPENDENCIA Nº 2161 BARRIO VICHAY",
+      "telefono": "043-422940",
+      "horario": "00:00 A 24:00",
+      "emergencia_24h": true,
+      "coord": [
+        -77.53767,
+        -9.4932
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM w853108930 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001562",
+      "nombre": "CENTRO DE SALUD HUARUPAMPA",
+      "tipo": "centro_salud",
+      "categoria": "I-3",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "AV. RAIMONDI 5TA DRA S/N",
+      "telefono": "043-422332",
+      "horario": "7:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5302617,
+        -9.525825
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916688116 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00010205",
+      "nombre": "POLICLINICO POLICIAL HUARAZ",
+      "tipo": "centro_salud",
+      "categoria": "I-3",
+      "institucion": "FFAA/PNP (SANIDAD PNP)",
+      "distrito": "Huaraz",
+      "direccion": "AV. GAMARRA S/N HUARAZ",
+      "telefono": "043226001",
+      "horario": "07:30 - 19.30",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5265369,
+        -9.5267595
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00001574",
+      "nombre": "CENTRO DE SALUD MONTERREY",
+      "tipo": "centro_salud",
+      "categoria": "I-3",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "AV. CORDILLERA BLANCA S/N",
+      "telefono": "947673657",
+      "horario": "7:00 - 19:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5384063,
+        -9.4745377
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928756305 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001557",
+      "nombre": "CENTRO DE SALUD NICRUPAMPA",
+      "tipo": "centro_salud",
+      "categoria": "I-3",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "LAS FLORES S/NNICRUPAMPA",
+      "telefono": "43422773",
+      "horario": "07:00 - 19:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.524032,
+        -9.52074
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6231251385 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001568",
+      "nombre": "CENTRO DE SALUD PALMIRA",
+      "tipo": "centro_salud",
+      "categoria": "I-4",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "PARAJE CASCAPAMPA S/N, CARRETERA HUARAZ-CARAZ",
+      "telefono": "043-428209",
+      "horario": "24 HORAS",
+      "emergencia_24h": true,
+      "coord": [
+        -77.5342225,
+        -9.5071164
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n5384026624 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00016403",
+      "nombre": "CENTRO DE ESPECIALIDADES MEDICAS SAN FERNANDO",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "AV. GAMARRA Nº 1129 - HUARAZ",
+      "telefono": "043-221606",
+      "horario": "8:00-13:00/15:0-20:0",
+      "emergencia_24h": false,
+      "coord": [
+        -77.52716,
+        -9.53375
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con \"Centro Médico CEMSAF\" (n5363823721, ~9 m) y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00031027",
+      "nombre": "CENTRO MEDICO \"PVM\"",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "CONFRATERNIDAD INTERNACIONAL SUR",
+      "telefono": "943786837",
+      "horario": "08:00-19:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.529173,
+        -9.539405
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00028543",
+      "nombre": "CENTRO MEDICO DR. SOLORZANO S.A.C",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "PEDRO PABLO ATUSPARIA",
+      "telefono": "920757580",
+      "horario": "08:00-18:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5264728,
+        -9.5399508
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00011907",
+      "nombre": "CENTRO MEDICO ESPECIALIZADO VILLA",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "AVENIDA AGUSTIN GAMARRA Nº 592",
+      "telefono": "043 - 221784",
+      "horario": "L-V:7:30-19:30/S:7:3",
+      "emergencia_24h": false,
+      "coord": [
+        -77.526591,
+        -9.528346
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n5914870085 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00010988",
+      "nombre": "CENTRO MEDICO GINECO OBSTETRICO SAN FERNANDO",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "JR. 27 DE NOVIEMBRE Nº 631 HUARAZ",
+      "telefono": "043-428269",
+      "horario": "8:00-13:00/15:00-20:",
+      "emergencia_24h": false,
+      "coord": [
+        -77.53146,
+        -9.528759
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con \"Centro medico San Fernando\" (búsqueda local OSM, ~17 m) y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00030444",
+      "nombre": "CENTRO MEDICO QHALI KAY S.A.C.",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "JOSE CARLOS MARIATEGUI",
+      "telefono": "930296960",
+      "horario": "L-D 07:00 - 21:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.52847,
+        -9.540695
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00033545",
+      "nombre": "CENTRO MEDICO VDC",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "CONFRATERNIDAD INTERNACIONAL SUR",
+      "telefono": "944 820 535",
+      "horario": "07:00 - 19:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5287848,
+        -9.5397855
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00017307",
+      "nombre": "CLINICA ALEMANA",
+      "tipo": "clinica",
+      "categoria": "I-4",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "JR. JOSE MARIA ROBLES 928 SAN FRANSISCO",
+      "telefono": "043-222419",
+      "horario": "08-14.00/16-20.30",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5255345,
+        -9.5294191
+      ],
+      "metodo_ubicacion": "Sin coordenadas en el registro; punto medio del Jr. José María Robles Arano (Nominatim/OSM), sin número exacto",
+      "confianza": "baja"
+    },
+    {
+      "codigo_renipress": "00009273",
+      "nombre": "CLINICA GINMEDIC",
+      "tipo": "clinica",
+      "categoria": "II-E",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "PASAJE ANTONIO RAIMONDI Nº 132 BARRIO SAN FRANCISCO",
+      "telefono": "043-421166",
+      "horario": "24 horas",
+      "emergencia_24h": true,
+      "coord": [
+        -77.522829,
+        -9.526908
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n7209630385 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00036313",
+      "nombre": "MEDIC CENTER LOMA LINDA S.A.C.",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "SAN ISIDRO",
+      "telefono": "942143551",
+      "horario": "07:00 - 22:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5284398,
+        -9.5408528
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00036304",
+      "nombre": "MEDSALUD AL E.I.R.L.",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "CONFRATERNIDAD INTERNACIONAL SUR",
+      "telefono": "970213490",
+      "horario": "7:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.527996,
+        -9.5396203
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00012670",
+      "nombre": "POLICLINICO EL POLO",
+      "tipo": "clinica",
+      "categoria": null,
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "AV. CONFRATERNIDAD INTERNACIONAL OESTE N° 205",
+      "telefono": "043-634452",
+      "horario": "8:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5327072,
+        -9.5278637
+      ],
+      "metodo_ubicacion": "Sin coordenadas en el registro; tramo de la Av. Confraternidad Internacional Oeste dentro del distrito de Huaraz (Nominatim/OSM), sin número exacto",
+      "confianza": "baja"
+    },
+    {
+      "codigo_renipress": "00036305",
+      "nombre": "POLICLINICO SAN FELIPE",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "ALEJANDRO TAFUR",
+      "telefono": "998093693",
+      "horario": "7:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.529918,
+        -9.5335126
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con \"Policlinico San Felipe\" (búsqueda local OSM, ~10 m) y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00016584",
+      "nombre": "POLICLINICO VIRGEN DEL ROSARIO",
+      "tipo": "clinica",
+      "categoria": null,
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "AVENIDA AGUSTIN GAMARRA N° 814",
+      "telefono": "043-422631",
+      "horario": "8:00-13:00 15:00 -",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5268188,
+        -9.5308779
+      ],
+      "metodo_ubicacion": "Sin coordenadas en el registro; tramo de la Av. Agustín Gamarra (Urb. Belén) según Nominatim/OSM, sin número exacto",
+      "confianza": "baja"
+    },
+    {
+      "codigo_renipress": "00016039",
+      "nombre": "SAN FRANCISCO DE ASIS",
+      "tipo": "clinica",
+      "categoria": "II-1",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "AV. RAYMONDI Nº 799 - HUARAZ",
+      "telefono": "+51943885826",
+      "horario": "8:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5279525,
+        -9.526046
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00030293",
+      "nombre": "SERVIMEDIC SALUD HUARAZ S.R.L",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "PRIVADO",
+      "distrito": "Huaraz",
+      "direccion": "CONFRATERNIDAD INTERNACIONAL SUR",
+      "telefono": "(51) 943820865",
+      "horario": "07:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5286347,
+        -9.5394813
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00010265",
+      "nombre": "CENTRO MEDICO ESPECIALIZADO ROMERO",
+      "tipo": "clinica",
+      "categoria": "I-4",
+      "institucion": "PRIVADO",
+      "distrito": "Independencia",
+      "direccion": "JR. SEBASTIAN DE ALISTE 445",
+      "telefono": "043-396469/943581429/943581467",
+      "horario": "9:00 - 13:00- 4:00-8",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5325003,
+        -9.5223472
+      ],
+      "metodo_ubicacion": "Sin coordenadas en el registro; nodo OSM \"Clínica Romero\" (n6917115990), junto al Jr. Sebastián de Aliste (dirección del registro)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00030845",
+      "nombre": "CENTRO MEDICO MI SALUD",
+      "tipo": "clinica",
+      "categoria": "I-3",
+      "institucion": "OTRO",
+      "distrito": "Independencia",
+      "direccion": "LOS LIBERTADORES",
+      "telefono": "(043) 713192",
+      "horario": "7:30 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5311263,
+        -9.5211833
+      ],
+      "metodo_ubicacion": "La coordenada del registro (-9.5261154, -77.5287792) es un valor genérico repetido en varias IPRESS y cae en el distrito de Huaraz; se reemplazó por el punto medio del Jr. Los Libertadores, Independencia (Nominatim/OSM)",
+      "confianza": "baja"
+    },
+    {
+      "codigo_renipress": "00012671",
+      "nombre": "CLINICA SAN PABLO SEDE HUARAZ",
+      "tipo": "clinica",
+      "categoria": "II-1",
+      "institucion": "PRIVADO",
+      "distrito": "Independencia",
+      "direccion": "JR. HUAYLAS Nº 172",
+      "telefono": "043-428811",
+      "horario": "24 HORAS",
+      "emergencia_24h": true,
+      "coord": [
+        -77.5309417,
+        -9.51791
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n4109039592 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00012050",
+      "nombre": "CLINICA VERA",
+      "tipo": "clinica",
+      "categoria": "I-4",
+      "institucion": "PRIVADO",
+      "distrito": "Independencia",
+      "direccion": "PROLONGACIÓN AV. CENTENARIO Nº 502",
+      "telefono": "951217175",
+      "horario": "8:00 - 19.00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5310809,
+        -9.5129709
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00022114",
+      "nombre": "COMPLEJO MEDICO SANTIAGO APOSTOL",
+      "tipo": "clinica",
+      "categoria": null,
+      "institucion": "PRIVADO",
+      "distrito": "Independencia",
+      "direccion": "PASAJE LAS CAMPANILLAS 162 URBANIZACION CAMPO ALEGRE",
+      "telefono": "043-427960",
+      "horario": "8:00 - 20:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.526878,
+        -9.516398
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00001556",
+      "nombre": "PUESTO DE SALUD COYLLUR",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "SECTOR TUNYA S/N -CPM DE COYLLUR",
+      "telefono": "993888479",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.4902958,
+        -9.5247111
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916688114 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001545",
+      "nombre": "PUESTO DE SALUD HUALLCOR",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CENTRO POBLADO DE HAULLCOR",
+      "telefono": "996297676",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.4938517,
+        -9.6007183
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670343 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001549",
+      "nombre": "PUESTO DE SALUD HUAMARIN",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CESERIO DE HUAMARIN",
+      "telefono": "943905677",
+      "horario": "8:00 -14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.51248,
+        -9.61529
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670345 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001555",
+      "nombre": "PUESTO DE SALUD ICHOCA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "AV. LAS FLORES SN",
+      "telefono": "043-426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5046168,
+        -9.5309779
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916688117 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00011002",
+      "nombre": "PUESTO DE SALUD JAUNA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CENTRO POBLADO DE JAUNA",
+      "telefono": "043-426955",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.48005,
+        -9.6168067
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670341 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001544",
+      "nombre": "PUESTO DE SALUD MACASHCA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CASERIO DE MACASHCA",
+      "telefono": "43426955",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.4967333,
+        -9.5650733
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670342 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001546",
+      "nombre": "PUESTO DE SALUD SAN NICOLAS",
+      "tipo": "puesto_salud",
+      "categoria": "I-2",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "AV. AUGUSTO B. LEGUI S/N",
+      "telefono": "975542560",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5150817,
+        -9.5936483
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670340 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001548",
+      "nombre": "PUESTO DE SALUD SANTA CATALINA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CASERIO DE SANTA CATALINA",
+      "telefono": "43426955",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5060667,
+        -9.6402933
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670344 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001547",
+      "nombre": "PUESTO DE SALUD YANACOSHCA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Huaraz",
+      "direccion": "CASERIO DE YANACOSHCA",
+      "telefono": "943761459",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5065567,
+        -9.5806467
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6916670346 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001576",
+      "nombre": "CHAVIN",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO MENOR DE CHAVIN",
+      "telefono": "43426955",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5367928,
+        -9.4336163
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928756306 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00031987",
+      "nombre": "ENFERMERIA DEL BIM N° 06 CAP. \"JUAN HOYLE PALACIOS\" - HUARAZ",
+      "tipo": "puesto_salud",
+      "categoria": "I-2",
+      "institucion": "FFAA/PNP (SANIDAD DEL EJÉRCITO)",
+      "distrito": "Independencia",
+      "direccion": "CONFRATERNIDAD INTERNACIONAL OESTE",
+      "telefono": "996923180",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5342231,
+        -9.5139973
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, dentro del polígono distrital INEI (sin objeto OSM con el mismo nombre)",
+      "confianza": "media"
+    },
+    {
+      "codigo_renipress": "00001563",
+      "nombre": "PUESTO DE SALUD ATIPAYAN",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE ATIPAYAN",
+      "telefono": "43426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5640466,
+        -9.5366328
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928770064 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001575",
+      "nombre": "PUESTO DE SALUD CHONTAYOC",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE CHONTAYOC",
+      "telefono": "43426955",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5476971,
+        -9.4570496
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928756304 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001572",
+      "nombre": "PUESTO DE SALUD CURHUAZ",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CASERIO DE CURHUAZ S/N",
+      "telefono": "955927230",
+      "horario": "07:00 - 13:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5234736,
+        -9.4963624
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777120 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001558",
+      "nombre": "PUESTO DE SALUD HUANCHAC",
+      "tipo": "puesto_salud",
+      "categoria": "I-2",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "LOCALIDA DE HUANCHAC S/N",
+      "telefono": "43420406",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5139133,
+        -9.5078583
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777122 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001577",
+      "nombre": "PUESTO DE SALUD HUANJA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "COMUNIDAD DE HUANJA",
+      "telefono": "943445650",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5575998,
+        -9.4378576
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS; el nodo OSM \"Puesto de Salud Huanja\" (n8298363404) está a ~250 m, pero ambos puntos caen ~600 m fuera del polígono INEI de Independencia (posible desfase del límite distrital)",
+      "confianza": "baja"
+    },
+    {
+      "codigo_renipress": "00001564",
+      "nombre": "PUESTO DE SALUD HUAYAWILLCA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE HUAYAWIILCA",
+      "telefono": "43422332",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5932941,
+        -9.5470514
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928770061 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001561",
+      "nombre": "PUESTO DE SALUD LLUPA",
+      "tipo": "puesto_salud",
+      "categoria": "I-2",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO LLUPA",
+      "telefono": "989174749",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.4785865,
+        -9.51827
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777123 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001570",
+      "nombre": "PUESTO DE SALUD MARCAC",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "LOCALIDAD DE MARCAC",
+      "telefono": "966203456",
+      "horario": "07:00 -13:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5397451,
+        -9.4839061
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928756303 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001559",
+      "nombre": "PUESTO DE SALUD MARIAN",
+      "tipo": "puesto_salud",
+      "categoria": "I-2",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "AV. ATUSPARIA S/N –CPM DE MARIAN",
+      "telefono": "043 - 426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5035764,
+        -9.513511
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777121 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001573",
+      "nombre": "PUESTO DE SALUD PARIA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE PARIA S/N",
+      "telefono": "943977158",
+      "horario": "8:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5171204,
+        -9.4899416
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777119 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001565",
+      "nombre": "PUESTO DE SALUD QUENUAYOC",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE QUENUAYOC",
+      "telefono": "43422332",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5543831,
+        -9.5250901
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928770063 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00010997",
+      "nombre": "PUESTO DE SALUD SANTA ROSA DE CANSHAN",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO SANTA ROSA DE CANSHAN",
+      "telefono": "043-426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5684102,
+        -9.5517841
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928770062 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001569",
+      "nombre": "PUESTO DE SALUD SHECTA",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLAADO DE SECHTA",
+      "telefono": "43426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.5735547,
+        -9.4938291
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777124 y con el polígono distrital INEI",
+      "confianza": "alta"
+    },
+    {
+      "codigo_renipress": "00001560",
+      "nombre": "PUESTO DE SALUD UNCHUS",
+      "tipo": "puesto_salud",
+      "categoria": "I-1",
+      "institucion": "MINSA/GOBIERNO REGIONAL",
+      "distrito": "Independencia",
+      "direccion": "CENTRO POBLADO DE UNCHUS S/N",
+      "telefono": "043-426955",
+      "horario": "08:00 - 14:00",
+      "emergencia_24h": false,
+      "coord": [
+        -77.4982655,
+        -9.5229364
+      ],
+      "metodo_ubicacion": "Coordenada del registro RENIPRESS, coincide con nodo/vía OSM n6928777125 y con el polígono distrital INEI",
+      "confianza": "alta"
+    }
+  ],
+  "descartados": [
+    {
+      "codigo_renipress": "00035976",
+      "nombre": "ALERTA TOTAL",
+      "motivo": "Servicio privado de traslado de pacientes (ambulancias)"
+    },
+    {
+      "codigo_renipress": "00018783",
+      "nombre": "BERMANLAB",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00018114",
+      "nombre": "BIOCELLS DX E.I.R.L.",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00012746",
+      "nombre": "CENTRO DE DIAGNOSTICO CLINICO ECOGRAFICO Dr ESCALANTE EIRL",
+      "motivo": "Centro de diagnóstico ecográfico (solo imágenes)"
+    },
+    {
+      "codigo_renipress": "00017063",
+      "nombre": "CENTRO DE OFTALMOLOGIA INTEGRAL",
+      "motivo": "Centro de oftalmología"
+    },
+    {
+      "codigo_renipress": "00028701",
+      "nombre": "CENTRO DE SALUD MENTAL COMUNITARIO \"ALLY WARAQ\"",
+      "motivo": "Centro de Salud Mental Comunitario: atención especializada en salud mental, no general ni de emergencia"
+    },
+    {
+      "codigo_renipress": "00030712",
+      "nombre": "CENTRO DE SALUD MENTAL COMUNITARIO LLAPANTSIKPAQ",
+      "motivo": "Centro de Salud Mental Comunitario: atención especializada en salud mental, no general ni de emergencia"
+    },
+    {
+      "codigo_renipress": "00009962",
+      "nombre": "CENTRO DENTAL SAN JOSE S.A.C.",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00032134",
+      "nombre": "CENTRO MEDICO BREVETES HUASCARAN",
+      "motivo": "Centro médico de brevetes (exámenes para licencias de conducir)"
+    },
+    {
+      "codigo_renipress": "00030714",
+      "nombre": "CENTRO MEDICO ECOGRAFICO",
+      "motivo": "Centro ecográfico (solo diagnóstico por imágenes)"
+    },
+    {
+      "codigo_renipress": "00034106",
+      "nombre": "CENTRO MEDICO ESPECIALIZADO VILLA",
+      "motivo": "Coordenada del registro es un valor genérico repetido (-9.5261154, -77.5287792) y la dirección (\"Lucar y Torre\", sin número) no se pudo ubicar en OSM/Nominatim; no se inventa la ubicación"
+    },
+    {
+      "codigo_renipress": "00018111",
+      "nombre": "CENTRO MEDICO MONTOYA",
+      "motivo": "Sin coordenadas en el registro y no se pudo ubicar en OSM ni Nominatim (Jr. Ruiz Huidobro 687, San Francisco); no se inventa la ubicación"
+    },
+    {
+      "codigo_renipress": "00031124",
+      "nombre": "CENTRO MÉDICO OCUPACIONAL SAN JUAN",
+      "motivo": "Centro médico ocupacional (exámenes laborales, no atención general)"
+    },
+    {
+      "codigo_renipress": "00018506",
+      "nombre": "CENTRO ODONTOLOGICO AMERICANO - HUARAZ",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00008886",
+      "nombre": "CENTRO ODONTOLOGICO INTEGRAL SAC",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00019025",
+      "nombre": "CENTRO ODONTOLOGICO LIVIADENT",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00012058",
+      "nombre": "CENTRO ODONTOLOGICO SIGLO XXI",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00025832",
+      "nombre": "CENTRO ODONTOLÓGICO ODONTO MUNDO",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00020672",
+      "nombre": "CLINICA ODONTOLOGICA DENTA",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00010194",
+      "nombre": "CONSULTORIO DE PEDIATRIA",
+      "motivo": "Consultorio médico individual (no es clínica ni centro de salud)"
+    },
+    {
+      "codigo_renipress": "00009205",
+      "nombre": "CONSULTORIO DENTAL",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00028285",
+      "nombre": "CONSULTORIO DENTAL \"SAN VICENTE\"",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00010471",
+      "nombre": "CONSULTORIO DENTAL SAN VICENTE",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00012750",
+      "nombre": "CONSULTORIO MEDICO DE OTORRINOLARINGOLOGIA",
+      "motivo": "Consultorio médico individual (no es clínica ni centro de salud)"
+    },
+    {
+      "codigo_renipress": "00017806",
+      "nombre": "CONSULTORIO MEDICO DR. SALINAS",
+      "motivo": "Consultorio médico individual (no es clínica ni centro de salud)"
+    },
+    {
+      "codigo_renipress": "00017804",
+      "nombre": "CONSULTORIO MÉDICO \"CLINICAL MEDIC\"",
+      "motivo": "Consultorio médico individual (no es clínica ni centro de salud)"
+    },
+    {
+      "codigo_renipress": "00016892",
+      "nombre": "CONSULTORIO MÉDICO Y CENTRO MÉDICO DE APOYO AL DIAGÓSTICO \"CLINICLA MEDIC\"",
+      "motivo": "Consultorio médico y centro de apoyo al diagnóstico (consultorio individual, no clínica)"
+    },
+    {
+      "codigo_renipress": "00017805",
+      "nombre": "CONSULTORIO ODONTOLOGICO",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00019564",
+      "nombre": "CONSULTORIO ODONTOLÓGICO H&T",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00012057",
+      "nombre": "CONSULTORIO PSICOLÓGICO",
+      "motivo": "Consultorio psicológico"
+    },
+    {
+      "codigo_renipress": "00030878",
+      "nombre": "Consultorio odontológico Señor de Quinuapata",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00017118",
+      "nombre": "DENTI DENT",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00019566",
+      "nombre": "FIORELLA ALEJANDRA RAMIREZ ZEBALLOS",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00028307",
+      "nombre": "FMC MEDICAL CENTER CENTRO DE DIAGNOSTICO SAC",
+      "motivo": "Centro de diagnóstico (apoyo al diagnóstico, no atención general)"
+    },
+    {
+      "codigo_renipress": "00011906",
+      "nombre": "GAMARRA BENITES BERNARDO ARTURO",
+      "motivo": "Consultorio médico individual (no es clínica ni centro de salud)"
+    },
+    {
+      "codigo_renipress": "00021415",
+      "nombre": "GLOBAL DENT",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00028286",
+      "nombre": "GOLDENT HUARAZ",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00032157",
+      "nombre": "HOGAR PROTEGIDO \"MI NUEVA FAMILIA\"",
+      "motivo": "Hogar protegido (residencia de salud mental), no atiende al público"
+    },
+    {
+      "codigo_renipress": "00033535",
+      "nombre": "HYPERBARIC O2",
+      "motivo": "Medicina hiperbárica (servicio especializado)"
+    },
+    {
+      "codigo_renipress": "00035978",
+      "nombre": "LABORATORIO CLÍNICO MEDICLAB",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00017116",
+      "nombre": "LABORATORIO CLÍNICO SEÑOR DE LA SOLEDAD",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00031563",
+      "nombre": "LABORATORIO DE ANALISIS CLINICOS BIO SALUD",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00014022",
+      "nombre": "LABORATORIO DE REFERENCIA REGIONAL ANCASH",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00027637",
+      "nombre": "LABORATORIO MEDICO SANTA ROSA SAC.",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00012053",
+      "nombre": "LABORATORIO SUIZA PERUANA EIRL.",
+      "motivo": "Laboratorio clínico / patología"
+    },
+    {
+      "codigo_renipress": "00037680",
+      "nombre": "NEFRO CENTRO HUARAZ",
+      "motivo": "Centro de hemodiálisis"
+    },
+    {
+      "codigo_renipress": "00031041",
+      "nombre": "NEFRO CENTRO SAN PEDRO",
+      "motivo": "Centro de hemodiálisis"
+    },
+    {
+      "codigo_renipress": "00024467",
+      "nombre": "NUEVO HORIZONTE",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00025439",
+      "nombre": "PUESTO DE SALUD E. P. HUARAZ",
+      "motivo": "Puesto de salud del establecimiento penitenciario (INPE): atención restringida a la población penal"
+    },
+    {
+      "codigo_renipress": "00028700",
+      "nombre": "SAMU ANCASH",
+      "motivo": "SAMU: servicio de atención prehospitalaria y traslado, no atiende pacientes en sede"
+    },
+    {
+      "codigo_renipress": "00019565",
+      "nombre": "STHEF DENT",
+      "motivo": "Odontológico (solo atención dental)"
+    },
+    {
+      "codigo_renipress": "00001567",
+      "nombre": "CASHACANCHA",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00028480",
+      "nombre": "CENTRO DE AISLAMIENTO TEMPORAL \"CASA BLANCA\"",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00019024",
+      "nombre": "CENTRO DE TERAPIAS ALTERNATIVAS",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00012749",
+      "nombre": "CENTRO INFANTIL WAWAIKY",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00030295",
+      "nombre": "CENTRO MEDICO AM CONDUCTOR SAC",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00017285",
+      "nombre": "CENTRO MEDICO DR SOLORZANO S.A.C",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00020673",
+      "nombre": "CENTRO MEDICO FE AL NIÑO DIVINO",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00013119",
+      "nombre": "CENTRO MEDICO OFTALMOLOGICO CRISTO REY EIRL",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00012751",
+      "nombre": "CENTRO MEDICO OLIDENT CLINIC SAC",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00024766",
+      "nombre": "CENTRO MEDICO PSV MEDIC CENTER HUARAZ E.I.R.L.",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00032156",
+      "nombre": "CENTRO MEDICO VALENTINA EIRL",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00032169",
+      "nombre": "CENTRO ODONTOLOGICO JADE Y GAEL",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00020637",
+      "nombre": "CENTRO ODONTOLOGICO PERU DENTUS",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00033548",
+      "nombre": "CENTRO PEDIATRICO MUNDO INFANTIL",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00018113",
+      "nombre": "CENTRO PEDIATRICO MUNDO INFANTIL E.I.R.L.",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00008884",
+      "nombre": "CENTRO RADIOLOGICO DE DIAGNOSTICO POR IMAGEN DIGITAL H & M E.I.R.L.",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00001566",
+      "nombre": "CHINCAY",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00018326",
+      "nombre": "CLINICA DEL RIÑON SAN RENATO S.A.C.",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00018277",
+      "nombre": "CLINICA DENTAL GOLDENT HUARAZ",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00020636",
+      "nombre": "CLINICA DENTAL HAPPY DENT",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00032159",
+      "nombre": "CLINICA INTERNA MEDIC",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00015962",
+      "nombre": "CLINICA INTERNACIONAL S.A. - MEDICENTRO HUARAZ",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00012748",
+      "nombre": "CONSULTORIO MEDICO DRA COSME",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00012052",
+      "nombre": "CONSULTORIO MEDICO Y CENTRO DE APOYO AL DIAGNOSTICO \"CLINICAL MEDIC\"",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00017041",
+      "nombre": "CONSULTORIO ODONTOLOGICO",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00025782",
+      "nombre": "DENTAL NORDENT",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00016034",
+      "nombre": "FMC MEDICAL CENTER CENTRO DE DIAGNOSTICO",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00031560",
+      "nombre": "HIDMOR EXÁMENES MÉDICOS",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00017911",
+      "nombre": "HOSPIMEDIC SALUD S.A.C.",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00017502",
+      "nombre": "MOSQUERA & MAGUIÑA - CONSULTORIO ODONTOLÓGICO ESPECIALIZADO EN ORTODONCIA",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE PARTE"
+    },
+    {
+      "codigo_renipress": "00010070",
+      "nombre": "NUEVO HORIZONTE",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00001571",
+      "nombre": "OCSHARUTUNA",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00018390",
+      "nombre": "ODONTO SALUD",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00012051",
+      "nombre": "OFTALMED VISION",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00031561",
+      "nombre": "POLICLINICO FRIDA",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00018377",
+      "nombre": "POLICLINICO MUNICIPAL DE HUARAZ SALUD",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00009961",
+      "nombre": "POLICLINICO PNP-HUARAZ",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00017119",
+      "nombre": "POLICLINICO PSV MEDIC CENTER E.I.R.L.",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00012056",
+      "nombre": "POLICLINICO SALUD CONTROL S.A.C.",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00012054",
+      "nombre": "SAN JUAN E.I.R.L",
+      "motivo": "Estado en RENIPRESS: BAJA DEFINITIVA"
+    },
+    {
+      "codigo_renipress": "00024496",
+      "nombre": "SERVICIOS MÉDICOS ASOCIADOS OSTEOPERU SAC",
+      "motivo": "Estado en RENIPRESS: BAJA PROVISIONAL"
+    },
+    {
+      "codigo_renipress": "00022112",
+      "nombre": "SERVICIOS MÉDICOS SAN PEDRO",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    },
+    {
+      "codigo_renipress": "00020688",
+      "nombre": "SERVIMEDIC INTERNACIONAL S.A.C.",
+      "motivo": "Estado en RENIPRESS: CIERRE TEMPORAL DE OFICIO"
+    }
+  ]
+}

@@ -582,3 +582,22 @@ Revisión del usuario:
 - **Aluvión de 2025 en el modo Aluvión:** el flujo Llaca–Casca del 28-04-2025 (desborde de laguna glaciar, INAIGEM) se muestra también en aluvión, con su recorrido; la tarjeta dice "Aluvión: ya bajó un aluvión aquí (2025-04-28)".
 - **Un solo comando:** `npm run datos:todo` (carga → caminos aguas abajo → carga).
 - **Pruebas guardadas en el proyecto:** `src/features/riesgo/server/datos.integration.test.ts` (mapa = tarjeta en los 6 peligros, todo huaico con camino, sin repetidos, noticias completas) y `e2e/mapa.spec.ts` con Playwright (`npm run test:e2e`).
+
+## 11. Fase 4: lugares seguros, rutas, centros de salud y emergencia
+
+### 11.1 Rutas a pie
+- **Calles:** 3 190 vías caminables de OpenStreetMap (`scripts/etl/osm_calles.py`), divididas en 48 282 tramos. Cada tramo se marca si cruza una zona de peligro (nivel ≥ 2) de aluvión, huaico o inundación.
+- **Cálculo** (`src/features/rutas/ruta.ts`, en el servidor de la app, sin servicios externos): camino de menor costo (Dijkstra) hasta el lugar seguro válido para el peligro; los tramos en zona de peligro cuestan ×4, para salir de la zona lo antes posible. Velocidad 70 m/min.
+- **Validación con el plan oficial:** desde 40 puntos al azar dentro de la zona de aluvión alto/muy alto, en el 92 % de los tramos que pasan junto a una flecha oficial de evacuación la ruta va en la misma dirección (97 de 106). Queda como prueba automática (≥ 85 %).
+
+### 11.2 Centros de salud
+- **Fuente:** registro RENIPRESS de SUSALUD (datosabiertos.gob.pe, corte del 30-10-2026, `RENIPRESS_30-10-2026.csv`, no se versiona por su tamaño: 20 MB). 53 establecimientos activos de Huaraz e Independencia: 2 hospitales, 5 centros de salud, 25 puestos de salud y 21 clínicas. Se excluyeron farmacias, laboratorios, consultorios unipersonales, odontología, etc. (lista de descartados con motivo en `data/raw/huaraz/establecimientos_salud.json`).
+- **Ubicación:** 35 confirmadas con OpenStreetMap, 13 solo con el registro, 5 aproximadas (se avisa en la app). La coordenada repetida -9.5261154, -77.5287792 del registro es un valor de relleno y se descartó.
+- **Teléfonos y horarios:** del registro; los teléfonos se normalizan a "(043) 123456" o "9xx xxx xxx".
+- **Aviso:** si el centro está en zona de aluvión (alto o muy alto, o aluvión ocurrido) o donde ya bajó un huaico, se avisa que en esa emergencia podría no estar disponible. Las calles que se inundan cerca no generan aviso.
+
+### 11.3 Teléfonos de emergencia (verificados el 20-11-2026)
+- **Nacionales:** 105 Policía, 116 Bomberos, 106 SAMU, 115 Defensa Civil, 113 Salud (gob.pe y prensa).
+- **911:** todavía no opera en Áncash; solo pruebas en Lima y Callao (Infobae 26-06-2026, El Peruano 18-09-2026; MTC prevé operar desde el 2.º trimestre de 2027). La app no lo muestra como operativo.
+- **Locales con respaldo fuerte:** serenazgos de Huaraz e Independencia, emergencia del Hospital Víctor Ramos Guardia, PNP Huaraz. **Por confirmar** (una sola fuente o fuentes que no coinciden): Gestión del Riesgo de Independencia, fijos del hospital, Bomberos de Huaraz N.º 84, EsSalud. Sin número público: COER Áncash y la Oficina de Gestión del Riesgo de la Municipalidad de Huaraz.
+- Archivo: `data/raw/huaraz/telefonos_emergencia.json` (cada número con fuente y cita). Se incluye en la página al compilar: no depende de la base.

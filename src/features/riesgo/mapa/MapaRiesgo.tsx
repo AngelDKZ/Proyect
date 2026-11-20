@@ -9,6 +9,7 @@ import {
   Map as MLMap,
   Marker,
   NavigationControl,
+  Popup,
   ScaleControl,
   type ExpressionSpecification,
   type GeoJSONSource,
@@ -24,6 +25,9 @@ import { CENTRO_HUARAZ, colorManzanas, colorSusceptibilidad, ESTILO_BASE, leyend
 import { BuscadorLugares } from "@/features/lugares/BuscadorLugares";
 import { TarjetaResultado } from "./TarjetaResultado";
 import { VistaConstruccion } from "./VistaConstruccion";
+import { type EstadoRuta, VistaLugarSeguro } from "@/features/rutas/VistaLugarSeguro";
+import { type EstadoSalud, VistaSalud } from "@/features/rutas/VistaSalud";
+import type { CentroSalud } from "@/features/rutas/server/rutas";
 
 // El worker se sirve desde public/ (ver scripts/build/copiar-worker-maplibre.mjs).
 setWorkerUrl(`/vendor/maplibre-gl-worker.mjs?v=${getVersion()}`);
@@ -41,6 +45,28 @@ async function pedirJson<T>(url: string, signal?: AbortSignal): Promise<T> {
 }
 
 /** Flecha de evacuación dibujada en un canvas (apunta al norte; se rota con el rumbo). */
+function escapar(t: string): string {
+  return t.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+}
+
+/** Cruz roja sobre blanco para los centros de salud. */
+function imagenSalud(): ImageData {
+  const c = document.createElement("canvas");
+  c.width = c.height = 40;
+  const g = c.getContext("2d")!;
+  g.fillStyle = "#ffffff";
+  g.strokeStyle = "#c62828";
+  g.lineWidth = 4;
+  g.beginPath();
+  g.roundRect(4, 4, 32, 32, 7);
+  g.fill();
+  g.stroke();
+  g.fillStyle = "#c62828";
+  g.fillRect(17, 10, 6, 20);
+  g.fillRect(10, 17, 20, 6);
+  return g.getImageData(0, 0, 40, 40);
+}
+
 function imagenFlecha(): ImageData {
   const c = document.createElement("canvas");
   c.width = c.height = 40;
@@ -67,7 +93,7 @@ function imagenFlecha(): ImageData {
 function agregarCapas(map: MLMap, peligro: Peligro) {
   // Debajo de las etiquetas del mapa base, para que los nombres de calles se sigan leyendo.
   const antes = map.getStyle().layers.find((l) => l.type === "symbol")?.id;
-  for (const id of ["suscep", "manzanas", "elementos", "zonas", "flechas"]) map.addSource(id, { type: "geojson", data: VACIO });
+  for (const id of ["suscep", "manzanas", "elementos", "zonas", "flechas", "ruta", "salud"]) map.addSource(id, { type: "geojson", data: VACIO });
 
   map.addLayer(
     { id: "suscep", type: "fill", source: "suscep", layout: { visibility: "none" }, paint: { "fill-color": colorSusceptibilidad() as never, "fill-opacity": 0.3 } },
@@ -148,6 +174,18 @@ function agregarCapas(map: MLMap, peligro: Peligro) {
     layout: { visibility: "none", "text-field": ["coalesce", ["get", "nombre"], ["get", "referencia"]], "text-font": ["Noto Sans Regular"], "text-size": 12, "text-offset": [0, 1.2], "text-anchor": "top", "text-max-width": 10 },
     paint: { "text-color": "#1b5e20", "text-halo-color": "#fff", "text-halo-width": 1.5 },
   });
+
+  // Ruta a pie (verde con borde blanco) y centros de salud (siempre visibles).
+  map.addLayer({ id: "ruta-halo", type: "line", source: "ruta", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#ffffff", "line-width": 9 } });
+  map.addLayer({ id: "ruta", type: "line", source: "ruta", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#2e7d32", "line-width": 5 } });
+  map.addImage("salud", imagenSalud(), { pixelRatio: 2 });
+  map.addLayer({
+    id: "salud",
+    type: "symbol",
+    source: "salud",
+    minzoom: 12,
+    layout: { "icon-image": "salud", "icon-allow-overlap": true, "icon-size": ["interpolate", ["linear"], ["zoom"], 12, 0.6, 16, 1] },
+  });
 }
 
 /** Qué significan los puntos verdes en cada peligro (mapa oficial de evacuación, mayo 2025). */
@@ -161,10 +199,28 @@ function visible(map: MLMap, ids: string[], si: boolean) {
   for (const id of ids) map.setLayoutProperty(id, "visibility", si ? "visible" : "none");
 }
 
+/** Dónde se estaba mirando el mapa en esta pestaña (para volver igual desde Emergencia u otra página). */
+function vistaGuardada(): { center: [number, number]; zoom: number } | null {
+  try {
+    const v = JSON.parse(sessionStorage.getItem("vista-mapa") ?? "null");
+    return v && Array.isArray(v.center) && typeof v.zoom === "number" ? v : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Peligro pedido en la URL (?peligro=aluvion); este componente solo corre en el navegador. */
 function peligroDeLaUrl(): Peligro {
   const p = new URLSearchParams(window.location.search).get("peligro");
-  return p && esPeligro(p) ? p : "inundacion_pluvial";
+  if (p && esPeligro(p)) return p;
+  // Al volver al mapa sin el peligro en la dirección, se usa el último elegido en esta pestaña.
+  try {
+    const guardado = sessionStorage.getItem("peligro");
+    if (guardado && esPeligro(guardado)) return guardado;
+  } catch {
+    /* almacenamiento bloqueado */
+  }
+  return "inundacion_pluvial";
 }
 
 export default function MapaRiesgo() {
@@ -177,13 +233,23 @@ export default function MapaRiesgo() {
   const geolocalizar = useRef<GeolocateControl | null>(null);
   const chips = useRef<HTMLUListElement>(null);
 
-  const [listo, setListo] = useState(false);
+  // Mapa cuyo estilo ya terminó de cargar. Next 16 conserva esta página al ir a otra y la reactiva al volver:
+  // el mapa se crea de nuevo, así que no basta un "listo = true" (sería del mapa anterior). Se guarda cuál está listo.
+  const [mapaListo, setMapaListo] = useState<MLMap | null>(null);
   const [peligro, setPeligro] = useState<Peligro>(peligroDeLaUrl);
   const [cargandoCapa, setCargandoCapa] = useState(false);
   const [resultado, setResultado] = useState<ResultadoConsulta | null>(null);
   const [consultando, setConsultando] = useState(false);
   const [aviso, setAviso] = useState<string | null>(null);
-  const [vista, setVista] = useState<"resultado" | "construir">("resultado");
+  const [vista, setVista] = useState<"resultado" | "construir" | "lugar" | "salud">("resultado");
+  const [estadoRuta, setEstadoRuta] = useState<EstadoRuta>({ cargando: true });
+  const [estadoSalud, setEstadoSalud] = useState<EstadoSalud>({ cargando: true });
+  const destinoRuta = useRef<Marker | null>(null);
+  // Parámetros con los que se abrió el mapa (p. ej. la ruta pedida desde Emergencia), leídos antes de que la
+  // dirección se reescriba con el peligro elegido.
+  const [parametrosIniciales] = useState(() => new URLSearchParams(window.location.search));
+  // El mapa se crea una sola vez; sus clics llaman a la versión más reciente de abrirLugar a través de esta referencia.
+  const abrirLugarRef = useRef<(idLugar?: number) => Promise<void>>(async () => {});
 
   /** Descarga una vez y reutiliza (los datos solo cambian al recargar la base). */
   const datos = useCallback(<T,>(url: string): Promise<T> => {
@@ -226,11 +292,12 @@ export default function MapaRiesgo() {
   // Crear el mapa una sola vez.
   useEffect(() => {
     if (!contenedor.current) return;
+    const vista = vistaGuardada();
     const map = new MLMap({
       container: contenedor.current,
       style: ESTILO_BASE,
-      center: CENTRO_HUARAZ,
-      zoom: 14,
+      center: vista?.center ?? CENTRO_HUARAZ,
+      zoom: vista?.zoom ?? 14,
       minZoom: 11,
       maxBounds: LIMITES_PILOTO,
       attributionControl: { compact: true },
@@ -241,25 +308,52 @@ export default function MapaRiesgo() {
     map.addControl(geo, "top-right");
     geolocalizar.current = geo;
     map.addControl(new ScaleControl({ unit: "metric" }), "bottom-left");
+    map.on("moveend", () => {
+      try {
+        const c = map.getCenter();
+        sessionStorage.setItem("vista-mapa", JSON.stringify({ center: [c.lng, c.lat], zoom: map.getZoom() }));
+      } catch {
+        /* almacenamiento bloqueado */
+      }
+    });
     geo.on("geolocate", (pos) => consultar({ lng: pos.coords.longitude, lat: pos.coords.latitude }));
-    map.on("click", (e: MapMouseEvent) => consultar(e.lngLat));
+    map.on("click", (e: MapMouseEvent) => {
+      const [f] = map.queryRenderedFeatures(e.point, { layers: ["zonas", "salud"].filter((l) => map.getLayer(l)) });
+      if (f?.layer.id === "zonas") return abrirLugarRef.current(Number(f.properties.id));
+      if (f?.layer.id === "salud") {
+        const p = f.properties as { nombre: string; telefono?: string };
+        new Popup({ closeButton: true, offset: 14 })
+          .setLngLat(e.lngLat)
+          .setHTML(`<strong>${escapar(p.nombre)}</strong>${p.telefono ? `<br><a href="tel:${escapar(String(p.telefono).split(" / ")[0].replace(/[^\d]/g, ""))}">Llamar: ${escapar(p.telefono)}</a>` : ""}`)
+          .addTo(map);
+        return;
+      }
+      consultar(e.lngLat);
+    });
     map.on("load", () => {
       agregarCapas(map, peligroDeLaUrl());
-      setListo(true);
+      setMapaListo(map);
+      pedirJson<FC>("/api/v1/salud?todos").then((d) => (map.getSource("salud") as GeoJSONSource | undefined)?.setData(d)).catch(() => {});
+      // Desde la pantalla de Emergencia: /mapa?peligro=aluvion&lon=..&lat=..&ruta=1
+      const q = parametrosIniciales;
+      const lon = Number(q.get("lon")), lat = Number(q.get("lat"));
+      if (q.get("ruta") && Number.isFinite(lon) && Number.isFinite(lat) && lon && lat) {
+        map.jumpTo({ center: [lon, lat], zoom: 16 });
+        consultar({ lng: lon, lat }).then(() => abrirLugarRef.current());
+      }
     });
     return () => {
       map.remove();
       mapa.current = null;
       marcador.current = null;
     };
-  }, [consultar]);
+  }, [consultar, parametrosIniciales]);
 
   // Cambiar de peligro: capas, colores y URL.
   useEffect(() => {
     const map = mapa.current;
-    if (!listo || !map) return;
+    if (!map || map !== mapaListo) return;
     let vigente = true;
-    window.history.replaceState(null, "", `?peligro=${peligro}`);
     map.setPaintProperty("manzanas", "fill-color", colorManzanas(peligro) as ExpressionSpecification);
     visible(map, ["suscep"], peligro === "deslizamiento");
     const conZonas = peligro === "aluvion" || peligro === "huaico" || peligro === "inundacion_pluvial";
@@ -291,7 +385,17 @@ export default function MapaRiesgo() {
     return () => {
       vigente = false;
     };
-  }, [peligro, listo, datos]);
+  }, [peligro, mapaListo, datos]);
+
+  // Recordar el peligro elegido (dirección y pestaña), aunque el mapa todavía esté cargando.
+  useEffect(() => {
+    window.history.replaceState(window.history.state, "", `?peligro=${peligro}`);
+    try {
+      sessionStorage.setItem("peligro", peligro);
+    } catch {
+      /* navegación privada o almacenamiento bloqueado: no pasa nada */
+    }
+  }, [peligro]);
 
   // En móvil los botones de peligro se deslizan: el elegido siempre a la vista.
   useEffect(() => {
@@ -305,9 +409,75 @@ export default function MapaRiesgo() {
     if (resultado && !window.matchMedia("(min-width: 1024px)").matches) panel.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [resultado, vista]);
 
+  const limpiarRuta = () => {
+    (mapa.current?.getSource("ruta") as GeoJSONSource | undefined)?.setData(VACIO);
+    destinoRuta.current?.remove();
+  };
+  const dibujarRuta = (coords: [number, number][]) => {
+    const map = mapa.current;
+    if (!map || coords.length < 2) return;
+    (map.getSource("ruta") as GeoJSONSource).setData({ type: "Feature", geometry: { type: "LineString", coordinates: coords }, properties: {} });
+    destinoRuta.current ??= new Marker({ color: "#2e7d32" });
+    destinoRuta.current.setLngLat(coords.at(-1)!).addTo(map);
+    const xs = coords.map((c) => c[0]), ys = coords.map((c) => c[1]);
+    map.fitBounds([[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]], { padding: 70, maxZoom: 17, duration: 600 });
+  };
+  /** Punto de partida: el último punto marcado en el mapa. */
+  const origen = () => marcador.current?.getLngLat();
+
+  /** Ruta al lugar seguro más conveniente para el peligro elegido (o a uno concreto si se tocó en el mapa). */
+  const abrirLugar = async (idLugar?: number) => {
+    const o = origen();
+    const p = peligro === "huaico" || peligro === "inundacion_pluvial" ? peligro : "aluvion";
+    setVista("lugar");
+    if (!o) {
+      setEstadoRuta({ error: "Primero toca en el mapa el punto desde donde saldrías (o usa tu ubicación) y luego vuelve a abrir el lugar seguro." });
+      return;
+    }
+    setEstadoRuta({ cargando: true });
+    try {
+      const r = await pedirJson<import("@/features/rutas/ruta").Ruta<import("@/features/rutas/server/rutas").LugarSeguro>>(
+        `/api/v1/ruta?lon=${o.lng.toFixed(6)}&lat=${o.lat.toFixed(6)}&peligro=${p}${idLugar ? `&lugar=${idLugar}` : ""}`,
+      );
+      setEstadoRuta({ ruta: r, peligro: p });
+      dibujarRuta(r.coordenadas);
+    } catch (e) {
+      setEstadoRuta({ error: (e as Error).message || "No se pudo calcular la ruta." });
+    }
+  };
+
+  useEffect(() => {
+    abrirLugarRef.current = abrirLugar;
+  });
+
+  const abrirSalud = async () => {
+    const o = origen();
+    setVista("salud");
+    if (!o) return setEstadoSalud({ error: "Primero toca en el mapa tu ubicación." });
+    setEstadoSalud({ cargando: true });
+    try {
+      const d = await pedirJson<{ centros: CentroSalud[] }>(`/api/v1/salud?lon=${o.lng.toFixed(6)}&lat=${o.lat.toFixed(6)}`);
+      setEstadoSalud({ centros: d.centros });
+    } catch {
+      setEstadoSalud({ error: "No se pudo buscar centros de salud. Revisa tu conexión." });
+    }
+  };
+  const rutaASalud = async (c: CentroSalud) => {
+    const o = origen();
+    if (!o) return;
+    try {
+      const r = await pedirJson<{ coordenadas: [number, number][] }>(`/api/v1/ruta?lon=${o.lng.toFixed(6)}&lat=${o.lat.toFixed(6)}&salud=${c.id}`);
+      dibujarRuta(r.coordenadas);
+      if (!window.matchMedia("(min-width: 1024px)").matches) window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      setAviso("No encontramos una ruta a pie hasta ese centro de salud.");
+    }
+  };
+
   const cerrar = () => {
     setResultado(null);
     marcador.current?.remove();
+    limpiarRuta();
   };
   const volverAlMapa = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const usarUbicacion = () => {
@@ -321,7 +491,7 @@ export default function MapaRiesgo() {
   const info = INFO_PELIGRO[peligro];
 
   return (
-    <div className="grid lg:h-[calc(100dvh-57px)] lg:grid-cols-[1fr_400px]">
+    <div className="grid lg:h-[calc(100dvh-4rem)] lg:grid-cols-[1fr_400px]">
       <div className="relative h-[64dvh] min-h-96 lg:h-full">
         <div ref={contenedor} className="h-full w-full" role="region" aria-label={`Mapa de ${info.nombre.toLowerCase()} en Huaraz`} />
 
@@ -374,10 +544,35 @@ export default function MapaRiesgo() {
           </p>
         )}
 
-        {resultado && vista === "construir" ? (
+        {vista === "lugar" ? (
+          <VistaLugarSeguro
+            estado={estadoRuta}
+            onVolver={() => {
+              limpiarRuta();
+              setVista("resultado");
+            }}
+          />
+        ) : vista === "salud" ? (
+          <VistaSalud
+            estado={estadoSalud}
+            onVolver={() => {
+              limpiarRuta();
+              setVista("resultado");
+            }}
+            onRuta={rutaASalud}
+          />
+        ) : resultado && vista === "construir" ? (
           <VistaConstruccion resultado={resultado} onVolver={() => setVista("resultado")} />
         ) : resultado ? (
-          <TarjetaResultado resultado={resultado} peligro={peligro} onElegirPeligro={setPeligro} onCerrar={cerrar} onConstruir={() => setVista("construir")} />
+          <TarjetaResultado
+            resultado={resultado}
+            peligro={peligro}
+            onElegirPeligro={setPeligro}
+            onCerrar={cerrar}
+            onConstruir={() => setVista("construir")}
+            onLugarSeguro={() => abrirLugar()}
+            onSalud={abrirSalud}
+          />
         ) : (
           <section className="flex flex-col gap-3 rounded-xl border border-line bg-surface p-4">
             <h2 className="text-lg font-semibold">¿Qué peligros hay donde vives?</h2>
@@ -421,6 +616,12 @@ export default function MapaRiesgo() {
                 <li className="text-xs text-muted">Fuera del Quillcay, en rojo oscuro: recorrido del aluvión del 28-04-2025 (quebrada Llaca – río Casca).</li>
               </>
             )}
+            <li className="flex items-center gap-2">
+              <span aria-hidden className="grid size-3.5 shrink-0 place-items-center rounded-[3px] border-2 border-[#c62828] bg-white text-[9px] leading-none font-black text-[#c62828]">
+                +
+              </span>
+              Centro de salud (toca para ver el teléfono)
+            </li>
             {peligro === "huaico" && (
               <li className="text-xs text-muted">
                 Solo hechos, sin predicción. Rojo: huaicos que ya ocurrieron (INGEMMET, INDECI, INAIGEM, prensa). Azul fuerte: zonas críticas por huaico del

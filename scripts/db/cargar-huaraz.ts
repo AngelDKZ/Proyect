@@ -15,6 +15,7 @@ import postgres from "postgres";
 import * as s from "../../src/lib/db/schema";
 import type { Geometry, MultiPolygon } from "../../src/lib/db/geometry";
 import { normalizar } from "../../src/features/lugares/normalizar";
+import { telefonosLegibles } from "../../src/features/rutas/telefono";
 import { PELIGROS, type Peligro } from "../../src/features/riesgo/peligros";
 import { CATEGORIAS_CERCA, type Hallazgo, nivelElemento, RADIO_CERCA_M } from "../../src/features/riesgo/veredicto";
 
@@ -62,6 +63,21 @@ const NOMBRE_PELIGRO: Record<string, string> = { huaico: "huaico", deslizamiento
 /** Radio aproximado según qué tan precisa es la ubicación del evento. */
 const RADIO_CONFIANZA = { alta: 60, media: 150, baja: 300 } as const;
 
+/** "CENTRO DE SALUD HUARUPAMPA" → "Centro de Salud Huarupampa" (respeta siglas y números). */
+function nombrePropio(t: string): string {
+  const menores = new Set(["de", "del", "la", "las", "los", "y", "e", "en"]);
+  const siglas = new Set(["II", "III", "IV", "SAC", "S.A.C.", "EIRL", "E.I.R.L.", "SRL", "S.R.L.", "BIM", "PNP", "IPRESS", "CS", "PS", "CM"]);
+  return t
+    .trim()
+    .split(/\s+/)
+    .map((w, i) => {
+      if (siglas.has(w.toUpperCase()) || /\d/.test(w)) return w.toUpperCase();
+      const l = w.toLowerCase();
+      return i > 0 && menores.has(l) ? l : l.charAt(0).toUpperCase() + l.slice(1);
+    })
+    .join(" ");
+}
+
 /** "SAN MARTIN DE PORRES" → "San Martin De Porres" (los nombres del INEI vienen en mayúsculas). */
 function titulo(t: string | null): string {
   return String(t ?? "").toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase());
@@ -80,7 +96,7 @@ async function main() {
 
   await db.transaction(async (tx) => {
     // 1) Vaciar (orden inverso a las dependencias)
-    await tx.execute(sql`TRUNCATE places, city_block_hazards, city_blocks, evacuation_arrows, safe_zone_hazards, safe_zones,
+    await tx.execute(sql`TRUNCATE health_facilities, street_segments, streets, places, city_block_hazards, city_blocks, evacuation_arrows, safe_zone_hazards, safe_zones,
       hazard_features, datasets, data_sources, hazard_types, territorial_units RESTART IDENTITY CASCADE`);
 
     // 2) Tipos de peligro
@@ -294,7 +310,47 @@ async function main() {
     suma("city_block_hazards", niveles.length);
     void dManz;
 
-    // 9) Lugares para el buscador: centros poblados del INEI y nombres de OpenStreetMap
+    // 9) Calles para rutas a pie: cada tramo recto con su largo y si cruza una zona de peligro.
+    //    Peligroso = donde la app marca nivel ≥ 2 (aluvión: zonas medio a muy alto y aluviones ocurridos;
+    //    huaico: ya bajó, zona crítica o camino aguas abajo; inundación: aniegos, inundaciones con ubicación y sectores).
+    if (existsSync(path.join(ROOT, "data/processed/huaraz/osm_calles.geojson"))) {
+      const calles = proc("osm_calles.geojson").features.map((f) => ({ osmId: f.properties.osm_id, name: f.properties.nombre ?? null, highway: f.properties.tipo, geom: f.geometry }));
+      await enLotes(calles, 300, (lote) => tx.insert(s.streets).values(lote as never));
+      await tx.execute(sql`
+        INSERT INTO street_segments (street_id, seq, length_m, geom)
+        SELECT st.id, d.path[1], ST_Length(d.geom::geography), d.geom
+        FROM streets st, ST_DumpSegments(st.geom) d
+        WHERE ST_Length(d.geom::geography) > 0`);
+      const peligroso = (peligro: string, categorias: string) => sql`
+        EXISTS (SELECT 1 FROM hazard_features hf
+                WHERE hf.hazard_type_code = ${peligro} AND hf.category::text = ANY(${sql.raw(`ARRAY[${categorias}]`)})
+                  AND (GeometryType(hf.geom) <> 'POINT' OR coalesce(hf.approx_radius_m, 0) > 0)
+                  AND ST_DWithin(hf.geom, sg.geom, 0.003)
+                  AND ST_DWithin(hf.geom::geography, sg.geom::geography, coalesce(hf.approx_radius_m, 0))
+                  AND (hf.category <> 'zona_modelada' OR hf.level >= 2)
+                  AND (hf.category <> 'sector_expuesto' OR hf.location_confidence <> 'baja'))`;
+      await tx.execute(sql`UPDATE street_segments sg SET
+        hazard_aluvion = ${peligroso("aluvion", "'zona_modelada','evento_registrado'")},
+        hazard_huaico = ${peligroso("huaico", "'area_evaluada','evento_registrado','zona_critica','camino_aguas_abajo'")},
+        hazard_inundacion = ${peligroso("inundacion_pluvial", "'aniego_recurrente','evento_registrado','sector_expuesto'")}`);
+      suma("calles", calles.length);
+    }
+
+    // 10) Centros de salud (RENIPRESS de SUSALUD + OpenStreetMap)
+    const archivoSalud = path.join(ROOT, "data/raw/huaraz/establecimientos_salud.json");
+    if (existsSync(archivoSalud)) {
+      const est = JSON.parse(readFileSync(archivoSalud, "utf8")).establecimientos as any[];
+      const filasSalud = est.filter((e) => Array.isArray(e.coord)).map((e) => ({
+        renipressCode: e.codigo_renipress ?? null, name: nombrePropio(e.nombre), type: e.tipo, category: e.categoria ?? null, institution: e.institucion ?? null,
+        district: e.distrito ?? null, address: e.direccion ?? null, phone: telefonosLegibles(e.telefono).join(" / ") || null, schedule: e.horario ?? null,
+        emergency24h: e.emergencia_24h ?? null, locationMethod: e.metodo_ubicacion ?? null, locationConfidence: e.confianza ?? "media",
+        geom: { type: "Point", coordinates: e.coord },
+      }));
+      await enLotes(filasSalud, 200, (lote) => tx.insert(s.healthFacilities).values(lote as never));
+      suma("centros_de_salud", filasSalud.length);
+    }
+
+    // 11) Lugares para el buscador: centros poblados del INEI y nombres de OpenStreetMap
     const lugares = [
       ...JSON.parse(readFileSync(path.join(ROOT, "data/raw/inei/huaraz_centros_poblados_inei.geojson"), "utf8")).features.map((f: any) => ({
         name: titulo(f.properties.nombccpp), kind: "centro_poblado", district: titulo(f.properties.nombdist), source: "INEI", geom: puntoDe(f.geometry),

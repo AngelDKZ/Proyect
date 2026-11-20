@@ -17,10 +17,12 @@ const url = process.env.DATABASE_URL;
 const sql = url ? postgres(url, { max: 2, onnotice: () => {} }) : undefined;
 const hayDatos = sql ? Number((await sql`SELECT count(*) AS n FROM city_blocks`)[0].n) > 0 : false;
 
+// La conexión se cierra al terminar todas las pruebas del archivo (no al final del primer bloque).
+afterAll(async () => {
+  await sql?.end();
+});
+
 describe.skipIf(!hayDatos)("datos de Huaraz (integración)", () => {
-  afterAll(async () => {
-    await sql?.end();
-  });
 
   it("el color de cada manzana coincide con la tarjeta en su interior (6 peligros)", async () => {
     // Muestra fija: hasta 15 manzanas con nivel ≠ 0 y 5 sin nivel por peligro.
@@ -75,4 +77,33 @@ describe.skipIf(!hayDatos)("datos de Huaraz (integración)", () => {
     const archivo = JSON.parse(readFileSync("data/raw/huaraz/noticias_inundaciones.json", "utf8"));
     expect(n).toBe(archivo.lugares.length);
   });
+});
+
+describe.skipIf(!hayDatos)("rutas a pie (integración)", () => {
+  it("en aluvión, las rutas van en la dirección de las flechas oficiales de evacuación (≥ 85 %)", async () => {
+    const { rutaALugarSeguro } = await import("@/features/rutas/server/rutas");
+    const puntos = await sql!<{ x: number; y: number }[]>`
+      SELECT ST_X(g) x, ST_Y(g) y FROM (
+        SELECT (ST_Dump(ST_GeneratePoints(ST_Union(geom), 15, 7))).geom g
+        FROM hazard_features WHERE hazard_type_code = 'aluvion' AND category = 'zona_modelada' AND level >= 3) t`;
+    const flechas = await sql!<{ x: number; y: number; rumbo: number }[]>`SELECT ST_X(geom) x, ST_Y(geom) y, bearing_deg rumbo FROM evacuation_arrows`;
+    const m = (ax: number, ay: number, bx: number, by: number) => Math.hypot((ax - bx) * Math.cos((ay * Math.PI) / 180), ay - by) * 111_320;
+    let a = 0, total = 0;
+    for (const p of puntos) {
+      const r = await rutaALugarSeguro(p.x, p.y, "aluvion");
+      if (!r) continue;
+      const c = r.coordenadas;
+      for (let i = 0; i < c.length - 1; i++) {
+        const mx = (c[i][0] + c[i + 1][0]) / 2, my = (c[i][1] + c[i + 1][1]) / 2;
+        const rumbo = ((Math.atan2((c[i + 1][0] - c[i][0]) * Math.cos((my * Math.PI) / 180), c[i + 1][1] - c[i][1]) * 180) / Math.PI + 360) % 360;
+        for (const f of flechas)
+          if (m(mx, my, f.x, f.y) <= 25) {
+            total++;
+            if (Math.abs(((rumbo - f.rumbo + 540) % 360) - 180) <= 90) a++;
+          }
+      }
+    }
+    expect(total).toBeGreaterThan(10);
+    expect(a / total).toBeGreaterThanOrEqual(0.85);
+  }, 120_000);
 });

@@ -7,8 +7,10 @@
  */
 import { sql } from "drizzle-orm";
 import {
+  bigint,
   boolean,
   check,
+  doublePrecision,
   index,
   integer,
   jsonb,
@@ -262,4 +264,64 @@ export const places = pgTable(
     geom: geometryColumn("geom", "Point").notNull(),
   },
   (t) => [index("places_geom_gist").using("gist", t.geom)],
+);
+
+// --- Calles para rutas a pie --------------------------------------------------------
+
+/** Vías caminables de OpenStreetMap (para calcular rutas a pie hacia lugares seguros y centros de salud). */
+export const streets = pgTable(
+  "streets",
+  {
+    id: serial("id").primaryKey(),
+    osmId: bigint("osm_id", { mode: "number" }).notNull(),
+    name: text("name"),
+    highway: varchar("highway", { length: 32 }).notNull(),
+    geom: geometryColumn("geom", "LineString").notNull(),
+  },
+  (t) => [index("streets_geom_gist").using("gist", t.geom)],
+);
+
+/**
+ * Cada tramo recto de una calle, con su largo y si cruza una zona de peligro (por peligro).
+ * Se genera en el cargador a partir de `streets` y `hazard_features`; la ruta evita los tramos peligrosos.
+ */
+export const streetSegments = pgTable(
+  "street_segments",
+  {
+    id: serial("id").primaryKey(),
+    streetId: integer("street_id")
+      .notNull()
+      .references(() => streets.id, { onDelete: "cascade" }),
+    seq: integer("seq").notNull(),
+    lengthM: doublePrecision("length_m").notNull(),
+    hazardAluvion: boolean("hazard_aluvion").notNull().default(false),
+    hazardHuaico: boolean("hazard_huaico").notNull().default(false),
+    hazardInundacion: boolean("hazard_inundacion").notNull().default(false),
+    geom: geometryColumn("geom", "LineString").notNull(),
+  },
+  (t) => [index("street_segments_geom_gist").using("gist", t.geom)],
+);
+
+// --- Centros de salud --------------------------------------------------------------
+
+/** Establecimientos de salud (registro RENIPRESS de SUSALUD, completado con OpenStreetMap). */
+export const healthFacilities = pgTable(
+  "health_facilities",
+  {
+    id: serial("id").primaryKey(),
+    renipressCode: varchar("renipress_code", { length: 20 }),
+    name: text("name").notNull(),
+    type: varchar("type", { length: 24 }).notNull(), // hospital | centro_salud | puesto_salud | clinica | otro
+    category: varchar("category", { length: 8 }),
+    institution: text("institution"),
+    district: text("district"),
+    address: text("address"),
+    phone: text("phone"),
+    schedule: text("schedule"),
+    emergency24h: boolean("emergency_24h"),
+    locationMethod: text("location_method"),
+    locationConfidence: locationConfidence("location_confidence").notNull().default("media"),
+    geom: geometryColumn("geom", "Point").notNull(),
+  },
+  (t) => [index("health_facilities_geom_gist").using("gist", t.geom)],
 );

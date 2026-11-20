@@ -51,3 +51,6 @@ tools/visor-revision/visor.html
 # Playwright
 /test-results/
 /playwright-report/
+
+# Registro RENIPRESS completo (20 MB): se vuelve a descargar desde datosabiertos.gob.pe (ver data/raw/huaraz/establecimientos_salud.json)
+/data/raw/susalud/

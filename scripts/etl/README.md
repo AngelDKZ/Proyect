@@ -42,6 +42,7 @@ OUT=../../data/processed/huaraz
 | `osm_lugares.py` | Nombres de barrios, plazas, mercados, colegios y calles de OpenStreetMap para el buscador (`python3 osm_lugares.py -77.62,-9.62,-77.43,-9.43 ../../data/processed/huaraz/osm_lugares.geojson`). Solo usa la biblioteca estándar. |
 | `pendiente_copernicus.sh` | Pendiente del terreno desde el modelo de elevación Copernicus GLO-30, procesada en la base local con PostGIS raster. Requiere el contenedor `mapa-riesgo-db`. |
 | `huaico_caminos.ts` | Camino aguas abajo (según el relieve, con los cauces de OSM quemados) desde cada huaico ocurrido y zona crítica del INGEMMET hasta el río Santa. Lee los orígenes de la base: `npm run db:cargar`, luego `npm run datos:caminos`, y otra vez `npm run db:cargar`. |
+| `osm_calles.py` | Vías caminables de OpenStreetMap para las rutas a pie (`python3 osm_calles.py -77.60,-9.60,-77.47,-9.46 ../../data/processed/huaraz/osm_calles.geojson`). |
 
 ## Resultados (19-11-2026)
 

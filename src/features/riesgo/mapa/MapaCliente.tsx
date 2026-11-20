@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const MapaRiesgo = dynamic(() => import("./MapaRiesgo"), {
   ssr: false,
   loading: () => (
-    <p role="status" className="grid h-[62dvh] place-items-center text-sm text-muted lg:h-[calc(100dvh-57px)]">
+    <p role="status" className="grid h-[62dvh] place-items-center text-sm text-muted lg:h-[calc(100dvh-4rem)]">
       Cargando el mapa…
     </p>
   ),
