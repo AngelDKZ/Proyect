@@ -47,3 +47,7 @@ tools/visor-revision/visor.html
 
 # Copiado en predev/prebuild desde node_modules
 /public/vendor/
+
+# Playwright
+/test-results/
+/playwright-report/

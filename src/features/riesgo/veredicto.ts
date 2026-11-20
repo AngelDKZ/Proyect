@@ -207,10 +207,18 @@ export function construirVeredicto(
     detalle.find((h) => h.dentro),
   );
 
+  // Aluvión ya ocurrido (p. ej. Llaca–Casca 2025) fuera del mapa oficial: se dice como hecho, no como "peligro muy alto".
+  const aluvionOcurrido =
+    peligro === "aluvion" && !porManzana
+      ? propios.find((h) => h.dentro && h.categoria === "evento_registrado" && !propios.some((z) => z.dentro && z.categoria === "zona_modelada"))
+      : undefined;
+
   return {
     peligro,
     nivel,
-    titulo: porManzana
+    titulo: aluvionOcurrido
+      ? `Aluvión: ya bajó un aluvión aquí${aluvionOcurrido.fecha ? ` (${aluvionOcurrido.fecha})` : ""}`
+      : porManzana
       ? `${INFO_PELIGRO[peligro].corto}: ${minusculaInicial(textoNivel(peligro, nivel))} en parte de tu manzana`
       : cercano
         ? `${INFO_PELIGRO[peligro].corto}: registrado a ${formatoDistancia(cercano.distanciaM)}`

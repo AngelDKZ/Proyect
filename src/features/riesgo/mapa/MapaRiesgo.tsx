@@ -413,10 +413,13 @@ export default function MapaRiesgo() {
               </li>
             )}
             {peligro === "aluvion" && (
-              <li className="flex items-center gap-2">
-                <span aria-hidden className="w-3.5 shrink-0 text-center font-bold text-[#10307a]">↑</span>
-                Dirección de evacuación
-              </li>
+              <>
+                <li className="flex items-center gap-2">
+                  <span aria-hidden className="w-3.5 shrink-0 text-center font-bold text-[#10307a]">↑</span>
+                  Dirección de evacuación
+                </li>
+                <li className="text-xs text-muted">Fuera del Quillcay, en rojo oscuro: recorrido del aluvión del 28-04-2025 (quebrada Llaca – río Casca).</li>
+              </>
             )}
             {peligro === "huaico" && (
               <li className="text-xs text-muted">

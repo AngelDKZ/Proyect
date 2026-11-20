@@ -576,3 +576,9 @@ Revisión del usuario:
 - **Caminos aguas abajo sin tramos repetidos:** cada camino se dibuja solo hasta donde se une con otro ya dibujado; los 39 orígenes (huaicos y zonas críticas) siguen conectados.
 - **Corrección:** la regla de repetidos borró por error el punto de noticias "Av. Luzuriaga con Jr. Sucre" (inundaciones 2021 y 2023), a 29 m de otro evento de 2025. Ahora solo se aplica al inventario del INGEMMET; las noticias nunca se borran.
 - **"¿Cada cuánto pasa?"** se calcula de los datos (años con eventos desde 2018): inundación 6 de 9 años; deslizamiento y erosión todos los años desde 2022; huaico 3 de 4; caída de rocas 4 de 6. Aluvión: 1941 (Quillcay) y lagunas pequeñas de la quebrada Llaca en 2025.
+
+### 10.25 Pendientes de la revisión resueltos
+
+- **Aluvión de 2025 en el modo Aluvión:** el flujo Llaca–Casca del 28-04-2025 (desborde de laguna glaciar, INAIGEM) se muestra también en aluvión, con su recorrido; la tarjeta dice "Aluvión: ya bajó un aluvión aquí (2025-04-28)".
+- **Un solo comando:** `npm run datos:todo` (carga → caminos aguas abajo → carga).
+- **Pruebas guardadas en el proyecto:** `src/features/riesgo/server/datos.integration.test.ts` (mapa = tarjeta en los 6 peligros, todo huaico con camino, sin repetidos, noticias completas) y `e2e/mapa.spec.ts` con Playwright (`npm run test:e2e`).

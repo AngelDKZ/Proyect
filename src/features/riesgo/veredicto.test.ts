@@ -197,3 +197,11 @@ describe("evaluado sin peligro en la manzana", () => {
     expect(v.titulo).toBe("Deslizamiento: evaluado, terreno poco propenso a moverse");
   });
 });
+
+describe("aluvión ya ocurrido fuera del mapa oficial", () => {
+  it("recorrido del aluvión de 2025: 'ya bajó un aluvión aquí' con la fecha", () => {
+    const v = construirVeredicto("aluvion", [h({ categoria: "evento_registrado", nivel: 4, fecha: "2025-04-28", texto: "Recorrido del flujo de Llaca–Casca" })]);
+    expect(v.nivel).toBe(4);
+    expect(v.titulo).toBe("Aluvión: ya bajó un aluvión aquí (2025-04-28)");
+  });
+});

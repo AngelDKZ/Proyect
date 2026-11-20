@@ -139,6 +139,7 @@ async function main() {
     const dOsm = await dataset({ sourceId: fOsm, title: "Cauces de ríos y quebradas", hazardTypeCode: "huaico", sourceDate: "2026-11", method: "Overpass API", verificationStatus: "no_verificado", published: true });
     const dPendiente = await dataset({ sourceId: fCop, title: "Pendiente del terreno (Copernicus GLO-30, 30 m)", hazardTypeCode: "deslizamiento", scale: "30 m", sourceDate: "2021 (GLO-30)", method: "scripts/etl/pendiente_copernicus.sh: suavizado 3×3, pendiente en grados, clases del INGEMMET (15°, 25°, 45°). Modelo de superficie: incluye edificios", verificationStatus: "no_verificado", published: true });
     const dCaminos = await dataset({ sourceId: fCop, title: "Caminos aguas abajo de huaicos documentados (según el relieve)", hazardTypeCode: "huaico", scale: "30 m", sourceDate: "2026-11", method: "scripts/etl/huaico_caminos.ts: desde cada huaico ocurrido y zona crítica del INGEMMET, camino de mayor pendiente sobre Copernicus GLO-30 con los cauces de OSM quemados y relleno de depresiones, hasta el río Santa", verificationStatus: "no_verificado", published: true });
+    const dAluvionReciente = await dataset({ sourceId: fRecientes, title: "Aluviones recientes por desborde de lagunas glaciares", hazardTypeCode: "aluvion", sourceDate: "2025", method: "Eventos de origen glaciar de la investigación de huaicos (inspección técnica INAIGEM–INGEMMET); mismo punto y recorrido", verificationStatus: "verificado", published: true });
     const dRecientes: Record<string, number> = {};
     for (const p of PELIGROS_RECIENTES)
       dRecientes[p] = await dataset({ sourceId: fRecientes, title: `Eventos recientes de ${NOMBRE_PELIGRO[p]} (2022–2026)`, hazardTypeCode: p, sourceDate: "2022–2026", method: "Recopilación de reportes de INDECI, INGEMMET, INAIGEM, municipalidades y prensa con cita textual; ubicación con INEI, OpenStreetMap o Nominatim", verificationStatus: "verificado", published: true });
@@ -210,6 +211,12 @@ async function main() {
         const radio = p === "huaico" && e.confianza !== "alta" ? null : (RADIO_CONFIANZA[e.confianza as "alta" | "media" | "baja"] ?? 150);
         filas.push({ datasetId: dRecientes[p], hazardTypeCode: p, category: "evento_registrado", geom: { type: "Point", coordinates: e.coord }, locationConfidence: e.confianza, approxRadiusM: radio, eventDate: e.fecha, properties: props });
         if (e.geometria_recorrido) recorridos.push({ peligro: p, geometria: e.geometria_recorrido, props, fecha: e.fecha });
+        // Un flujo por desborde de laguna glaciar es también un aluvión: se muestra en los dos modos.
+        if (e.origen_glaciar) {
+          filas.push({ datasetId: dAluvionReciente, hazardTypeCode: "aluvion", category: "evento_registrado", level: 4, geom: { type: "Point", coordinates: e.coord }, locationConfidence: e.confianza, approxRadiusM: null, eventDate: e.fecha, properties: props });
+          if (e.geometria_recorrido) recorridos.push({ peligro: "aluvion", geometria: e.geometria_recorrido, props, fecha: e.fecha });
+          suma("aluviones_recientes", 1);
+        }
         suma(`eventos_recientes_${p}`, 1);
       }
     }
@@ -224,7 +231,7 @@ async function main() {
       const lineas = (g.conectores ?? []).map((c) => JSON.stringify({ type: "LineString", coordinates: c }));
       const res = await tx.execute(sql`
         INSERT INTO hazard_features (dataset_id, hazard_type_code, category, level, level_label, geom, location_confidence, event_date, properties)
-        SELECT ${dRecientes[r.peligro]}, ${r.peligro}, 'evento_registrado', 4, 'Recorrido de un flujo ya ocurrido',
+        SELECT ${r.peligro === "aluvion" ? dAluvionReciente : dRecientes[r.peligro]}, ${r.peligro}, 'evento_registrado', 4, 'Recorrido de un flujo ya ocurrido',
                ST_Multi(ST_Union(ST_Buffer(t.geom::geography, 50)::geometry)), 'media', ${r.fecha},
                ${JSON.stringify({ ...r.props, es_recorrido: true, nota_recorrido: g.nota ?? null })}::jsonb
         FROM (

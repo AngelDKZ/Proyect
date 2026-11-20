@@ -138,7 +138,8 @@
      ]
     ],
     "nota": "Quebrada Llaca (OSM 371457866) y Río Paria (OSM 370828702, hasta el río Santa por Palmira). OSM no tiene el tramo del río Casca entre ambos (~1,1 km): se trazó en línea recta, ubicación aproximada."
-   }
+   },
+   "origen_glaciar": true
   },
   {
    "fecha": "2025-02-03",
